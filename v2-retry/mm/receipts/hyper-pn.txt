@@ -1,0 +1,29 @@
+format=v2.mm.hyper.pn.v1  a count of Pn for each diagonal cycle n^n, no prime named or listed
+  gate Pn(2) = 1 · LUT 1 · EQUAL
+  gate Pn(3) = 2 · LUT 2 · EQUAL
+  gate Pn(26) = 9 · LUT 9 · EQUAL
+  gate Pn(255) = 54 · LUT 54 · EQUAL
+  gate Pn(1000) = 168 · LUT 168 · EQUAL
+  gate Pn(3093) = 442 · LUT 442 · EQUAL
+  gate Pn(46655) = 4821 · LUT 4821 · EQUAL
+  gate Pn(823415) = 65675 · LUT 65675 · EQUAL
+  gate Pn(1000000) = 78498 · LUT 78498 · EQUAL
+  gate Pn(16777215) = 1077871 · LUT 1077871 · EQUAL
+  gate Pn(17403391) = 1115538 · LUT 1115538 · EQUAL
+gate: EQUAL
+
+cycle   whole                limit                Pn up to the limit   Pn in the corner   time
+2^2     4                    3                    2                    0                  0.0s
+3^3     27                   26                   9                    0                  0.0s
+4^4     256                  255                  54                   0                  0.0s
+5^5     3125                 3093                 442                  3                  0.0s
+6^6     46656                46655                4821                 0                  0.0s
+7^7     823543               823415               65675                10                 0.0s
+8^8     16777216             16777215             1077871              0                  0.0s
+9^9     387420489            387419977            20700781             25                 0.0s
+10^10   10000000000          9999940951           455049972            2539               0.1s
+11^11   285311670611         285307476307         11261954282          159092             1.4s
+12^12   8916100448256        8916100448255        309787170203         0                  14.9s
+13^13   302875106592253      302875106584061      9373678643689        244                201.1s
+
+seal sha256 b102e880cdfbd0c7f70ccf939becbee4d43d5824c5718551580099c606a8448b

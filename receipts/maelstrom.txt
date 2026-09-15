@@ -1,0 +1,138 @@
+format=atlas.maelstrom.v1
+
+== the two rays: phi^n = (F(n-1), F(n)) = a + b*phi, trace 2a+b = L(n) ==
+  n        a        b    trace   norm   L%5
+  0        1        0        2      1     2
+  1        0        1        1     -1     1
+  2        1        1        3      1     3
+  3        1        2        4     -1     4
+  4        2        3        7      1     2
+  5        3        5       11     -1     1
+  6        5        8       18      1     3
+  7        8       13       29     -1     4
+  8       13       21       47      1     2
+  9       21       34       76     -1     1
+ 10       34       55      123      1     3
+ 11       55       89      199     -1     4
+ 12       89      144      322      1     2
+ 13      144      233      521     -1     1
+
+== the ladder 1..13 ==
+trace ray only (Lucas): [1, 2, 3, 4, 6, 7, 8, 9, 11, 12]
+two rays:               [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  n  coord ray  trace ray  factors
+  1          -          -  []
+  2         F3         L0  [2]
+  3         F4         L2  [3]
+  4          -         L3  [2, 2]
+  5         F5          -  [5]
+  6          -          -  [2, 3]
+  7          -         L4  [7]
+  8         F6          -  [2, 2, 2]
+  9          -          -  [3, 3]
+ 10          -          -  [2, 5]
+ 11          -         L5  [11]
+ 12          -          -  [2, 2, 3]
+ 13         F7          -  [13]
+
+== twin seams (p, p+2, seam, factors, ray of p, ray of p+2) ==
+(  3,  5)    4  [2, 2]           F4,L2  F5     2^2
+(  5,  7)    6  [2, 3]           F5     L4     6k
+( 11, 13)   12  [2, 2, 3]        L5     F7     6k
+( 17, 19)   18  [2, 3, 3]        -      -      6k
+( 29, 31)   30  [2, 3, 5]        L7     -      6k
+( 41, 43)   42  [2, 3, 7]        -      -      6k
+( 59, 61)   60  [2, 2, 3, 5]     -      -      6k
+( 71, 73)   72  [2, 2, 2, 3, 3]  -      -      6k
+(101,103)  102  [2, 3, 17]       -      -      6k
+(107,109)  108  [2, 2, 3, 3, 3]  -      -      6k
+
+== mediant tree to depth 16: neighbours unimodular = true ==
+  row   minted      max   F(k+2)
+    0        1        1        1
+    1        2        2        2
+    2        4        3        3
+    3        8        5        5
+    4       16        8        8
+    5       32       13       13
+    6       64       21       21
+    7      128       34       34
+    8      256       55       55
+    9      512       89       89
+   10     1024      144      144
+   11     2048      233      233
+   12     4096      377      377
+   13     8192      610      610
+   14    16384      987      987
+   15    32768     1597     1597
+   16    65536     2584     2584
+
+== ?(F(n)/F(n+1)) as num/2^k (toward 2/3 = 0.1010...) ==
+n= 1  1/1  ->  1/2^0  path 
+n= 2  1/2  ->  1/2^1  path L
+n= 3  2/3  ->  3/2^2  path LR
+n= 4  3/5  ->  5/2^3  path LRL
+n= 5  5/8  ->  11/2^4  path LRLR
+n= 6  8/13  ->  21/2^5  path LRLRL
+n= 7  13/21  ->  43/2^6  path LRLRLR
+n= 8  21/34  ->  85/2^7  path LRLRLRL
+n= 9  34/55  ->  171/2^8  path LRLRLRLR
+n=10  55/89  ->  341/2^9  path LRLRLRLRL
+n=11  89/144  ->  683/2^10  path LRLRLRLRLR
+n=12  144/233  ->  1365/2^11  path LRLRLRLRLRL
+
+== the bridge over the dictionary ==
+finite patterns: 65278  magnitudes: 32639  distinct partners (sheet 0): 32639
+round trip ?(partner) = value: all 65278  max tree depth: 338953138925153547590470800371487866879 (= 255*2^120 - 1: the largest integer cell, on the right wall toward the cusp)  max partner denominator bits: 13
+sample partners:
+  <1|-1> = 1/2^1  ->  1/2  path L
+  <3|-2> = 3/2^2  ->  2/3  path LR
+  <5|-3> = 5/2^3  ->  3/5  path LRL
+  <3|-1> = 3/2^1  ->  3/2  path RL
+  <255|-8> = 255/2^8  ->  8/9  path LRRRRRRR
+  <129|-8> = 129/2^8  ->  8/15  path LRLLLLLL
+  <1|-126> = 1/2^126  ->  1/127  path (depth 126)
+  <255|0> = 255/2^0  ->  255/1  path (depth 254)
+  <3|4> = 3/2^-4  ->  48/1  path RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+
+== the frame: parents (left a/c, right b/d), node = mediant, b*c - a*d = 1; O(terms), never a walk ==
+  <1|-1> -> 1/2  depth 1  left 0/1  right 1/1  det 1
+  <3|-2> -> 2/3  depth 2  left 1/2  right 1/1  det 1
+  <255|-8> -> 8/9  depth 8  left 7/8  right 1/1  det 1
+  <1|-133> -> 1/134  depth 133  left 0/1  right 1/133  det 1
+  <255|-133> -> 8/1009  depth 133  left 7/883  right 1/126  det 1
+  <129|-133> -> 8/1015  depth 133  left 1/127  right 7/888  det 1
+  <255|0> -> 255/1  depth 254  left 254/1  right 1/0  det 1
+  <255|120> -> 338953138925153547590470800371487866880/1  depth 338953138925153547590470800371487866879  left 338953138925153547590470800371487866879/1  right 1/0  det 1
+partner table sha256 7a8131b0b81a9e5a54c084b5aaac8ac8b2f55b50f283af187bd903cd9a6ec8b0
+
+== the fibers: odd m = ±5^k; the 8-bit torus (k mod 64) and the 16-bit torus (k mod 16384, products exact) ==
+   m  sign8     k8 | sign16    k16
+   1      +      0 |      +      0
+   3      -     35 |      -   9891
+   5      +      1 |      +      1
+   7      -     10 |      -   3786
+   9      +      6 |      +   3398
+  11      -     21 |      -   7381
+  13      +     47 |      +  10223
+  15      -     36 |      -   9892
+  17      +     28 |      +   8604
+  19      -     23 |      -  15255
+  21      +     45 |      +  13677
+  23      -     14 |      -   3214
+  25      +      2 |      +      2
+  27      -     41 |      -  13289
+  29      +     59 |      +   6011
+  31      -      8 |      -   7560
+   … (all 128 rows hashed)
+ 241      +     36 |      +   6756
+ 243      -     47 |      -    303
+ 245      +     21 |      +   7573
+ 247      -      6 |      -   9094
+ 249      +     10 |      +  13450
+ 251      -      1 |      -   6977
+ 253      +     35 |      +  10595
+ 255      -      0 |      -   2112
+255 * 255 = position sum -> 65025 (exact 65025)
+1/3 = position -k -> 43691 (3 * 43691 = 1 mod 2^16)
+fiber table sha256 b1ae5b6f3efa99351bfd703bf1a3ee41bb29ca05a49827a7f06d2e74e1e0dd00

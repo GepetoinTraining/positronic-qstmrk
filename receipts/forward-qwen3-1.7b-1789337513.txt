@@ -1,0 +1,10 @@
+format=atlas.forward.v1
+model=qwen3-1.7b
+intake=.\receipts\intake-qwen3-1.7b-20260913
+[seq1] tokens=[1] argmax=0 top5=[0, 1, 2, 3, 4] per_position_argmax=[0] logits_sha256=f3339a78e62edb63287028ebc97d4f14fdda1213286f024c60be5ce9e8042111 seconds=0
+[seq8] tokens=[1, 2, 3, 4, 5, 6, 7, 8] argmax=0 top5=[0, 1, 2, 3, 4] per_position_argmax=[0, 0, 0, 0, 0, 0, 0, 0] logits_sha256=d84b4703b617d338c46d29526f4024672cba77672c627e2fadc77fce89ee348a seconds=0
+[france] tokens=[785, 6722, 315, 9625, 374] argmax=0 top5=[0, 1, 2, 3, 4] per_position_argmax=[0, 0, 0, 0, 0] logits_sha256=c88272e0f57c3c620688c6d5a49b3de373e9c19a2cba9a68e1081245ece33b55 seconds=0
+[gate 5:seq1] FAIL — logits hash f3339a78e62edb63287028ebc97d4f14fdda1213286f024c60be5ce9e8042111 not in .\receipts\reference-qwen3-1.7b.txt
+[gate 5:seq8] FAIL — logits hash d84b4703b617d338c46d29526f4024672cba77672c627e2fadc77fce89ee348a not in .\receipts\reference-qwen3-1.7b.txt
+[gate 5:france] FAIL — logits hash c88272e0f57c3c620688c6d5a49b3de373e9c19a2cba9a68e1081245ece33b55 not in .\receipts\reference-qwen3-1.7b.txt
+gate 5: FAIL — 3 logit rows differ from the reference receipt

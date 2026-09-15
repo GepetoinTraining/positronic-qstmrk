@@ -1,0 +1,38 @@
+format=v2.mm.4d.v1  MM[a, b, (c, d)] — the third coordinate two-sided: c showing, d inverted, a seam between, no seat shared
+generation 0 (sides available): the named rail 2 3 5 7
+
+run   first met   its two-sided splits (showing,inverted)            neighbours across the seam
+4     gen 1       (2,2)                                                —
+5     rail        (2,3) (3,2)                                          3/2 on show (inverted: 2/3)
+6     gen 1       (3,3) (2,4) (4,2)                                    —
+7     rail        (2,5) (5,2) (3,4) (4,3)                              4/3 on show (inverted: 3/4)
+8     gen 1       (3,5) (5,3) (2,6) (4,4) (6,2)                        —
+9     gen 1       (2,7) (7,2) (3,6) (5,4) (4,5) (6,3)                  5/4 on show (inverted: 4/5)
+10    gen 1       (3,7) (5,5) (7,3) (2,8) (4,6) (6,4) (8,2)            —
+11    gen 2       (2,9) (3,8) (5,6) (7,4) (4,7) (9,2) (6,5) (8,3)      6/5 on show (inverted: 5/6)
+12    gen 1       (5,7) (7,5) (2,10) (3,9) (4,8) (9,3) (6,6) (8,4) (10,2) —
+13    gen 2       (3,10) (5,8) (7,6) (4,9) (9,4) (6,7) (8,5) (10,3)    7/6 on show (inverted: 6/7)
+14    gen 1       (7,7) (2,12) (5,9) (4,10) (9,5) (6,8) (8,6) (10,4) (12,2) —
+15    gen 2       (3,12) (5,10) (7,8) (9,6) (6,9) (8,7) (10,5) (12,3)  8/7 on show (inverted: 7/8)
+16    gen 2       (2,14) (7,9) (4,12) (9,7) (6,10) (8,8) (10,6) (12,4) (14,2) —
+17    gen 2       (3,14) (5,12) (7,10) (9,8) (8,9) (10,7) (12,5) (14,3) 9/8 on show (inverted: 8/9)
+18    gen 2       (4,14) (9,9) (6,12) (8,10) (10,8) (12,6) (14,4)      —
+19    gen 2       (5,14) (7,12) (9,10) (10,9) (12,7) (14,5)            10/9 on show (inverted: 9/10)
+20    gen 2       (6,14) (8,12) (10,10) (12,8) (14,6)                  —
+21    gen 2       (7,14) (9,12) (12,9) (14,7)                          —
+22    gen 2       (8,14) (10,12) (12,10) (14,8)                        —
+23    gen 2       (9,14) (14,9)                                        —
+24    gen 2       (10,14) (12,12) (14,10)                              —
+26    gen 2       (12,14) (14,12)                                      —
+28    gen 2       (14,14)                                              —
+
+where the neighbour relations go:
+  3/2 → the two interiors of 5 (first met on the rail)
+  4/3 → the two interiors of 7 (first met on the rail)
+  5/4 → the two interiors of 9 (first met in generation 1)
+  6/5 → the two interiors of 11 (first met in generation 2)
+  7/6 → the two interiors of 13 (first met in generation 2)
+
+flagged: joining two sides across the seam holds their seat runs end to end on one coordinate — whether that is admitted, or is the addition the house has not produced, is the open declaration
+machine side: run names are read in decades by pairing; runs are ordered by which pairs into which; loops are wiring
+seal sha256 e9e6998c5743e731e5da111fbacf85114d4f609a6f8d53784f5a372b09d90e24

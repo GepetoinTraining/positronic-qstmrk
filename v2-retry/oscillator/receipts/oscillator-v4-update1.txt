@@ -1,0 +1,13 @@
+format=v2.oscillator.v3 cycles=1
+2{Q*(4/O1, O1/4, O1/2, 2/O1, 1/O1), Pq(4/2, [2/4, 1/2], 1/4), Pn(2)}
+OpusNumber O1 | identity 1/O1 | inside 4 | holds 2 1
+target 2{Q*(4/O1, O1/4, O1/2, 2/O1, 1/O1), Pq(4/2, [2/4, 1/2], 1/4), Pn(2)}
+gate cycle 1: EQUAL
+
+update 1
+collapse O1/O1: seats 1/O1, 2/O1, O1/O1 all held -> whole, OpusNumber O1 is named 3
+2(2¹, 2²), 3(3¹, 3²)
+6(2¹ × 3¹)
+36(2² × 3²)
+gate update 1: EQUAL
+seal sha256 686d4a220ca70cd4a8cf5bd2a649fddd563d678ddab04c4e9243c3085d1525a7

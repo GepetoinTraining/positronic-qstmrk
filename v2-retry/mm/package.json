@@ -1,0 +1,21 @@
+{
+  "name": "mm",
+  "private": true,
+  "type": "module",
+  "description": "v2: the manifold matrix — walks stored in SQLite, viewed by dimension (pgarcia, 2026-09-14)",
+  "scripts": {
+    "walk": "node --experimental-strip-types --no-warnings src/main.ts",
+    "dev": "vite --port 5173 --strictPort"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}

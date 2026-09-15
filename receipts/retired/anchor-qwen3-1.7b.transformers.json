@@ -1,0 +1,118 @@
+{
+ "anchors": {
+  "france": {
+   "argmax": 12095,
+   "per_position_argmax": [
+    25,
+    315,
+    279,
+    374,
+    12095
+   ],
+   "tokens": [
+    785,
+    6722,
+    315,
+    9625,
+    374
+   ],
+   "top5": [
+    12095,
+    264,
+    1112,
+    32671,
+    7407
+   ],
+   "top5_pieces": [
+    " Paris",
+    " a",
+    "...",
+    " ______",
+    " located"
+   ]
+  },
+  "seq1": {
+   "argmax": 25,
+   "per_position_argmax": [
+    25
+   ],
+   "tokens": [
+    1
+   ],
+   "top5": [
+    25,
+    74592,
+    102107,
+    40,
+    99481
+   ],
+   "top5_pieces": [
+    ":",
+    "STRACT",
+    "\u8eca",
+    "I",
+    "\u5c4a"
+   ]
+  },
+  "seq8": {
+   "argmax": 3764,
+   "per_position_argmax": [
+    25,
+    3555,
+    4,
+    5,
+    6,
+    25010,
+    89401,
+    3764
+   ],
+   "tokens": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "top5": [
+    3764,
+    1812,
+    25010,
+    353,
+    1057
+   ],
+   "top5_pieces": [
+    "*)",
+    "*/",
+    "()*",
+    " *",
+    "/*"
+   ]
+  }
+ },
+ "config": {
+  "head_dim": 128,
+  "hidden_size": 2048,
+  "intermediate_size": 6144,
+  "num_attention_heads": 16,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 8,
+  "rms_norm_eps": 1e-06,
+  "rope_theta": null,
+  "tie_word_embeddings": true,
+  "vocab_size": 151936
+ },
+ "model": "qwen3-1.7b",
+ "recorded": "2026-09-13T03:23:21",
+ "reference": {
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "torch": "2.5.1+cu121",
+  "transformers": "5.9.0"
+ },
+ "seal": "4c82b1a893e921321b5d5ceb7d55a26e34b395f39da07255744a6c03e95808f3",
+ "seconds": 25.9,
+ "source": "D:\\positronic-qstmrk\\models\\qwen3-1.7b"
+}

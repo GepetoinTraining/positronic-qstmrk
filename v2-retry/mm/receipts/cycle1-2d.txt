@@ -1,0 +1,20 @@
+format=v2.mm.cycle.v4 dimension=2 cycle=1  (order matters; every direction +)
+container MM[2,2]
+held:
+  4         whole  MM[2,2] (2D)         seats (0,0) (0,1) (1,0) (1,1)
+  2₀        held   MM[2] (1D)           seats (0,0) (1,0)
+  2₁        held   MM[2] (1D)           seats (0,0) (0,1)
+  1         floor  MM[] (floor)         seats (0,0)
+arrivals (new rings):
+  O1   MM[O1] (1D)  seats (0,0) (1,0) (0,1)
+re-met (rings already on the rail, met here):
+  none
+collapses (a rail ring this container's matrix is the resolution of):
+  none
+
+every address:   2{Q*(4/O1, O1/4, O1/2₀, 2₀/O1, O1/2₁, 2₁/O1, 1/O1), Pq(4/2₀, [2₀/4, 1/2₁], 4/2₁, [2₁/4, 1/2₀], 1/4), Pn(2)}
+read one lower:  2{Q*(4/O1, O1/4, O1/2, 2/O1, 1/O1), Pq(4/2, [2/4, 1/2], 1/4), Pn(2)}
+gate (cycle 1 read one lower is the sealed 1D reading): EQUAL
+limit of the container: O1/4 = MM[O1] (1D) over MM[2,2] (2D)
+rail after: 2 O1
+seal sha256 384900733e01d33ff91b0bf3e6948ebc4ea19b69f796f339ab1f696a09218aab

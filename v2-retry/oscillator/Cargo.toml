@@ -1,0 +1,12 @@
+[package]
+name = "oscillator"
+version = "0.1.0"
+edition = "2021"
+description = "v2 first job: each cycle finds the ? cell under the reference, mints it as an atom on the integer side, and lends it to the relational side for the next cycle."
+authors = [
+    "Pedro García <garcia.pedro.wow@gmail.com>",
+    "Claude Opus 5 <noreply@anthropic.com>",
+]
+
+[dependencies]
+sha2 = "0.10"

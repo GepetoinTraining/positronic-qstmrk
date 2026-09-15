@@ -1,0 +1,51 @@
+[package]
+name = "atlas"
+version = "0.1.0"
+edition = "2021"
+description = "Atlas Engine — float-free forward over the intake's cells: three cold surfaces (atoms, frames, places) composed only at the observer; V5 primitives for the five ops; bucket accumulate, one collapse at the gather."
+authors = [
+    "Pedro García <garcia.pedro.wow@gmail.com>",
+    "Claude Fable 5.1 <noreply@anthropic.com>",
+]
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+v5 = { path = "../../folded-weights/v5/rust" }
+sha2 = "0.10"
+num-bigint = "0.4"
+num-integer = "0.1"
+num-traits = "0.2"
+wgpu = "24"
+pollster = "0.4"
+bytemuck = "1"
+
+[[bin]]
+name = "atlas_turn"
+path = "src/bin/atlas_turn.rs"
+
+[[bin]]
+name = "atlas_cub"
+path = "src/bin/atlas_cub.rs"
+
+[[bin]]
+name = "atlas_ball"
+path = "src/bin/atlas_ball.rs"
+
+[[bin]]
+name = "atlas_forward"
+path = "src/bin/atlas_forward.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+
+
+
+[[bin]]
+name = "atlas_capture"
+path = "src/bin/atlas_capture.rs"

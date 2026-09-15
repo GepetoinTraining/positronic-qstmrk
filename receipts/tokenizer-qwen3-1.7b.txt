@@ -1,0 +1,19 @@
+format=atlas.tokenizer.v1
+tokenizer.json sha256 aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4
+vocab 151643 merges 151387 added 26
+[EQUAL] round-trip ok    5 ids  'The capital of France is'
+[EQUAL] round-trip ok    4 ids  'Hello, world!'
+[EQUAL] round-trip ok   10 ids  '  leading spaces and\ttabs\n\nnewlines\r\n'
+[EQUAL] round-trip ok   31 ids  "don't stop; they're here, we'll see, I'd say it'"
+[EQUAL] round-trip ok   18 ids  'Olá, mundo! Coração, ação, São Paulo — açúcar.'
+[EQUAL] round-trip ok   17 ids  '日本語のテキスト、中文文本，한국어 텍스트.'
+[EQUAL] round-trip ok   15 ids  'emoji 🙂🚀👍🏽 and symbols ∑∫√ ≈ ≠ ±'
+[EQUAL] round-trip ok   15 ids  '<|im_start|>user\nWhat is 2+2?<|im_end|>\n<|im_sta'
+[EQUAL] round-trip ok   13 ids  'def f(x):\n    return x**2  # comment\n'
+[EQUAL] round-trip ok   12 ids  'MixedCASE WORDS and CamelCaseWords and snake_cas'
+[EQUAL] round-trip ok   38 ids  'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+[EQUAL] round-trip ok   50 ids  '123456789012345678901234567890123456789012345678'
+[EQUAL] round-trip ok    7 ids  'é́ combining marks é vs é'
+[EQUAL] round-trip ok    0 ids  ''
+France = [785, 6722, 315, 9625, 374] (the engine's reference prompt: [785, 6722, 315, 9625, 374])
+gate (tokenizer): PASS — 14/14 strings equal to the reference

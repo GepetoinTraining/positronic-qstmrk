@@ -1,0 +1,8 @@
+format=v2.mm.naming.v2  (a ring no crossing has is a prime; one a crossing has is substituted — matrix: a matrix of two or more coordinates held in a walk; pair: the i×real crossing of two things met in one walk, the top's run holding the bottom's)
+O1   → 3      prime        found in 2D cycle 1
+O2   → 5      prime        found in 2D cycle 2
+O3   → 8 (matrix, 3D cycle 1), [4,2] (pair, 2D cycle 1), [4,2] (pair, 3D cycle 1)   substituted   found in 2D cycle 2
+O4   → 7      prime        found in 2D cycle 2
+O5   → [2,3] (matrix, 2D cycle 2), [3,2] (matrix, 2D cycle 2), [3,2] (pair, 3D cycle 1)   substituted   found in 3D cycle 1
+named rail: 2 3 5 7   known substitutes: 8 [2,3]
+seal sha256 6c5e6d2023a6b2eba70a80c86ea82b59a9008915bfdfd44736ad7c37a6de2d09

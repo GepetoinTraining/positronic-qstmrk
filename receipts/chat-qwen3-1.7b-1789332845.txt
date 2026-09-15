@@ -1,0 +1,5 @@
+format=atlas.chat.v1 kernel=card max_new=8 think=False lookahead=0
+READY model=qwen3-1.7b layers=28 vocab=151936 kernel=card load_ms=5279
+you> Hi
+atlas> Hello! I'm doing well. How
+   [END picked_up=0 computed=13 generated=8 positions=20 passes=8 guessed=0 accepted=0 ms=8755]

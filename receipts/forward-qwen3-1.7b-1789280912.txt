@@ -1,0 +1,7 @@
+format=atlas.forward.v1
+model=qwen3-1.7b
+intake=D:/positronic-qstmrk\receipts\intake-qwen3-1.7b-20260913
+[seq1] tokens=[1] argmax=25 top5=[25, 74592, 102107, 40, 99481] per_position_argmax=[25] logits_sha256=536cd9f4a9dc1257633fd4ba619d853fc5ce44b1d7e9cf10c794c2bec794d967 seconds=1.1
+[seq8] tokens=[1, 2, 3, 4, 5, 6, 7, 8] argmax=3764 top5=[3764, 1812, 25010, 353, 1027] per_position_argmax=[25, 3555, 4, 5, 6, 25010, 89401, 3764] logits_sha256=29353094da1ca4fb75c4c234fe9e859261cd1a909ad7cef421e3e0ca6f0a42b8 seconds=8.2
+[france] tokens=[785, 6722, 315, 9625, 374] argmax=12095 top5=[12095, 264, 1112, 7407, 279] per_position_argmax=[25, 315, 279, 374, 12095] logits_sha256=c3e34060f647d8d8adb1304b06919b9cc261b78a44344cfc97e54afc95886f82 seconds=5.3
+gate 5: reference receipt written to D:/positronic-qstmrk\receipts\reference-qwen3-1.7b.txt (3 logit rows); every later run must reproduce it

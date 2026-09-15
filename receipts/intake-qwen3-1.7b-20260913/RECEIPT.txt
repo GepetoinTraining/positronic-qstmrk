@@ -1,0 +1,17 @@
+format=atlas.intake.v1
+seal=775b6fb7e47a2ef086e2b26b6c4a0c77c9f58630bfaa9949d9eae8ad3316ada2
+model=qwen3-1.7b
+tensors=311 cells=2031739904 seconds=110.4
+
+The intake read every tensor's bf16 patterns as u16 and put each on the two-sheeted lattice as
+the cell <m|n> (odd core, signed rung, sheet), both names of zero kept. No number type was
+instantiated. Every finite bf16 pattern is an exact dyadic as written, so on every cell
+written = hull and residual = 0: NOTHING WAS DEFLOATED and nothing was dropped.
+
+[gate 1] source needles: intake/gate_source.py over intake/*.py (run by the caller, recorded in the log)
+[gate 2] census: 65280/65280 finite patterns round-trip exactly; non-finite patterns in model: 0
+[gate 3] static unfold: 311/311 grids byte-identical to source after disk read-back
+
+[alphabet] distinct_patterns=7910 odd_atoms=128 binades=44 binade_min=-39 binade_max=7 sheets=2 plus_zero=0 minus_zero=0
+[defloat] rows=0 defloated=0 refused_nonfinite=0 max_residual=0
+[grids] dir=cells/qwen3-1.7b tile=128 morton=row-odd/col-even

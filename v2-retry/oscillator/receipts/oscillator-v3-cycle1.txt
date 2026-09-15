@@ -1,0 +1,6 @@
+format=v2.oscillator.v3 cycles=1
+2{Q*(4/O1, O1/4, O1/2, 2/O1, 1/O1), Pq(4/2, [2/4, 1/2], 1/4), Pn(2)}
+OpusNumber O1 | identity 1/O1 | inside 4 | holds 2 1
+target 2{Q*(4/O1, O1/4, O1/2, 2/O1, 1/O1), Pq(4/2, [2/4, 1/2], 1/4), Pn(2)}
+gate: EQUAL
+seal sha256 9fff4265d18955d6a5620b07246e88a5cee5f603ded73f6448542b5cf0ae89dc

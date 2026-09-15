@@ -1,0 +1,13 @@
+format=v2.tpb_cycle.v1 cycles=2 | declared: magnitude <= 2 (squares only), one rectangle (2¹ × O1¹), no update
+cycle   1  reference 2²  walk     4  covered    3  new Opus    1  seam     2
+           the one rectangle written: 2¹ × O1¹
+cycle   2  reference O1²  walk     9  covered    6  new Opus    3  seam     5
+
+seam: 1/2, 1/O1, 1/O2, 1/O3, 1/O4, … , 1/O4 → ∅   (5 entries)
+shadow names, first 48: 2 3 5 7 8
+tpb atoms.tpb          40 B       10 words
+tpb charts.tpb        144 B       36 words
+tpb glue.tpb          132 B       33 words
+tpb seam.tpb           20 B        5 words
+readback: 4 of 4 found entries placed in their origin chart; seam order intact
+seal sha256 e32b94dc6cc477d94767dc487246948ca326667b634c1b9b9852a8195f838456

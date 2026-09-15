@@ -1,0 +1,77 @@
+{
+ "model": "Qwen3-1.7B",
+ "rule": "value = ±odd (values.csv); its e outside, as a cube (minify.cube: 27 cells, one on, bit 27 the side) from centre 20; e ≥ 0 → odd·5^e then e decades down; e < 0 → odd·2^−e",
+ "centre": 20,
+ "bitOrder": "cell (x,y,z) = bit x·9+y·3+z",
+ "model_cube": {
+  "plus": "111.111.111/111.111.111/111.100.001",
+  "minus": "011.111.111/111.111.111/111.111.111"
+ },
+ "e": "e.csv",
+ "tables": [
+  {
+   "name": "model.layers.0.self_attn.k_proj.weight",
+   "shape": [
+    1024,
+    2048
+   ],
+   "rows": 1024,
+   "columns": 2048,
+   "plus": "111.111.111/111.010.000/000.000.000",
+   "minus": "011.111.111/111.111.111/110.000.000",
+   "values": {
+    "bytes": 8502136,
+    "sha256": "91ef2574ec026a32c3d10be74c783471a96c3d57e1481b43dad9a3167f694732"
+   },
+   "cube": {
+    "bytes": 8388608,
+    "sha256": "d90f7b9ace1ec8835879cd956691628e32350ce7c6dee13b4810a9b907b6a054"
+   },
+   "cubes": {
+    "sha256": "6bafc8cff278ca19f81154cd4c1fdca99dda659b132798734974d34e3494dda4"
+   }
+  },
+  {
+   "name": "model.layers.0.self_attn.q_norm.weight",
+   "shape": [
+    128
+   ],
+   "rows": 1,
+   "columns": 128,
+   "plus": "000.000.000/000.000.000/000.000.000",
+   "minus": "000.010.001/011.111.111/100.100.000",
+   "values": {
+    "bytes": 880,
+    "sha256": "ae0398d73deac39df3e36249623d107af8f506cc67e22c436421a8b8d5947239"
+   },
+   "cube": {
+    "bytes": 512,
+    "sha256": "04d4e3e38a56edfe88e57a8f16734c6b3f18ec11028b32046d61d4b47560c4c2"
+   },
+   "cubes": {
+    "sha256": "9c7a0b4fcff53419f20ee92149da5b84ac061479d4e19934a327d3e4ebfdaa45"
+   }
+  },
+  {
+   "name": "model.norm.weight",
+   "shape": [
+    2048
+   ],
+   "rows": 1,
+   "columns": 2048,
+   "plus": "000.000.000/000.000.000/000.000.000",
+   "minus": "000.000.011/100.111.111/111.100.000",
+   "values": {
+    "bytes": 16182,
+    "sha256": "1242de8e23b3c09c8cf9a0a46c2ebee189c369a3dbf982c02b300d03aae50070"
+   },
+   "cube": {
+    "bytes": 8192,
+    "sha256": "d8062964601148241b29d520b5591dfee727b54b23b42b4c811b94b8a7e4b33f"
+   },
+   "cubes": {
+    "sha256": "8c99aa15466a14ad7901975c4985e65f34a301f158ba43f8b7cf063fd84996ac"
+   }
+  }
+ ]
+}

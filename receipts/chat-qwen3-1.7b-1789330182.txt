@@ -1,0 +1,14 @@
+format=atlas.chat.v1 kernel=cub max_new=48 think=False lookahead=0
+READY model=qwen3-1.7b layers=28 vocab=151936 kernel=cub load_ms=553
+you> Repeat this sentence exactly three times: the quick brown fox jumps over the lazy dog.
+atlas> the quick brown fox jumps over the lazy dog.  
+the quick brown fox jumps over the lazy dog.  
+the quick brown fox jumps over the lazy dog.
+   [END picked_up=0 computed=29 generated=33 positions=61 passes=33 guessed=0 accepted=0 ms=117171]
+you> List the days of the week, then list them again in reverse.
+atlas> The days of the week are:  
+Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+
+The days of the week in reverse are:  
+Sunday, Saturday, Friday, Thursday, Wednesday, Tuesday, Monday.
+   [END picked_up=61 computed=28 generated=47 positions=135 passes=47 guessed=0 accepted=0 ms=160746]

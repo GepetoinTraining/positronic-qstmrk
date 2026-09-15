@@ -1,0 +1,5 @@
+format=atlas.chat.v1 kernel=card3 max_new=6 think=False lookahead=0
+READY model=qwen3-1.7b layers=28 vocab=151936 kernel=card3 load_ms=5274
+you> Hi
+atlas> ![](https://images.unsplash
+   [END picked_up=0 computed=13 generated=6 positions=18 passes=6 guessed=0 accepted=0 ms=3519]

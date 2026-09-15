@@ -1,0 +1,31 @@
+format=v2.mm.naming.v2  (a ring no crossing has is a prime; one a crossing has is substituted — matrix: a matrix of two or more coordinates held in a walk; pair: the i×real crossing of two things met in one walk, the top's run holding the bottom's)
+O1   → 3      prime        found in 2D cycle 1
+O2   → 5      prime        found in 2D cycle 2
+O3   → 8 (matrix, 3D cycle 1), [4,2] (pair, 2D cycle 1), [4,2] (pair, 3D cycle 1)   substituted   found in 2D cycle 2
+O4   → 7      prime        found in 2D cycle 2
+O5   → [2,3] (matrix, 2D cycle 2), [3,2] (matrix, 2D cycle 2), [2,3] (matrix, 3D cycle 2), [3,2] (matrix, 3D cycle 2)   substituted   found in 3D cycle 1
+O6   → [2,2,3] (matrix, 3D cycle 2), [2,3,2] (matrix, 3D cycle 2), [3,2,2] (matrix, 3D cycle 2), [4,3] (pair, 2D cycle 1), [[2,3],2] (pair, 2D cycle 2), [[3,2],2] (pair, 2D cycle 2), [4,3] (pair, 3D cycle 1), [[2,3],2] (pair, 3D cycle 1), [[3,2],2] (pair, 3D cycle 2)   substituted   found in 2D cycle 3
+O7   → 13     prime        found in 2D cycle 3
+O8   → [8,2] (pair, 2D cycle 2), [8,2] (pair, 3D cycle 1), [4,4] (pair, 3D cycle 1)   substituted   found in 2D cycle 3
+O9   → 19     prime        found in 2D cycle 3
+O10  → 11     prime        found in 2D cycle 3
+O11  → [3,7] (matrix, 2D cycle 4), [7,3] (matrix, 2D cycle 4), [7,3] (pair, 3D cycle 1)   substituted   found in 2D cycle 3
+O12  → 17     prime        found in 2D cycle 3
+O13  → [2,5] (matrix, 2D cycle 3), [5,2] (matrix, 2D cycle 3), [5,2] (pair, 3D cycle 1)   substituted   found in 3D cycle 2
+O14  → [11,2] (pair, 2D cycle 3), [11,2] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O15  → [2,7] (matrix, 2D cycle 4), [7,2] (matrix, 2D cycle 4), [7,2] (pair, 3D cycle 1)   substituted   found in 3D cycle 2
+O16  → [3,5] (matrix, 2D cycle 3), [5,3] (matrix, 2D cycle 3), [5,3] (pair, 3D cycle 1)   substituted   found in 3D cycle 2
+O17  → [[2,3],4] (pair, 2D cycle 2), [[3,2],4] (pair, 2D cycle 2), [8,3] (pair, 2D cycle 2), [8,3] (pair, 3D cycle 1), [[2,3],4] (pair, 3D cycle 1), [[2,2,3],2] (pair, 2D cycle 3), [[2,2,3],2] (pair, 3D cycle 2), [[2,3,2],2] (pair, 3D cycle 2), [[3,2,2],2] (pair, 3D cycle 2), [[3,2],4] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O18  → [5,4] (pair, 2D cycle 2), [5,4] (pair, 3D cycle 1), [[2,5],2] (pair, 2D cycle 3), [[5,2],2] (pair, 2D cycle 3), [[2,5],2] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O19  → [13,2] (pair, 2D cycle 3), [13,2] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O20  → 23     prime        found in 2D cycle 4
+O21  → 29     prime        found in 2D cycle 4
+O22  → [13,3] (pair, 2D cycle 3), [13,3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O23  → [3,3,3] (matrix, 3D cycle 2), [[3,3],3] (pair, 2D cycle 2), [[3,3],3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O24  → 31     prime        found in 2D cycle 4
+O25  → [11,3] (pair, 2D cycle 3), [11,3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O26  → 41     prime        found in 2D cycle 4
+O27  → [[3,3],5] (pair, 2D cycle 2), [[3,5],3] (pair, 2D cycle 3), [[5,3],3] (pair, 2D cycle 3), [[3,3],5] (pair, 3D cycle 2), [[3,5],3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O28  → 37     prime        found in 2D cycle 4
+named rail: 2 3 5 7 13 19 11 17 23 29 31 41 37   known substitutes: 8 [2,3] [2,2,3] [8,2] [3,7] [2,5] [11,2] [2,7] [3,5] [[2,3],4] [5,4] [13,2] [13,3] [3,3,3] [11,3] [[3,3],5]
+seal sha256 1fa4440765339960b7db680460102d23b07a0bfa1d614a2773d6980564f68979

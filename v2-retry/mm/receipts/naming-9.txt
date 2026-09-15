@@ -1,0 +1,221 @@
+format=v2.mm.naming.v2  (a ring no crossing has is a prime; one a crossing has is substituted — matrix: a matrix of two or more coordinates held in a walk; pair: the i×real crossing of two things met in one walk, the top's run holding the bottom's)
+O1   → 3      prime        found in 2D cycle 1
+O2   → 5      prime        found in 2D cycle 2
+O3   → 8 (matrix, 3D cycle 1), [4,2] (pair, 2D cycle 1), [4,2] (pair, 3D cycle 1)   substituted   found in 2D cycle 2
+O4   → 7      prime        found in 2D cycle 2
+O5   → [2,3] (matrix, 2D cycle 2), [3,2] (matrix, 2D cycle 2), [2,3] (matrix, 3D cycle 2), [3,2] (matrix, 3D cycle 2)   substituted   found in 3D cycle 1
+O6   → [2,2,3] (matrix, 3D cycle 2), [2,3,2] (matrix, 3D cycle 2), [3,2,2] (matrix, 3D cycle 2), [4,3] (pair, 2D cycle 1), [[2,3],2] (pair, 2D cycle 2), [[3,2],2] (pair, 2D cycle 2), [4,3] (pair, 3D cycle 1), [[2,3],2] (pair, 3D cycle 1), [[3,2],2] (pair, 3D cycle 2)   substituted   found in 2D cycle 3
+O7   → 13     prime        found in 2D cycle 3
+O8   → [8,2] (pair, 2D cycle 2), [8,2] (pair, 3D cycle 1), [4,4] (pair, 3D cycle 1)   substituted   found in 2D cycle 3
+O9   → 19     prime        found in 2D cycle 3
+O10  → 11     prime        found in 2D cycle 3
+O11  → [3,7] (matrix, 2D cycle 4), [7,3] (matrix, 2D cycle 4), [7,3] (pair, 3D cycle 1)   substituted   found in 2D cycle 3
+O12  → 17     prime        found in 2D cycle 3
+O13  → [2,5] (matrix, 2D cycle 3), [5,2] (matrix, 2D cycle 3), [5,2] (pair, 3D cycle 1)   substituted   found in 3D cycle 2
+O14  → [2,11] (matrix, 2D cycle 5), [11,2] (matrix, 2D cycle 5), [11,2] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O15  → [2,7] (matrix, 2D cycle 4), [7,2] (matrix, 2D cycle 4), [7,2] (pair, 3D cycle 1)   substituted   found in 3D cycle 2
+O16  → [3,5] (matrix, 2D cycle 3), [5,3] (matrix, 2D cycle 3), [5,3] (pair, 3D cycle 1)   substituted   found in 3D cycle 2
+O17  → [[2,3],4] (pair, 2D cycle 2), [[3,2],4] (pair, 2D cycle 2), [8,3] (pair, 2D cycle 2), [8,3] (pair, 3D cycle 1), [[2,3],4] (pair, 3D cycle 1), [[2,2,3],2] (pair, 2D cycle 3), [[2,2,3],2] (pair, 3D cycle 2), [[2,3,2],2] (pair, 3D cycle 2), [[3,2,2],2] (pair, 3D cycle 2), [[3,2],4] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O18  → [5,4] (pair, 2D cycle 2), [5,4] (pair, 3D cycle 1), [[2,5],2] (pair, 2D cycle 3), [[5,2],2] (pair, 2D cycle 3), [[2,5],2] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O19  → [2,13] (matrix, 2D cycle 5), [13,2] (matrix, 2D cycle 5), [13,2] (pair, 3D cycle 2)   substituted   found in 3D cycle 2
+O20  → 23     prime        found in 2D cycle 4
+O21  → 29     prime        found in 2D cycle 4
+O22  → [3,13] (matrix, 2D cycle 5), [13,3] (matrix, 2D cycle 5), [13,3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O23  → [3,3,3] (matrix, 3D cycle 2), [[3,3],3] (pair, 2D cycle 2), [[3,3],3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O24  → 31     prime        found in 2D cycle 4
+O25  → [3,11] (matrix, 2D cycle 5), [11,3] (matrix, 2D cycle 5), [11,3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O26  → 41     prime        found in 2D cycle 4
+O27  → [[3,3],5] (pair, 2D cycle 2), [[3,5],3] (pair, 2D cycle 3), [[5,3],3] (pair, 2D cycle 3), [[3,3],5] (pair, 3D cycle 2), [[3,5],3] (pair, 3D cycle 2)   substituted   found in 2D cycle 4
+O28  → 37     prime        found in 2D cycle 4
+O29  → [7,4] (pair, 2D cycle 2), [7,4] (pair, 3D cycle 1), [[2,7],2] (pair, 3D cycle 2), [[2,7],2] (pair, 2D cycle 4), [[7,2],2] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O30  → [8,4] (pair, 2D cycle 2), [8,4] (pair, 3D cycle 1), [[8,2],2] (pair, 2D cycle 3), [[8,2],2] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O31  → 43     prime        found in 2D cycle 5
+O32  → [2,3,3] (matrix, 3D cycle 2), [3,2,3] (matrix, 3D cycle 2), [3,3,2] (matrix, 3D cycle 2), [[3,3],2] (pair, 2D cycle 2), [[2,3],3] (pair, 2D cycle 2), [[3,2],3] (pair, 2D cycle 2), [[2,3],3] (pair, 3D cycle 1), [[3,2],3] (pair, 3D cycle 2), [[3,3],2] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O33  → [[3,3],4] (pair, 2D cycle 2), [[2,3],[3,2]] (pair, 2D cycle 2), [[3,2],[2,3]] (pair, 2D cycle 2), [[2,2,3],3] (pair, 2D cycle 3), [[2,2,3],3] (pair, 3D cycle 2), [[2,3,2],3] (pair, 3D cycle 2), [[2,3,3],2] (pair, 3D cycle 2), [[3,2,2],3] (pair, 3D cycle 2), [[3,2,3],2] (pair, 3D cycle 2), [[3,3,2],2] (pair, 3D cycle 2), [[2,3],[2,3]] (pair, 3D cycle 2), [[2,3],[3,2]] (pair, 3D cycle 2), [[3,2],[2,3]] (pair, 3D cycle 2), [[3,2],[3,2]] (pair, 3D cycle 2), [[3,3],4] (pair, 3D cycle 2), [[2,3,3],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 5
+O34  → 47     prime        found in 2D cycle 5
+O35  → [3,23] (matrix, 2D cycle 9), [23,3] (matrix, 2D cycle 9)   substituted   found in 2D cycle 5
+O36  → 59     prime        found in 2D cycle 5
+O37  → [3,17] (matrix, 2D cycle 6), [17,3] (matrix, 2D cycle 6), [17,3] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O38  → 61     prime        found in 2D cycle 5
+O39  → [[3,3,3],3] (pair, 3D cycle 2), [[3,3],[3,3]] (pair, 3D cycle 2), [[3,3,3],3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O40  → [8,[2,3]] (pair, 2D cycle 2), [8,[3,2]] (pair, 2D cycle 2), [8,[2,3]] (pair, 3D cycle 1), [[2,2,3],4] (pair, 2D cycle 3), [[8,2],3] (pair, 2D cycle 3), [8,[3,2]] (pair, 3D cycle 2), [[2,2,3],4] (pair, 3D cycle 2), [[2,3,2],4] (pair, 3D cycle 2), [[3,2,2],4] (pair, 3D cycle 2), [[8,2],3] (pair, 3D cycle 2), [[[2,3],4],2] (pair, 3D cycle 2), [[[2,3],4],2] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O41  → 103    prime        found in 2D cycle 5
+O42  → [[3,7],7] (pair, 2D cycle 3), [[7,3],7] (pair, 3D cycle 2), [[7,7],3] (pair, 2D cycle 4), [[7,3],7] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O43  → [11,4] (pair, 2D cycle 3), [11,4] (pair, 3D cycle 2), [[2,11],2] (pair, 3D cycle 2), [[2,11],2] (pair, 2D cycle 5), [[11,2],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 5
+O44  → 53     prime        found in 2D cycle 5
+O45  → 71     prime        found in 2D cycle 5
+O46  → 89     prime        found in 2D cycle 5
+O47  → [[5,5],5] (pair, 2D cycle 3)   substituted   found in 2D cycle 5
+O48  → [3,19] (matrix, 2D cycle 6), [19,3] (matrix, 2D cycle 6), [19,3] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O49  → [11,[3,3]] (pair, 2D cycle 3), [11,[3,3]] (pair, 3D cycle 2), [[3,11],3] (pair, 2D cycle 4), [[11,3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 5
+O50  → [8,5] (pair, 2D cycle 2), [8,5] (pair, 3D cycle 1), [[2,5],4] (pair, 2D cycle 3), [[5,2],4] (pair, 2D cycle 3), [[2,5],4] (pair, 3D cycle 2), [[5,4],2] (pair, 3D cycle 2), [[5,4],2] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O51  → 67     prime        found in 2D cycle 5
+O52  → [5,17] (matrix, 2D cycle 6), [17,5] (matrix, 2D cycle 6), [17,5] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O53  → 83     prime        found in 2D cycle 5
+O54  → 109    prime        found in 2D cycle 5
+O55  → 149    prime        found in 2D cycle 5
+O56  → [[3,3],7] (pair, 2D cycle 2), [[3,7],3] (pair, 2D cycle 3), [[3,3],7] (pair, 3D cycle 2), [[7,3],3] (pair, 3D cycle 2), [[7,3],3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O57  → 79     prime        found in 2D cycle 5
+O58  → [5,19] (matrix, 2D cycle 6), [19,5] (matrix, 2D cycle 6), [19,5] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O59  → 127    prime        found in 2D cycle 5
+O60  → 73     prime        found in 2D cycle 5
+O61  → [[5,5],3] (pair, 2D cycle 3), [[3,5],5] (pair, 2D cycle 3), [[5,3],5] (pair, 2D cycle 3), [[3,5],5] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O62  → [29,3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O63  → [[3,5],7] (pair, 2D cycle 3), [[5,3],7] (pair, 2D cycle 3), [[3,7],5] (pair, 2D cycle 3), [[7,3],5] (pair, 3D cycle 2), [[3,5],7] (pair, 3D cycle 2), [[5,7],3] (pair, 2D cycle 4), [[7,3],5] (pair, 2D cycle 4), [[7,5],3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O64  → [17,[3,3]] (pair, 2D cycle 3), [17,[3,3]] (pair, 3D cycle 2), [[3,17],3] (pair, 2D cycle 5), [[17,3],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 5
+O65  → 107    prime        found in 2D cycle 5
+O66  → 131    prime        found in 2D cycle 5
+O67  → [37,3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O68  → 97     prime        found in 2D cycle 5
+O69  → [7,19] (matrix, 2D cycle 6), [19,7] (matrix, 2D cycle 6), [19,7] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O70  → 157    prime        found in 2D cycle 5
+O71  → [7,17] (matrix, 2D cycle 6), [17,7] (matrix, 2D cycle 6), [17,7] (pair, 3D cycle 2)   substituted   found in 2D cycle 5
+O72  → [[3,5],[3,3]] (pair, 2D cycle 3), [[5,3],[3,3]] (pair, 2D cycle 3), [[3,3,3],5] (pair, 3D cycle 2), [[3,5],[3,3]] (pair, 3D cycle 2), [[3,3,3],5] (pair, 2D cycle 4), [[[3,3],5],3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O73  → [[3,5],11] (pair, 2D cycle 3), [[5,3],11] (pair, 2D cycle 3), [[3,5],11] (pair, 3D cycle 2), [[3,11],5] (pair, 2D cycle 4), [[5,11],3] (pair, 2D cycle 5), [[11,3],5] (pair, 2D cycle 5), [[11,5],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 5
+O74  → [29,5] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O75  → [41,3] (pair, 2D cycle 4)   substituted   found in 2D cycle 5
+O76  → [[2,5],[2,3]] (pair, 2D cycle 3), [[2,5],[3,2]] (pair, 2D cycle 3), [[3,5],4] (pair, 2D cycle 3), [[5,2],[2,3]] (pair, 2D cycle 3), [[5,2],[3,2]] (pair, 2D cycle 3), [[5,3],4] (pair, 2D cycle 3), [[2,2,3],5] (pair, 2D cycle 3), [[2,2,3],5] (pair, 3D cycle 2), [[2,3,2],5] (pair, 3D cycle 2), [[3,2,2],5] (pair, 3D cycle 2), [[2,5],[2,3]] (pair, 3D cycle 2), [[2,5],[3,2]] (pair, 3D cycle 2), [[3,5],4] (pair, 3D cycle 2), [[5,4],3] (pair, 3D cycle 2), [[5,4],3] (pair, 2D cycle 4), [O81,2] (pair, 2D cycle 6), [[[2,3],5],2] (pair, 2D cycle 8)   substituted   found in 2D cycle 6
+O77  → [71,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O78  → [8,7] (pair, 2D cycle 2), [8,7] (pair, 3D cycle 1), [[2,7],4] (pair, 3D cycle 2), [[2,7],4] (pair, 2D cycle 4), [[7,2],4] (pair, 2D cycle 4), [[7,4],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O79  → 101    prime        found in 2D cycle 6
+O80  → 191    prime        found in 2D cycle 6
+O81  → [[2,3],5] (pair, 2D cycle 2), [[3,2],5] (pair, 2D cycle 2), [[2,3],5] (pair, 3D cycle 1), [[2,5],3] (pair, 2D cycle 3), [[3,5],2] (pair, 2D cycle 3), [[5,2],3] (pair, 2D cycle 3), [[5,3],2] (pair, 2D cycle 3), [[3,2],5] (pair, 3D cycle 2), [[2,5],3] (pair, 3D cycle 2), [[3,5],2] (pair, 3D cycle 2)   substituted   found in 2D cycle 6
+O82  → [31,3] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O83  → [5,23] (matrix, 2D cycle 9), [23,5] (matrix, 2D cycle 9)   substituted   found in 2D cycle 6
+O84  → 181    prime        found in 2D cycle 6
+O85  → [53,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O86  → [[5,5],[3,3]] (pair, 2D cycle 3), [[3,5],[5,3]] (pair, 2D cycle 3), [[5,3],[3,5]] (pair, 2D cycle 3), [[[3,3],5],5] (pair, 2D cycle 4), [[[5,5],3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O87  → [[3,3],8] (pair, 2D cycle 2), [[2,2,3],[2,3]] (pair, 2D cycle 3), [[2,2,3],[3,2]] (pair, 2D cycle 3), [[2,2,3],[2,3]] (pair, 3D cycle 2), [[2,2,3],[3,2]] (pair, 3D cycle 2), [[2,3,2],[2,3]] (pair, 3D cycle 2), [[2,3,2],[3,2]] (pair, 3D cycle 2), [[2,3,3],4] (pair, 3D cycle 2), [[3,2,2],[2,3]] (pair, 3D cycle 2), [[3,2,2],[3,2]] (pair, 3D cycle 2), [[3,2,3],4] (pair, 3D cycle 2), [[3,3,2],4] (pair, 3D cycle 2), [[3,3],8] (pair, 3D cycle 2), [[[2,3],4],3] (pair, 3D cycle 2), [[[2,3],4],3] (pair, 2D cycle 4), [[2,3,3],4] (pair, 2D cycle 5), [[[3,3],4],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O88  → [37,7] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O89  → [109,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O90  → [31,5] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O91  → 137    prime        found in 2D cycle 6
+O92  → [17,4] (pair, 2D cycle 3), [17,4] (pair, 3D cycle 2), [[2,17],2] (pair, 2D cycle 6), [[17,2],2] (pair, 2D cycle 6)   substituted   found in 2D cycle 6
+O93  → 113    prime        found in 2D cycle 6
+O94  → 233    prime        found in 2D cycle 6
+O95  → [29,7] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O96  → 293    prime        found in 2D cycle 6
+O97  → [47,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O98  → [13,4] (pair, 2D cycle 3), [13,4] (pair, 3D cycle 2), [[2,13],2] (pair, 3D cycle 2), [[2,13],2] (pair, 2D cycle 5), [[13,2],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O99  → [59,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O100 → [17,[3,5]] (pair, 2D cycle 3), [17,[5,3]] (pair, 2D cycle 3), [17,[3,5]] (pair, 3D cycle 2), [[3,17],5] (pair, 2D cycle 5), [[5,17],3] (pair, 2D cycle 5), [[17,3],5] (pair, 2D cycle 6), [[17,5],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 6
+O101 → 151    prime        found in 2D cycle 6
+O102 → [[8,2],4] (pair, 2D cycle 3), [[8,2],4] (pair, 3D cycle 2), [[8,4],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O103 → 139    prime        found in 2D cycle 6
+O104 → 229    prime        found in 2D cycle 6
+O105 → 199    prime        found in 2D cycle 6
+O106 → [43,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O107 → 193    prime        found in 2D cycle 6
+O108 → 167    prime        found in 2D cycle 6
+O109 → 227    prime        found in 2D cycle 6
+O110 → [53,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O111 → [47,7] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O112 → [7,23] (matrix, 2D cycle 9), [23,7] (matrix, 2D cycle 9)   substituted   found in 2D cycle 6
+O113 → 239    prime        found in 2D cycle 6
+O114 → 211    prime        found in 2D cycle 6
+O115 → [59,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O116 → 163    prime        found in 2D cycle 6
+O117 → [41,5] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O118 → [73,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O119 → 197    prime        found in 2D cycle 6
+O120 → [13,[3,3]] (pair, 2D cycle 3), [13,[3,3]] (pair, 3D cycle 2), [[3,13],3] (pair, 2D cycle 4), [[13,3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O121 → [43,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O122 → [61,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O123 → [[3,7],11] (pair, 2D cycle 3), [[7,3],11] (pair, 3D cycle 2), [[7,3],11] (pair, 2D cycle 4), [[3,11],7] (pair, 2D cycle 4), [[7,11],3] (pair, 2D cycle 5), [[11,3],7] (pair, 2D cycle 5), [[11,7],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O124 → 277    prime        found in 2D cycle 6
+O125 → [83,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O126 → [37,[3,3]] (pair, 2D cycle 4), [[37,3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O127 → 173    prime        found in 2D cycle 6
+O128 → 179    prime        found in 2D cycle 6
+O129 → 251    prime        found in 2D cycle 6
+O130 → [13,23] (matrix, 2D cycle 9), [23,13] (matrix, 2D cycle 9)   substituted   found in 2D cycle 6
+O131 → [[3,7],[3,3]] (pair, 2D cycle 3), [[3,3,3],7] (pair, 3D cycle 2), [[7,3],[3,3]] (pair, 3D cycle 2), [[7,3],[3,3]] (pair, 2D cycle 4), [[3,3,3],7] (pair, 2D cycle 4), [[[3,3],7],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O132 → [89,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O133 → 241    prime        found in 2D cycle 6
+O134 → [31,7] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O135 → [[5,5],7] (pair, 2D cycle 3), [[5,7],5] (pair, 2D cycle 4), [[7,5],5] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O136 → 223    prime        found in 2D cycle 6
+O137 → [67,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O138 → [47,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O139 → 337    prime        found in 2D cycle 6
+O140 → [37,5] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O141 → 263    prime        found in 2D cycle 6
+O142 → [[3,3,3],[3,3]] (pair, 3D cycle 2), [[3,3,3],[3,3]] (pair, 2D cycle 4), [[[3,3,3],3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O143 → [101,3] (pair, 2D cycle 6)   substituted   found in 2D cycle 6
+O144 → [[5,5],11] (pair, 2D cycle 3), [[5,11],5] (pair, 2D cycle 5), [[11,5],5] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O145 → [19,[3,3]] (pair, 2D cycle 3), [19,[3,3]] (pair, 3D cycle 2), [[3,19],3] (pair, 2D cycle 5), [[19,3],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 6
+O146 → [[5,5],13] (pair, 2D cycle 3), [[5,13],5] (pair, 2D cycle 5), [[13,5],5] (pair, 2D cycle 5), [O159,5] (pair, 2D cycle 7)   substituted   found in 2D cycle 6
+O147 → 313    prime        found in 2D cycle 6
+O148 → 349    prime        found in 2D cycle 6
+O149 → [97,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O150 → [[3,7],[3,5]] (pair, 2D cycle 3), [[3,7],[5,3]] (pair, 2D cycle 3), [[7,3],[3,5]] (pair, 3D cycle 2), [[5,7],[3,3]] (pair, 2D cycle 4), [[7,3],[3,5]] (pair, 2D cycle 4), [[7,3],[5,3]] (pair, 2D cycle 4), [[7,5],[3,3]] (pair, 2D cycle 4), [[[3,3],5],7] (pair, 2D cycle 4), [[[3,3],7],5] (pair, 2D cycle 5), [[[3,5],7],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O151 → [11,23] (matrix, 2D cycle 9), [23,11] (matrix, 2D cycle 9)   substituted   found in 2D cycle 6
+O152 → [41,7] (pair, 2D cycle 4)   substituted   found in 2D cycle 6
+O153 → [[3,7],13] (pair, 2D cycle 3), [[7,3],13] (pair, 3D cycle 2), [[7,3],13] (pair, 2D cycle 4), [[3,13],7] (pair, 2D cycle 4), [[7,13],3] (pair, 2D cycle 5), [[13,3],7] (pair, 2D cycle 5), [[13,7],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O154 → [[3,3,3],11] (pair, 3D cycle 2), [[3,3,3],11] (pair, 2D cycle 4), [[3,11],[3,3]] (pair, 2D cycle 4), [[11,3],[3,3]] (pair, 2D cycle 5), [[11,[3,3]],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 6
+O155 → [23,[3,5]] (pair, 2D cycle 4), [23,[5,3]] (pair, 2D cycle 4), [[3,23],5] (pair, 2D cycle 5), [[23,3],5] (pair, 2D cycle 6), [[5,23],3] (pair, 2D cycle 6), [[23,5],3] (pair, 2D cycle 8)   substituted   found in 2D cycle 6
+O156 → 311    prime        found in 2D cycle 6
+O157 → [[3,7],17] (pair, 2D cycle 3), [[7,3],17] (pair, 3D cycle 2), [[7,3],17] (pair, 2D cycle 4), [[3,17],7] (pair, 2D cycle 5), [[7,17],3] (pair, 2D cycle 5), [[17,3],7] (pair, 2D cycle 6), [[17,7],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 6
+O158 → [[3,5],13] (pair, 2D cycle 3), [[5,3],13] (pair, 2D cycle 3), [[3,5],13] (pair, 3D cycle 2), [[3,13],5] (pair, 2D cycle 4), [[5,13],3] (pair, 2D cycle 5), [[13,3],5] (pair, 2D cycle 5), [[13,5],3] (pair, 2D cycle 5), [O159,3] (pair, 2D cycle 7)   substituted   found in 2D cycle 6
+O159 → [5,13] (matrix, 2D cycle 5), [13,5] (matrix, 2D cycle 5), [13,5] (pair, 3D cycle 2)   substituted   found in 2D cycle 7
+O160 → [19,11] (matrix, 2D cycle 6), [11,19] (matrix, 2D cycle 6), [19,11] (pair, 3D cycle 2)   substituted   found in 2D cycle 8
+O161 → 257    prime        found in 2D cycle 9
+O162 → [[2,5],8] (pair, 2D cycle 3), [[5,2],8] (pair, 2D cycle 3), [[8,2],5] (pair, 2D cycle 3), [[8,2],5] (pair, 3D cycle 2), [[2,5],8] (pair, 3D cycle 2), [[5,4],4] (pair, 3D cycle 2), [[5,4],4] (pair, 2D cycle 4), [[8,5],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O163 → 269    prime        found in 2D cycle 9
+O164 → [79,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O165 → [7,[2,3]] (pair, 2D cycle 2), [7,[3,2]] (pair, 2D cycle 2), [7,[2,3]] (pair, 3D cycle 1), [[3,7],2] (pair, 2D cycle 3), [[7,3],2] (pair, 3D cycle 2), [7,[3,2]] (pair, 3D cycle 2), [[2,7],3] (pair, 3D cycle 2), [[2,7],3] (pair, 2D cycle 4), [[7,2],3] (pair, 2D cycle 4), [[7,3],2] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O166 → [19,4] (pair, 2D cycle 3), [19,4] (pair, 3D cycle 2), [[2,19],2] (pair, 2D cycle 6), [[19,2],2] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O167 → 307    prime        found in 2D cycle 9
+O168 → [41,[3,3]] (pair, 2D cycle 4), [[41,3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O169 → [67,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O170 → 331    prime        found in 2D cycle 9
+O171 → [43,7] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O172 → [11,8] (pair, 2D cycle 3), [11,8] (pair, 3D cycle 2), [[2,11],4] (pair, 3D cycle 2), [[2,11],4] (pair, 2D cycle 5), [[11,2],4] (pair, 2D cycle 5), [[11,4],2] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O173 → [29,11] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O174 → [89,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O175 → [31,13] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O176 → 317    prime        found in 2D cycle 9
+O177 → 397    prime        found in 2D cycle 9
+O178 → 271    prime        found in 2D cycle 9
+O179 → 373    prime        found in 2D cycle 9
+O180 → [[7,7],5] (pair, 2D cycle 4), [[5,7],7] (pair, 2D cycle 4), [[7,5],7] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O181 → [31,11] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O182 → 449    prime        found in 2D cycle 9
+O183 → 409    prime        found in 2D cycle 9
+O184 → 401    prime        found in 2D cycle 9
+O185 → 283    prime        found in 2D cycle 9
+O186 → [127,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O187 → 353    prime        found in 2D cycle 9
+O188 → [[7,7],7] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O189 → 457    prime        found in 2D cycle 9
+O190 → 421    prime        found in 2D cycle 9
+O191 → [103,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O192 → [[3,3,3],[3,5]] (pair, 3D cycle 2), [[3,3,3],[3,5]] (pair, 2D cycle 4), [[3,3,3],[5,3]] (pair, 2D cycle 4), [[[3,3],5],[3,3]] (pair, 2D cycle 4), [[[3,3,3],3],5] (pair, 2D cycle 5), [[[3,5],[3,3]],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O193 → 389    prime        found in 2D cycle 9
+O194 → [73,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O195 → [79,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O196 → [[3,3,3],13] (pair, 3D cycle 2), [[3,13],[3,3]] (pair, 2D cycle 4), [[3,3,3],13] (pair, 2D cycle 4), [[13,3],[3,3]] (pair, 2D cycle 5), [[13,[3,3]],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O197 → [31,[3,5]] (pair, 2D cycle 4), [31,[5,3]] (pair, 2D cycle 4), [[31,3],5] (pair, 2D cycle 6), [[31,5],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O198 → 433    prime        found in 2D cycle 9
+O199 → [31,[3,3]] (pair, 2D cycle 4), [[31,3],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O200 → [29,13] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O201 → [139,3] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O202 → [59,7] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O203 → [[5,5],[3,5]] (pair, 2D cycle 3), [[5,5],[5,3]] (pair, 2D cycle 3), [[[5,5],5],3] (pair, 2D cycle 5), [[[5,5],3],5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O204 → 367    prime        found in 2D cycle 9
+O205 → [[3,13],11] (pair, 2D cycle 4), [[3,11],13] (pair, 2D cycle 4), [[13,3],11] (pair, 2D cycle 5), [[13,11],3] (pair, 2D cycle 5), [[11,3],13] (pair, 2D cycle 5), [[11,13],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O206 → [163,3] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O207 → [67,7] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O208 → [61,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O209 → [[5,5],17] (pair, 2D cycle 3), [[5,17],5] (pair, 2D cycle 5), [[17,5],5] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O210 → [[3,3,3],19] (pair, 3D cycle 2), [[3,3,3],19] (pair, 2D cycle 4), [[3,19],[3,3]] (pair, 2D cycle 5), [[19,3],[3,3]] (pair, 2D cycle 6), [[19,[3,3]],3] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O211 → [37,13] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O212 → [101,5] (pair, 2D cycle 6)   substituted   found in 2D cycle 9
+O213 → [[7,7],[3,3]] (pair, 2D cycle 4), [[3,7],[7,3]] (pair, 2D cycle 4), [[7,3],[3,7]] (pair, 2D cycle 4), [[[3,7],7],3] (pair, 2D cycle 5), [[[3,3],7],7] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O214 → [71,5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O215 → [[5,7],11] (pair, 2D cycle 4), [[7,5],11] (pair, 2D cycle 4), [[5,11],7] (pair, 2D cycle 5), [[7,11],5] (pair, 2D cycle 5), [[11,5],7] (pair, 2D cycle 5), [[11,7],5] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O216 → [29,[3,3]] (pair, 2D cycle 4), [[29,3],3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+O217 → [29,17] (pair, 2D cycle 4)   substituted   found in 2D cycle 9
+O218 → [131,3] (pair, 2D cycle 5)   substituted   found in 2D cycle 9
+named rail: 2 3 5 7 13 19 11 17 23 29 31 41 37 43 47 59 61 103 53 71 89 67 83 109 149 79 127 73 107 131 97 157 101 191 181 137 113 233 293 151 139 229 199 193 167 227 239 211 163 197 277 173 179 251 241 223 337 263 313 349 311 257 269 307 331 317 397 271 373 449 409 401 283 353 457 421 389 433 367   known substitutes: 8 [2,3] [2,2,3] [8,2] [3,7] [2,5] [2,11] [2,7] [3,5] [[2,3],4] [5,4] [2,13] [3,13] [3,3,3] [3,11] [[3,3],5] [7,4] [8,4] [2,3,3] [[3,3],4] [3,23] [3,17] [[3,3,3],3] [8,[2,3]] [[3,7],7] [11,4] [[5,5],5] [3,19] [11,[3,3]] [8,5] [5,17] [[3,3],7] [5,19] [[5,5],3] [29,3] [[3,5],7] [17,[3,3]] [37,3] [7,19] [7,17] [[3,5],[3,3]] [[3,5],11] [29,5] [41,3] [[2,5],[2,3]] [71,3] [8,7] [[2,3],5] [31,3] [5,23] [53,3] [[5,5],[3,3]] [[3,3],8] [37,7] [109,3] [31,5] [17,4] [29,7] [47,3] [13,4] [59,3] [17,[3,5]] [[8,2],4] [43,5] [53,5] [47,7] [7,23] [59,5] [41,5] [73,3] [13,[3,3]] [43,3] [61,3] [[3,7],11] [83,3] [37,[3,3]] [13,23] [[3,7],[3,3]] [89,3] [31,7] [[5,5],7] [67,3] [47,5] [37,5] [[3,3,3],[3,3]] [101,3] [[5,5],11] [19,[3,3]] [[5,5],13] [97,3] [[3,7],[3,5]] [11,23] [41,7] [[3,7],13] [[3,3,3],11] [23,[3,5]] [[3,7],17] [[3,5],13] [5,13] [19,11] [[2,5],8] [79,5] [7,[2,3]] [19,4] [41,[3,3]] [67,5] [43,7] [11,8] [29,11] [89,5] [31,13] [[7,7],5] [31,11] [127,3] [[7,7],7] [103,3] [[3,3,3],[3,5]] [73,5] [79,3] [[3,3,3],13] [31,[3,5]] [31,[3,3]] [29,13] [139,3] [59,7] [[5,5],[3,5]] [[3,13],11] [163,3] [67,7] [61,5] [[5,5],17] [[3,3,3],19] [37,13] [101,5] [[7,7],[3,3]] [71,5] [[5,7],11] [29,[3,3]] [29,17] [131,3]
+seal sha256 2b7ebd0fd34516f46f913ff3540e2e60edd51259766f8aaad01107d96313b426

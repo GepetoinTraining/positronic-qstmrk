@@ -1,0 +1,43 @@
+format=v2.tpb_cycle.v1 cycles=32 | declared: magnitude <= 2 (squares only), one rectangle (2¹ × O1¹), no update
+cycle   1  reference 2²  walk     4  covered    3  new Opus    1  seam     2
+           the one rectangle written: 2¹ × O1¹
+cycle   2  reference O1²  walk     9  covered    6  new Opus    3  seam     5
+cycle   3  reference O2²  walk    25  covered   10  new Opus   15  seam    20
+cycle   4  reference O3²  walk    49  covered   26  new Opus   23  seam    43
+cycle   5  reference O4²  walk    64  covered   50  new Opus   14  seam    57
+cycle   6  reference O5²  walk   100  covered   65  new Opus   35  seam    92
+cycle   7  reference O6²  walk   121  covered  101  new Opus   20  seam   112
+cycle   8  reference O7²  walk   144  covered  122  new Opus   22  seam   134
+cycle   9  reference O8²  walk   169  covered  145  new Opus   24  seam   158
+cycle  10  reference O9²  walk   196  covered  170  new Opus   26  seam   184
+cycle  11  reference O10²  walk   225  covered  197  new Opus   28  seam   212
+cycle  12  reference O11²  walk   256  covered  226  new Opus   30  seam   242
+cycle  13  reference O12²  walk   289  covered  257  new Opus   32  seam   274
+cycle  14  reference O13²  walk   324  covered  290  new Opus   34  seam   308
+cycle  15  reference O14²  walk   361  covered  325  new Opus   36  seam   344
+cycle  16  reference O15²  walk   400  covered  362  new Opus   38  seam   382
+cycle  17  reference O16²  walk   441  covered  401  new Opus   40  seam   422
+cycle  18  reference O17²  walk   484  covered  442  new Opus   42  seam   464
+cycle  19  reference O18²  walk   529  covered  485  new Opus   44  seam   508
+cycle  20  reference O19²  walk   576  covered  530  new Opus   46  seam   554
+cycle  21  reference O20²  walk   676  covered  577  new Opus   99  seam   653
+cycle  22  reference O21²  walk   729  covered  677  new Opus   52  seam   705
+cycle  23  reference O22²  walk   784  covered  730  new Opus   54  seam   759
+cycle  24  reference O23²  walk   841  covered  785  new Opus   56  seam   815
+cycle  25  reference O24²  walk   900  covered  842  new Opus   58  seam   873
+cycle  26  reference O25²  walk   961  covered  901  new Opus   60  seam   933
+cycle  27  reference O26²  walk  1024  covered  962  new Opus   62  seam   995
+cycle  28  reference O27²  walk  1089  covered 1025  new Opus   64  seam  1059
+cycle  29  reference O28²  walk  1156  covered 1090  new Opus   66  seam  1125
+cycle  30  reference O29²  walk  1225  covered 1157  new Opus   68  seam  1193
+cycle  31  reference O30²  walk  1296  covered 1226  new Opus   70  seam  1263
+cycle  32  reference O31²  walk  1369  covered 1297  new Opus   72  seam  1335
+
+seam: 1/2, 1/O1, 1/O2, 1/O3, 1/O4, 1/O5, 1/O6, 1/O7, … , 1/O1334 → ∅   (1335 entries)
+shadow names, first 48: 2 3 5 7 8 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 50 51 52 53 54
+tpb atoms.tpb       10680 B     2670 words
+tpb charts.tpb      32064 B     8016 words
+tpb glue.tpb       201408 B    50352 words
+tpb seam.tpb         5340 B     1335 words
+readback: 1334 of 1334 found entries placed in their origin chart; seam order intact
+seal sha256 e09154d3fe70ea42577c7bd8b9e44cfa925bb92e7fba2d395388aaa0dac0137a

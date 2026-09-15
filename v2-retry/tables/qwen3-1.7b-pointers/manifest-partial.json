@@ -1,0 +1,46 @@
+{
+ "model": "Qwen3-1.7B",
+ "slots": 4505,
+ "K": 46,
+ "lut": "lut.csv",
+ "rule": "cells are ±slot into lut.csv; value = core followed by tens zeros, the whole model at one scale (2×5)^K",
+ "tables": [
+  {
+   "name": "model.layers.0.self_attn.k_proj.weight",
+   "shape": [
+    1024,
+    2048
+   ],
+   "rows": 1024,
+   "columns": 2048,
+   "distinct": 2220,
+   "file": "model/layers/0/self_attn/k_proj/weight.csv",
+   "bytes": 9141202,
+   "sha256": "8e237a1adb780b5c6131655630e4b720f6e5cdc91b0e81c2f31e8ce0c4f9d2c6"
+  },
+  {
+   "name": "model.layers.0.self_attn.q_norm.weight",
+   "shape": [
+    128
+   ],
+   "rows": 1,
+   "columns": 128,
+   "distinct": 101,
+   "file": "model/layers/0/self_attn/q_norm/weight.csv",
+   "bytes": 1045,
+   "sha256": "af54b80ea6901909a278439b56f676048f45611bb4d3a83bef1b7fe645778690"
+  },
+  {
+   "name": "model.norm.weight",
+   "shape": [
+    2048
+   ],
+   "rows": 1,
+   "columns": 2048,
+   "distinct": 163,
+   "file": "model/norm/weight.csv",
+   "bytes": 19374,
+   "sha256": "20b8e6519355f03f21db682bfbfdd5c98345ac340922acee6aa5db9cd49de061"
+  }
+ ]
+}

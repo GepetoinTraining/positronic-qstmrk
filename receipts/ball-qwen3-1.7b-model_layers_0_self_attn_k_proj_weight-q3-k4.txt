@@ -1,0 +1,45 @@
+format=atlas.ball.v1
+model=qwen3-1.7b tensor=model.layers.0.self_attn.k_proj.weight q=(1,1,1,0) |q|^2=3 k=4 W=512 H=512 digits=12
+[seal 2] |q|^2=2 orthogonal(M^T M = |q|^4 I)=true period(<=512)=4
+[seal 3] |q|^2=3 orthogonal(M^T M = |q|^4 I)=true period(<=512)=none
+[seal 5] |q|^2=5 orthogonal(M^T M = |q|^4 I)=true period(<=512)=none
+[seal 7] |q|^2=7 orthogonal(M^T M = |q|^4 I)=true period(<=512)=none
+[seal 11] |q|^2=11 orthogonal(M^T M = |q|^4 I)=true period(<=512)=none
+[seal 13] |q|^2=13 orthogonal(M^T M = |q|^4 I)=true period(<=512)=none
+points: 2097152 cells of model.layers.0.self_attn.k_proj.weight (1024x2048)
+[k=0] frame scale |q|^2k=1 (1 digits) | tight(level 0)=true tight(level 3)=true | occupied cells 3665 of 262144 | table sha256=2749521b6feea1e78e78b5d80c23098211e7dae397912fda6f5c241369e9f897 | 9188 ms
+[k=0] silhouette, level 5 (16x16):
+@..............@
+. . .          .
+..   .         .
+..           ...
+.              .
+.              .
+.              .
+.              .
+.              .
+.              .
+.              .
+.              .
+.              .
+.         .  . .
+..            ..
+@..............@
+[k=4] frame scale |q|^2k=81 (2 digits) | tight(level 0)=true tight(level 3)=true | occupied cells 1062 of 262144 | table sha256=7cf4b5aba3eed89ae8cb19ac7942fed3b908dfaea5ad35762d31ea8d54d38682 | 10762 ms
+[k=4] silhouette, level 5 (16x16):
+                
+                
+                
+                
+       .......  
+      .. .   ...
+    ....     ...
+   .@       ..  
+  .. .     @..  
+...      ... .  
+...    ...      
+   ......       
+                
+                
+                
+                

@@ -1,0 +1,195 @@
+format=v2.mm.hyper.v1  the limit of MM[R ×D] as D slabs of boxes, no seats; factored against the LUT of primes
+LUT: 1115538 primes, up to 17403391 (machine side: made by multiplying names into crossings)
+
+gate: every walked limit read again without seats
+  2D cycle1   MM[2 ×2]  f 1  corner 1^2  limit 3  walked 3  EQUAL
+  2D cycle2   MM[3 ×2]  f 2  corner 1^2  limit 8  walked 8  EQUAL
+  2D cycle3   MM[5 ×2]  f 3  corner 2^2  limit 21  walked 21  EQUAL
+  2D cycle4   MM[7 ×2]  f 5  corner 2^2  limit 45  walked 45  EQUAL
+  2D cycle5   MM[13 ×2]  f 11  corner 2^2  limit 165  walked 165  EQUAL
+  2D cycle6   MM[19 ×2]  f 17  corner 2^2  limit 357  walked 357  EQUAL
+  2D cycle7   MM[11 ×2]  f 7  corner 4^2  limit 105  walked 105  EQUAL
+  2D cycle8   MM[17 ×2]  f 13  corner 4^2  limit 273  walked 273  EQUAL
+  2D cycle9   MM[23 ×2]  f 19  corner 4^2  limit 513  walked 513  EQUAL
+  2D cycle10  MM[29 ×2]  f 23  corner 6^2  limit 805  walked 805  EQUAL
+  2D cycle11  MM[31 ×2]  f 29  corner 2^2  limit 957  walked 957  EQUAL
+  2D cycle12  MM[41 ×2]  f 37  corner 4^2  limit 1665  walked 1665  EQUAL
+  2D cycle13  MM[37 ×2]  f 31  corner 6^2  limit 1333  walked 1333  EQUAL
+  3D cycle1   MM[2 ×3]  f 1  corner 1^3  limit 7  walked 7  EQUAL
+  3D cycle2   MM[3 ×3]  f 2  corner 1^3  limit 26  walked 26  EQUAL
+gate: EQUAL
+
+the diagonal: cycle n in n dimensions, MM[n ×n]
+   2^2  whole 4  f 1  corner 1^2 = 1  limit 3 = prime
+   3^3  whole 27  f 2  corner 1^3 = 1  limit 26 = 2 × 13
+   4^4  whole 256  f 3  corner 1^4 = 1  limit 255 = 3 × 5 × 17
+   5^5  whole 3125  f 3  corner 2^5 = 32  limit 3093 = 3 × 1031
+   6^6  whole 46656  f 5  corner 1^6 = 1  limit 46655 = 5 × 7 × 31 × 43
+   7^7  whole 823543  f 5  corner 2^7 = 128  limit 823415 = 5 × 164683
+   8^8  whole 16777216  f 7  corner 1^8 = 1  limit 16777215 = 3^2 × 5 × 7 × 13 × 17 × 241
+   9^9  whole 387420489  f 7  corner 2^9 = 512  limit 387419977 = 7 × 103 × 127 × 4231
+  10^10 whole 10000000000  f 7  corner 3^10 = 59049  limit 9999940951 = 7 × 11 × 13 × 701 × 14251
+  11^11 whole 285311670611  f 7  corner 4^11 = 4194304  limit 285307476307 = 7 × 40758210901
+  12^12 whole 8916100448256  f 11  corner 1^12 = 1  limit 8916100448255 = 5 × 7 × 11 × 13 × 19 × 29 × 157 × 20593
+  13^13 whole 302875106592253  f 11  corner 2^13 = 8192  limit 302875106584061 = 11 × 79 × 348532918969
+
+every ring 2…13 in every dimension 1…13: the limit, factored
+  MM[2 ×1]  limit 1 = 
+  MM[2 ×2]  limit 3 = prime
+  MM[2 ×3]  limit 7 = prime
+  MM[2 ×4]  limit 15 = 3 × 5
+  MM[2 ×5]  limit 31 = prime
+  MM[2 ×6]  limit 63 = 3^2 × 7
+  MM[2 ×7]  limit 127 = prime
+  MM[2 ×8]  limit 255 = 3 × 5 × 17
+  MM[2 ×9]  limit 511 = 7 × 73
+  MM[2 ×10]  limit 1023 = 3 × 11 × 31
+  MM[2 ×11]  limit 2047 = 23 × 89
+  MM[2 ×12]  limit 4095 = 3^2 × 5 × 7 × 13
+  MM[2 ×13]  limit 8191 = prime
+  MM[3 ×1]  limit 2 = prime
+  MM[3 ×2]  limit 8 = 2^3
+  MM[3 ×3]  limit 26 = 2 × 13
+  MM[3 ×4]  limit 80 = 2^4 × 5
+  MM[3 ×5]  limit 242 = 2 × 11^2
+  MM[3 ×6]  limit 728 = 2^3 × 7 × 13
+  MM[3 ×7]  limit 2186 = 2 × 1093
+  MM[3 ×8]  limit 6560 = 2^5 × 5 × 41
+  MM[3 ×9]  limit 19682 = 2 × 13 × 757
+  MM[3 ×10]  limit 59048 = 2^3 × 11^2 × 61
+  MM[3 ×11]  limit 177146 = 2 × 23 × 3851
+  MM[3 ×12]  limit 531440 = 2^4 × 5 × 7 × 13 × 73
+  MM[3 ×13]  limit 1594322 = 2 × 797161
+  MM[4 ×1]  limit 3 = prime
+  MM[4 ×2]  limit 15 = 3 × 5
+  MM[4 ×3]  limit 63 = 3^2 × 7
+  MM[4 ×4]  limit 255 = 3 × 5 × 17
+  MM[4 ×5]  limit 1023 = 3 × 11 × 31
+  MM[4 ×6]  limit 4095 = 3^2 × 5 × 7 × 13
+  MM[4 ×7]  limit 16383 = 3 × 43 × 127
+  MM[4 ×8]  limit 65535 = 3 × 5 × 17 × 257
+  MM[4 ×9]  limit 262143 = 3^3 × 7 × 19 × 73
+  MM[4 ×10]  limit 1048575 = 3 × 5^2 × 11 × 31 × 41
+  MM[4 ×11]  limit 4194303 = 3 × 23 × 89 × 683
+  MM[4 ×12]  limit 16777215 = 3^2 × 5 × 7 × 13 × 17 × 241
+  MM[4 ×13]  limit 67108863 = 3 × 2731 × 8191
+  MM[5 ×1]  limit 3 = prime
+  MM[5 ×2]  limit 21 = 3 × 7
+  MM[5 ×3]  limit 117 = 3^2 × 13
+  MM[5 ×4]  limit 609 = 3 × 7 × 29
+  MM[5 ×5]  limit 3093 = 3 × 1031
+  MM[5 ×6]  limit 15561 = 3^2 × 7 × 13 × 19
+  MM[5 ×7]  limit 77997 = 3 × 25999
+  MM[5 ×8]  limit 390369 = 3 × 7 × 29 × 641
+  MM[5 ×9]  limit 1952613 = 3^3 × 13 × 5563
+  MM[5 ×10]  limit 9764601 = 3 × 7 × 11 × 41 × 1031
+  MM[5 ×11]  limit 48826077 = 3 × 1409 × 11551
+  MM[5 ×12]  limit 244136529 = 3^2 × 7 × 13 × 19 × 29 × 541
+  MM[5 ×13]  limit 1220694933 = 3 × 406898311
+  MM[6 ×1]  limit 5 = prime
+  MM[6 ×2]  limit 35 = 5 × 7
+  MM[6 ×3]  limit 215 = 5 × 43
+  MM[6 ×4]  limit 1295 = 5 × 7 × 37
+  MM[6 ×5]  limit 7775 = 5^2 × 311
+  MM[6 ×6]  limit 46655 = 5 × 7 × 31 × 43
+  MM[6 ×7]  limit 279935 = 5 × 55987
+  MM[6 ×8]  limit 1679615 = 5 × 7 × 37 × 1297
+  MM[6 ×9]  limit 10077695 = 5 × 19 × 43 × 2467
+  MM[6 ×10]  limit 60466175 = 5^2 × 7 × 11 × 101 × 311
+  MM[6 ×11]  limit 362797055 = 5 × 23 × 3154757
+  MM[6 ×12]  limit 2176782335 = 5 × 7 × 13 × 31 × 37 × 43 × 97
+  MM[6 ×13]  limit 13060694015 = 5 × 3433 × 760891
+  MM[7 ×1]  limit 5 = prime
+  MM[7 ×2]  limit 45 = 3^2 × 5
+  MM[7 ×3]  limit 335 = 5 × 67
+  MM[7 ×4]  limit 2385 = 3^2 × 5 × 53
+  MM[7 ×5]  limit 16775 = 5^2 × 11 × 61
+  MM[7 ×6]  limit 117585 = 3^3 × 5 × 13 × 67
+  MM[7 ×7]  limit 823415 = 5 × 164683
+  MM[7 ×8]  limit 5764545 = 3^2 × 5 × 53 × 2417
+  MM[7 ×9]  limit 40353095 = 5 × 67 × 163 × 739
+  MM[7 ×10]  limit 282474225 = 3^2 × 5^2 × 11 × 61 × 1871
+  MM[7 ×11]  limit 1977324695 = 5 × 199 × 1987261
+  MM[7 ×12]  limit 13841283105 = 3^3 × 5 × 13 × 53 × 67 × 2221
+  MM[7 ×13]  limit 96889002215 = 5 × 1301 × 14894543
+  MM[8 ×1]  limit 7 = prime
+  MM[8 ×2]  limit 63 = 3^2 × 7
+  MM[8 ×3]  limit 511 = 7 × 73
+  MM[8 ×4]  limit 4095 = 3^2 × 5 × 7 × 13
+  MM[8 ×5]  limit 32767 = 7 × 31 × 151
+  MM[8 ×6]  limit 262143 = 3^3 × 7 × 19 × 73
+  MM[8 ×7]  limit 2097151 = 7^2 × 127 × 337
+  MM[8 ×8]  limit 16777215 = 3^2 × 5 × 7 × 13 × 17 × 241
+  MM[8 ×9]  limit 134217727 = 7 × 73 × 262657
+  MM[8 ×10]  limit 1073741823 = 3^2 × 7 × 11 × 31 × 151 × 331
+  MM[8 ×11]  limit 8589934591 = 7 × 23 × 89 × 599479
+  MM[8 ×12]  limit 68719476735 = 3^3 × 5 × 7 × 13 × 19 × 37 × 73 × 109
+  MM[8 ×13]  limit 549755813887 = 7 × 79 × 8191 × 121369
+  MM[9 ×1]  limit 7 = prime
+  MM[9 ×2]  limit 77 = 7 × 11
+  MM[9 ×3]  limit 721 = 7 × 103
+  MM[9 ×4]  limit 6545 = 5 × 7 × 11 × 17
+  MM[9 ×5]  limit 59017 = 7 × 8431
+  MM[9 ×6]  limit 531377 = 7 × 11 × 67 × 103
+  MM[9 ×7]  limit 4782841 = 7^2 × 97609
+  MM[9 ×8]  limit 43046465 = 5 × 7 × 11 × 17 × 6577
+  MM[9 ×9]  limit 387419977 = 7 × 103 × 127 × 4231
+  MM[9 ×10]  limit 3486783377 = 7 × 11 × 41 × 131 × 8431
+  MM[9 ×11]  limit 31381057561 = 7 × 23 × 194913401
+  MM[9 ×12]  limit 282429532385 = 5 × 7 × 11 × 13^2 × 17 × 37 × 67 × 103
+  MM[9 ×13]  limit 2541865820137 = 7 × 363123688591
+  MM[10 ×1]  limit 7 = prime
+  MM[10 ×2]  limit 91 = 7 × 13
+  MM[10 ×3]  limit 973 = 7 × 139
+  MM[10 ×4]  limit 9919 = 7 × 13 × 109
+  MM[10 ×5]  limit 99757 = 7 × 14251
+  MM[10 ×6]  limit 999271 = 7 × 13 × 79 × 139
+  MM[10 ×7]  limit 9997813 = 7^2 × 211 × 967
+  MM[10 ×8]  limit 99993439 = 7 × 13 × 17 × 109 × 593
+  MM[10 ×9]  limit 999980317 = 7 × 19 × 139 × 54091
+  MM[10 ×10]  limit 9999940951 = 7 × 11 × 13 × 701 × 14251
+  MM[10 ×11]  limit 99999822853 = 7 × 1321 × 3191 × 3389
+  MM[10 ×12]  limit 999999468559 = 7 × 13 × 79 × 109 × 139 × 9181
+  MM[10 ×13]  limit 9999998405677 = 7 × 157 × 9099179623
+  MM[11 ×1]  limit 7 = prime
+  MM[11 ×2]  limit 105 = 3 × 5 × 7
+  MM[11 ×3]  limit 1267 = 7 × 181
+  MM[11 ×4]  limit 14385 = 3 × 5 × 7 × 137
+  MM[11 ×5]  limit 160027 = 7 × 22861
+  MM[11 ×6]  limit 1767465 = 3^2 × 5 × 7 × 31 × 181
+  MM[11 ×7]  limit 19470787 = 7^2 × 43 × 9241
+  MM[11 ×8]  limit 214293345 = 3 × 5 × 7 × 137 × 14897
+  MM[11 ×9]  limit 2357685547 = 7 × 19 × 37 × 181 × 2647
+  MM[11 ×10]  limit 25936376025 = 3 × 5^2 × 7 × 2161 × 22861
+  MM[11 ×11]  limit 285307476307 = 7 × 40758210901
+  MM[11 ×12]  limit 3138411599505 = 3^2 × 5 × 7 × 13 × 31 × 137 × 181 × 997
+  MM[11 ×13]  limit 34522645035067 = 7 × 53 × 79 × 1847 × 637729
+  MM[12 ×1]  limit 11 = prime
+  MM[12 ×2]  limit 143 = 11 × 13
+  MM[12 ×3]  limit 1727 = 11 × 157
+  MM[12 ×4]  limit 20735 = 5 × 11 × 13 × 29
+  MM[12 ×5]  limit 248831 = 11 × 22621
+  MM[12 ×6]  limit 2985983 = 7 × 11 × 13 × 19 × 157
+  MM[12 ×7]  limit 35831807 = 11 × 659 × 4943
+  MM[12 ×8]  limit 429981695 = 5 × 11 × 13 × 29 × 89 × 233
+  MM[12 ×9]  limit 5159780351 = 11 × 37 × 157 × 80749
+  MM[12 ×10]  limit 61917364223 = 11 × 13 × 19141 × 22621
+  MM[12 ×11]  limit 743008370687 = 11^2 × 23 × 266981089
+  MM[12 ×12]  limit 8916100448255 = 5 × 7 × 11 × 13 × 19 × 29 × 157 × 20593
+  MM[12 ×13]  limit 106993205379071 = 11 × 477517 × 20369233
+  MM[13 ×1]  limit 11 = prime
+  MM[13 ×2]  limit 165 = 3 × 5 × 11
+  MM[13 ×3]  limit 2189 = 11 × 199
+  MM[13 ×4]  limit 28545 = 3 × 5 × 11 × 173
+  MM[13 ×5]  limit 371261 = 11 × 33751
+  MM[13 ×6]  limit 4826745 = 3^2 × 5 × 7^2 × 11 × 199
+  MM[13 ×7]  limit 62748389 = 11 × 337 × 16927
+  MM[13 ×8]  limit 815730465 = 3 × 5 × 11 × 17 × 41^2 × 173
+  MM[13 ×9]  limit 10604498861 = 11 × 19 × 199 × 254971
+  MM[13 ×10]  limit 137858490825 = 3 × 5^2 × 11 × 4951 × 33751
+  MM[13 ×11]  limit 1792160391989 = 11^2 × 23 × 67 × 2311 × 4159
+  MM[13 ×12]  limit 23298085118385 = 3^2 × 5 × 7^2 × 11 × 173 × 199 × 27901
+  MM[13 ×13]  limit 302875106584061 = 11 × 79 × 348532918969
+
+machine side: BigInt products and accumulation; decimal strings as decade readings; the LUT is a multiplication table of names; nothing from the imaginary side and no relation is kept
+seal sha256 5932bbbf270135b711519cab8d642f043c3af5b8b387919ad943ff70a2c88315

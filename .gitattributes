@@ -1,0 +1,2 @@
+# Receipts are sealed by sha256 over their exact bytes: git must never rewrite line endings.
+* -text

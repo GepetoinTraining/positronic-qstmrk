@@ -1,0 +1,7 @@
+seed 20260914 · 180.5s
+cols       tables 311  held 507934976 · distinct real 420039818 · shuffled 420907067 · repeats real 87895158 vs shuffled 87027909 · tables real fewer 108, same 97, more 106
+rows       tables 198  held 507904000 · distinct real 420520814 · shuffled 420882783 · repeats real 87383186 vs shuffled 87021217 · tables real fewer 106, same 2, more 90
+gate×up    tables 28   held 176160768 · distinct real 157571134 · shuffled 157573398 · repeats real 18589634 vs shuffled 18587370 · tables real fewer 15, same 0, more 13
+q×k        tables 28   held 58720256 · distinct real 56190083 · shuffled 56194748 · repeats real 2530173 vs shuffled 2525508 · tables real fewer 18, same 0, more 10
+up×downᵀ   tables 28   held 176160768 · distinct real 157239884 · shuffled 157566000 · repeats real 18920884 vs shuffled 18594768 · tables real fewer 26, same 0, more 2
+q×oᵀ       tables 28   held 58720256 · distinct real 56202754 · shuffled 56200702 · repeats real 2517502 vs shuffled 2519554 · tables real fewer 9, same 0, more 19

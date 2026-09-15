@@ -1,0 +1,24 @@
+format=v2.oscillator.v1 cycles=16
+choices (not forced): C1 edge walk, first unreached seat | C2 deepen along rod 2 | C3 one ? per cycle
+names are the machine's reading of a run, printed for the reader only
+
+given   atom 2  (the bit: a ring of two seats)
+cycle  1  reference rod2 ••       (name    4)  deepened 2  ? cell / reference = 3/4  -> atom 3 joins the rail
+cycle  2  reference rod2 •••      (name    8)  deepened 1  ? cell / reference = 5/8  -> atom 5 joins the rail
+cycle  3  reference rod2 •••      (name    8)  deepened 0  ? cell / reference = 7/8  -> atom 7 joins the rail
+cycle  4  reference rod2 ••••     (name   16)  deepened 1  ? cell / reference = 11/16  -> atom 11 joins the rail
+cycle  5  reference rod2 ••••     (name   16)  deepened 0  ? cell / reference = 13/16  -> atom 13 joins the rail
+cycle  6  reference rod2 •••••    (name   32)  deepened 1  ? cell / reference = 17/32  -> atom 17 joins the rail
+cycle  7  reference rod2 •••••    (name   32)  deepened 0  ? cell / reference = 19/32  -> atom 19 joins the rail
+cycle  8  reference rod2 •••••    (name   32)  deepened 0  ? cell / reference = 23/32  -> atom 23 joins the rail
+cycle  9  reference rod2 •••••    (name   32)  deepened 0  ? cell / reference = 29/32  -> atom 29 joins the rail
+cycle 10  reference rod2 •••••    (name   32)  deepened 0  ? cell / reference = 31/32  -> atom 31 joins the rail
+cycle 11  reference rod2 ••••••   (name   64)  deepened 1  ? cell / reference = 37/64  -> atom 37 joins the rail
+cycle 12  reference rod2 ••••••   (name   64)  deepened 0  ? cell / reference = 41/64  -> atom 41 joins the rail
+cycle 13  reference rod2 ••••••   (name   64)  deepened 0  ? cell / reference = 43/64  -> atom 43 joins the rail
+cycle 14  reference rod2 ••••••   (name   64)  deepened 0  ? cell / reference = 47/64  -> atom 47 joins the rail
+cycle 15  reference rod2 ••••••   (name   64)  deepened 0  ? cell / reference = 53/64  -> atom 53 joins the rail
+cycle 16  reference rod2 ••••••   (name   64)  deepened 0  ? cell / reference = 59/64  -> atom 59 joins the rail
+
+rail: 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59
+seal sha256 e80810b710609174a12ddfa45f76421ca0f8e4c0d8185aadd31eed453eef88e4

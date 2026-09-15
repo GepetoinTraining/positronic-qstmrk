@@ -1,0 +1,11 @@
+format=atlas.chat.v1 kernel=bucket max_new=24 think=False
+READY model=qwen3-1.7b layers=28 vocab=151936 kernel=bucket load_ms=3472
+you> What is the capital of France? Answer in one word.
+atlas> Paris
+   [END picked_up=0 computed=24 generated=2 positions=25 ms=42005]
+you> And of Italy?
+atlas> Rome
+   [END picked_up=25 computed=18 generated=3 positions=45 ms=34369]
+you> Which of the two is further north?
+atlas> Paris is further north than Rome.
+   [END picked_up=45 computed=22 generated=8 positions=74 ms=53634]

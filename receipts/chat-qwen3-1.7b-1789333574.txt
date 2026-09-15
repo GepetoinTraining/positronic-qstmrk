@@ -1,0 +1,10 @@
+format=atlas.chat.v1 kernel=card max_new=16 think=False lookahead=0
+READY model=qwen3-1.7b layers=28 vocab=151936 kernel=card load_ms=5363
+you> Hi
+atlas> Hello! I'm doing well. How about you? 😊
+   [END picked_up=0 computed=13 generated=14 positions=26 passes=14 guessed=0 accepted=0 ms=14634]
+you> Tell me a short fact about the moon.
+atlas> Sure! Here's a short fact about the moon:
+
+The moon is the Earth
+   [END picked_up=26 computed=23 generated=16 positions=64 passes=16 guessed=0 accepted=0 ms=19770]

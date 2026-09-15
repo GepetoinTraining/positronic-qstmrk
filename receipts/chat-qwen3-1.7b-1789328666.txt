@@ -1,0 +1,8 @@
+format=atlas.chat.v1 kernel=bucket max_new=24 think=False
+READY model=qwen3-1.7b layers=28 vocab=151936 kernel=bucket load_ms=6676
+you> What is the capital of France? Answer in one word.
+atlas> Paris
+   [END picked_up=0 computed=24 generated=2 positions=25 ms=42631]
+you> And of Italy?
+atlas> Rome
+   [END picked_up=0 computed=39 generated=3 positions=41 ms=70530]

@@ -1,0 +1,7 @@
+Qwen3-1.7B · 311 tables · 2031739904 weights · 4505 slots · 63 residuals
+bf16               cells 4.063 GB + outside 0.0 KB = 4.063 GB · 16.00 bits/weight avg
+±slot              cells 3.556 GB + outside 9.0 KB = 3.556 GB · 14.00 bits/weight avg
+±slot per table    cells 3.302 GB + outside 997.2 KB = 3.303 GB · 13.00 bits/weight avg
+sign·odd·e         cells 3.520 GB + outside 16.1 KB = 3.520 GB · 13.86 bits/weight avg
+sign·res·handle    cells 4.013 GB + outside 109.0 KB = 4.013 GB · 15.80 bits/weight avg
+lm_head = embed_tokens byte for byte: yes (f56b71b6… / f56b71b6…)

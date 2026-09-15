@@ -1,0 +1,13 @@
+up×downᵀ cycles, 28 layers, seed 20260914 · gate vs measure.csv cycle 2: 28 equal, 0 different · 307s
+cycle 1  held 352321536 · distinct real 444528 · shuffled 444528 · repeats real 351877008 vs shuffled 351877008 · layers real fewer 0, same 28, more 0
+cycle 2  held 176160768 · distinct real 157239884 · shuffled 157572816 · repeats real 18920884 vs shuffled 18587952 · layers real fewer 28, same 0, more 0
+cycle 3  held 88080384 · distinct real 88080384 · shuffled 88080384 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 4  held 44040192 · distinct real 44040192 · shuffled 44040192 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 5  held 22020096 · distinct real 22020096 · shuffled 22020096 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 6  held 11010048 · distinct real 11010048 · shuffled 11010048 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 7  held 5505024 · distinct real 5505024 · shuffled 5505024 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 8  held 2752512 · distinct real 2752512 · shuffled 2752512 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 9  held 1376256 · distinct real 1376256 · shuffled 1376256 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 10 held 688128 · distinct real 688128 · shuffled 688128 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 11 held 344064 · distinct real 344064 · shuffled 344064 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
+cycle 12 held 172032 · distinct real 172032 · shuffled 172032 · repeats real 0 vs shuffled 0 · layers real fewer 0, same 28, more 0
