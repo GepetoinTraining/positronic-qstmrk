@@ -37,30 +37,27 @@ export type WalkEdge = {
 export type Walk = { run: Run; nodes: WalkNode[]; edges: WalkEdge[] };
 
 const apiUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
+  try {
+    const r = await fetch(apiUrl(path));
+    return r.ok ? ((await r.json()) as T) : fallback; // the store may be mid-rebuild or absent on static hosting
+  } catch {
+    return fallback;
+  }
+};
 
 export async function listRuns(dimension: number): Promise<Run[]> {
-  try {
-    const r = await fetch(apiUrl(`/api/runs?dimension=${dimension}`));
-    return r.ok ? r.json() : []; // the store may be mid-rebuild or absent on static hosting
-  } catch {
-    return [];
-  }
+  return loadJson(`/api/runs?dimension=${dimension}`, []);
 }
 
-export async function loadRun(id: number): Promise<Walk> {
-  const r = await fetch(apiUrl(`/api/run/${id}`));
-  return r.json();
+export async function loadRun(id: number): Promise<Walk | null> {
+  return loadJson(`/api/run/${id}`, null);
 }
 
 export type LedgerRow = { id: number; slot: string; reading: string; status: "prime" | "substituted"; name: string; substitutes: string; found_in: string };
 
 export async function loadLedger(): Promise<LedgerRow[]> {
-  try {
-    const r = await fetch(apiUrl("/api/ledger"));
-    return r.ok ? r.json() : [];
-  } catch {
-    return [];
-  }
+  return loadJson("/api/ledger", []);
 }
 
 /**

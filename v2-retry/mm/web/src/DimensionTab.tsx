@@ -36,7 +36,11 @@ export function DimensionTab({ dimension }: { dimension: 2 | 3 }) {
     if (runId === null) return;
     setWalk(null);
     setQuery("");
-    loadRun(runId).then(setWalk);
+    loadRun(runId).then((next) => {
+      if (next) return setWalk(next);
+      setRuns([]);
+      setRunId(null);
+    });
   }, [runId]);
 
   if (runs === null) return <section className="tabbody muted">loading…</section>;
