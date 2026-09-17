@@ -36,10 +36,9 @@ export type WalkEdge = {
 
 export type Walk = { run: Run; nodes: WalkNode[]; edges: WalkEdge[] };
 
-const apiUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
   try {
-    const r = await fetch(apiUrl(path));
+    const r = await fetch(path);
     return r.ok ? ((await r.json()) as T) : fallback; // the store may be mid-rebuild or absent on static hosting
   } catch {
     return fallback;
