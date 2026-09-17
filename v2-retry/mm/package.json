@@ -5,7 +5,8 @@
   "description": "v2: the manifold matrix — walks stored in SQLite, viewed by dimension (pgarcia, 2026-09-14)",
   "scripts": {
     "walk": "node --experimental-strip-types --no-warnings src/main.ts",
-    "dev": "vite --port 5173 --strictPort"
+    "dev": "vite --port 5173 --strictPort",
+    "build": "vite build"
   },
   "dependencies": {
     "react": "^19.3.0",
