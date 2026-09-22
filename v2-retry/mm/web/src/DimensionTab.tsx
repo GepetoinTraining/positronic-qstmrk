@@ -15,6 +15,7 @@ export function DimensionTab({ dimension }: { dimension: 2 | 3 }) {
   const [runs, setRuns] = useState<Run[] | null>(null);
   const [runId, setRunId] = useState<number | null>(null);
   const [walk, setWalk] = useState<Walk | null>(null);
+  const [runMissing, setRunMissing] = useState(false);
   const [view, setView] = useState<View>(dimension === 3 ? "graph" : "cells");
   const [query, setQuery] = useState("");
   const [ledger, setLedger] = useState<LedgerRow[]>([]);
@@ -26,6 +27,7 @@ export function DimensionTab({ dimension }: { dimension: 2 | 3 }) {
   useEffect(() => {
     setRuns(null);
     setWalk(null);
+    setRunMissing(false);
     listRuns(dimension).then((rs) => {
       setRuns(rs);
       setRunId(rs.length ? rs[rs.length - 1].id : null);
@@ -36,7 +38,11 @@ export function DimensionTab({ dimension }: { dimension: 2 | 3 }) {
     if (runId === null) return;
     setWalk(null);
     setQuery("");
-    loadRun(runId).then(setWalk);
+    setRunMissing(false);
+    loadRun(runId).then((next) => {
+      if (next) return setWalk(next);
+      setRunMissing(true);
+    });
   }, [runId]);
 
   if (runs === null) return <section className="tabbody muted">loading…</section>;
@@ -83,7 +89,9 @@ export function DimensionTab({ dimension }: { dimension: 2 | 3 }) {
         )}
       </div>
 
-      {!walk ? (
+      {runMissing ? (
+        <p className="muted">That walk is unavailable in this static build.</p>
+      ) : !walk ? (
         <p className="muted">loading…</p>
       ) : (
         <div className={view === "cells" ? "stack" : "split"}>

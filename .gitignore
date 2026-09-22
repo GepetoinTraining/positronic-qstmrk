@@ -8,6 +8,7 @@ cells/
 
 # Build outputs and dependencies
 **/target/
+dist/
 node_modules/
 __pycache__/
 *.pyc

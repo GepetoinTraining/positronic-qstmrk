@@ -36,21 +36,27 @@ export type WalkEdge = {
 
 export type Walk = { run: Run; nodes: WalkNode[]; edges: WalkEdge[] };
 
+const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
+  try {
+    const r = await fetch(path);
+    return r.ok ? ((await r.json()) as T) : fallback; // the store may be mid-rebuild or absent on static hosting
+  } catch {
+    return fallback;
+  }
+};
+
 export async function listRuns(dimension: number): Promise<Run[]> {
-  const r = await fetch(`/api/runs?dimension=${dimension}`);
-  return r.ok ? r.json() : []; // the store may be mid-rebuild
+  return loadJson(`/api/runs?dimension=${dimension}`, []);
 }
 
-export async function loadRun(id: number): Promise<Walk> {
-  const r = await fetch(`/api/run/${id}`);
-  return r.json();
+export async function loadRun(id: number): Promise<Walk | null> {
+  return loadJson(`/api/run/${id}`, null);
 }
 
 export type LedgerRow = { id: number; slot: string; reading: string; status: "prime" | "substituted"; name: string; substitutes: string; found_in: string };
 
 export async function loadLedger(): Promise<LedgerRow[]> {
-  const r = await fetch("/api/ledger");
-  return r.ok ? r.json() : [];
+  return loadJson("/api/ledger", []);
 }
 
 /**

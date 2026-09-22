@@ -56,4 +56,15 @@ function mmApi(): Plugin {
   };
 }
 
-export default defineConfig({ root: "web", plugins: [react(), mmApi()] });
+export default defineConfig({
+  root: "web",
+  base: "./",
+  build: {
+    outDir: "../dist",
+    emptyOutDir: true,
+  },
+  plugins: [
+    react(),
+    mmApi(), // dev-only SQLite API; production Pages builds stay static
+  ],
+});
