@@ -1,0 +1,13 @@
+format=v2.mm.last.v2 dimension=3 cycles=2 turns=1,c,c2  — the last pair across the seam per cycle and per turn: p/q · q/p → pq (i×real, a whole); then the union over the turns; cycles are dropped, only the rail per turn is carried
+turn 1: perm [0,1,2] sign [+,+,+]
+turn c: perm [1,2,0] sign [+,+,+]
+turn c2: perm [2,0,1] sign [+,+,+]
+cycle 1 [1]: 8/7 · 7/8 → 56   (rail 5 rings)
+cycle 1 [c]: 8/7 · 7/8 → 56   (rail 5 rings)
+cycle 1 [c2]: 8/7 · 7/8 → 56   (rail 5 rings)
+cycle 1 [union]: 8/7 · 7/8 → 56   (over 3 turns)
+cycle 2 [1]: 216/215 · 215/216 → 46440   (rail 130 rings)
+cycle 2 [c]: 216/215 · 215/216 → 46440   (rail 130 rings)
+cycle 2 [c2]: 216/215 · 215/216 → 46440   (rail 130 rings)
+cycle 2 [union]: 216/215 · 215/216 → 46440   (over 3 turns)
+seal sha256 ababae19ccf9fbbe1f551be43f96c67de15e79d3420594b14b4d0ebdc2804d4d

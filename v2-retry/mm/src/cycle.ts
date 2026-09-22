@@ -12,6 +12,8 @@ import { group, readings } from "./relation.ts";
 import type { Ring } from "./ring.ts";
 import { bitRing } from "./ring.ts";
 import type { Site } from "./site.ts";
+import type { Reading, Turn } from "./turns.ts";
+import { identity, offsetOf } from "./turns.ts";
 
 export type Kind = "whole" | "cube" | "table" | "held" | "floor" | "question" | "remet" | "rail";
 
@@ -32,6 +34,11 @@ export type Cycle = {
   rstar: Relation[][];
   limit: Relation | null;
   railAfter: Ring[];
+  /** the turn the walk was read through (the identity is today's walk: order matters, every direction +) */
+  turn: Turn;
+  /** the offset reading, if one was asked for, and whether it broke on this container (read forward then) */
+  reading: Reading | null;
+  broke: string | null;
 };
 
 export type WalkOptions = {
@@ -45,6 +52,17 @@ export type WalkOptions = {
   known?: readonly Ring[];
   /** machine side: called inside long loops so a walk past the machine's budget fails gracefully (budget.ts) */
   tick?: Tick;
+  /**
+   * the turn the site is read through (turns.ts): a signed permutation of the slots, applied as a lookup when a
+   * held thing's site is built and when it is placed. Default: the identity, today's walk bit for bit.
+   */
+  turn?: Turn;
+  /**
+   * a reading from an offset along each taken coordinate's ring (turns.ts `Reading`: `3`, `5`, `1/3`, `1/5`),
+   * wrapping round; a part reading that does not deal the container's axis equally breaks — `broke` is set on the
+   * cycle and that cycle is read forward.
+   */
+  reading?: Reading;
 };
 
 const fitsIn = (r: Ring, container: Ring) => pairsInto(r.seats, container.seats);
@@ -79,15 +97,24 @@ export function walkCycle(rail: readonly Ring[], k: number, dimension: number, o
   const opus = options.opus ?? rail.filter((r) => r !== bitRing);
   const known = options.known ?? [];
   const tick = options.tick ?? noTick;
+  const turn = options.turn ?? identity(dimension);
+  if (turn.perm.length !== dimension || turn.sign.length !== dimension) throw new Error(`refused: turn ${turn.label} has ${turn.perm.length} slots, the walk has ${dimension}`);
   const R = rail[k];
   const all = Array.from({ length: dimension }, (_, a) => a);
   const container = mm(...all.map(() => R));
   const fit = rail.filter((r) => fitsIn(r, R));
+  const reading = options.reading ?? null;
+  const off = reading ? offsetOf(reading, R.seats.length) : 0;
+  const broke = reading && off === null ? `reading ${reading.label} does not part the axis of ${R.label} (${R.seats.length} seats) equally — read forward` : null;
   const held: { thing: Thing; kind: Kind }[] = [];
   const add = (rings: Ring[], axes: number[], kind: Kind) => {
     const m = mm(...rings);
-    const site: Site = all.map((a) => (axes.includes(a) ? [rings[axes.indexOf(a)]] : []));
-    held.push({ thing: { label: matrixLabel(m, axes, dimension), m, site, region: place(container, m, axes) }, kind });
+    // the turn as a lookup: coordinate a lands on slot perm[a], read inverted where sign[a] is −
+    const landed = axes.map((a) => turn.perm[a]);
+    const inverted = axes.map((a) => turn.sign[a] === -1);
+    const offsets = axes.map(() => off ?? 0);
+    const site: Site = all.map((slot) => (landed.includes(slot) ? [rings[landed.indexOf(slot)]] : []));
+    held.push({ thing: { label: matrixLabel(m, landed, dimension), m, site, region: place(container, m, landed, inverted, offsets) }, kind });
   };
 
   add(all.map(() => R), all, "whole");
@@ -193,5 +220,8 @@ export function walkCycle(rail: readonly Ring[], k: number, dimension: number, o
     rstar: relate(remet),
     limit,
     railAfter: [...rail, ...arrivals.map((a) => a.ring)],
+    turn,
+    reading,
+    broke,
   };
 }

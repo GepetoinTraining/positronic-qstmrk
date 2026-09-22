@@ -1,3 +1,4 @@
+import { pairsInto } from "./bead.ts";
 import type { MM, Seat } from "./mm.ts";
 import { seatsOf } from "./mm.ts";
 
@@ -28,12 +29,20 @@ function seatsOfContainer(container: MM): Seat[] {
 /**
  * Place a matrix in a container from the origin: coordinate k of `m` runs along container axis `axes[k]`;
  * every other axis stays at its first seat. Which axes it takes is its orientation — its address.
+ * A coordinate marked `inverted[k]` is read from the far seat of its axis instead: a container seat is in it when
+ * the container's run from that seat to its end pairs into the coordinate (by pairing; no address is counted).
  */
-export function place(container: MM, m: MM, axes: readonly number[]): Region {
+export function place(container: MM, m: MM, axes: readonly number[], inverted: readonly boolean[] = [], offset: readonly number[] = []): Region {
   return seatsOfContainer(container).filter((s) =>
     s.every((addr, axis) => {
       const k = axes.indexOf(axis);
-      return k < 0 ? addr === 0 : m.coords[k].seats[addr] !== undefined;
+      if (k < 0) return addr === 0;
+      if (inverted[k]) return pairsInto(container.coords[axis].seats.slice(addr), m.coords[k].seats);
+      const off = offset[k] ?? 0;
+      if (off === 0) return m.coords[k].seats[addr] !== undefined;
+      // read from an offset along the ring, wrapping round: the seats from `off` to the end, then from the start
+      const n = container.coords[axis].seats.length;
+      return m.coords[k].seats[(addr - off + n) % n] !== undefined;
     }),
   );
 }
