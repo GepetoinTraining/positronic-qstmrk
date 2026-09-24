@@ -4,10 +4,11 @@ Private research repository. **No license yet**: all rights reserved by the auth
 
 Pedro García (pgarcia) with Claude (Fable 5.1, Opus 5).
 
-Two builds live here, both on Qwen3-1.7B:
+Three builds live here, all on Qwen3-1.7B:
 
 1. **v1: the Atlas Engine** (`atlas/`, `intake/`, `receipts/`, `LOG.md`). This is a float-free, all-integer inference engine. It runs the model from its own cells, and every stage either rewinds exactly or refuses with a receipt. The forward pass is bit-identical across the CPU and GPU kernels (RTX 3060 Ti via wgpu).
 2. **v2: the construction** (`v2-retry/`). This is a stepped rebuild from the floor: numbers are built, not imported. It holds the manifold-matrix walks, a viewer by dimension, and the geometric reading of the weights: pointers, the cube byte type, residuals and handles, and the cycler.
+3. **v3: the kernel** (`v3-based/`). This is the CubeKernel composed in Rust: binary → tryte → quadryte → Hurwitz seam → Octavian Catch → 9-gon → 7//11 hinge, exact, with receipts that rewind. It is driven by the onset oscillator and holds every BF16 pattern in the 41 table in 3,924 bytes. It also carries the attention registrations T10 and T11, run against v1's sealed captures and seal-verified tensors. Next is `v3-based/NEXT-STAGE.md`: the kernel as one running object, with no weights.
 
 Every measured claim carries **[M]** (measured), **[F]** (floatland reference only) or **[B]** (a choice of the builder's). Sealed receipts decide, not the session.
 
@@ -30,8 +31,18 @@ Every measured claim carries **[M]** (measured), **[F]** (floatland reference on
 | `v2-retry/mm/` | TypeScript: the manifold matrix. Walks into SQLite, the React viewer, and the tables pipeline for the weights |
 | `v2-retry/mm/receipts/` | v2 sealed receipts: cycles, namings, hyper limits, table scans |
 | `v2-retry/tables/` | v2 model-wide tables: LUTs, cores, planes, odds, roots, measurements (per-table dumps are not in git) |
+| `v3-based/SESSION-2026-09-24-code.md` | the v3 session record: what was built, run, measured and corrected |
+| `v3-based/NEXT-STAGE.md` | the next stage: the kernel as one running object, with no weights |
+| `v3-based/SYNTHESIS-v1-v2-v3.md` | v1 and v2 read against v3, cross-checked |
+| `v3-based/prereg_T*.txt` | v3 registrations (T9 from the web surface; T10, T11 here), sealed before running, outcomes appended |
+| `v3-based/walk/` | Rust: the census, Tier B, the composed kernel, the BF16 gate, the footprint, T10, T11 |
+| `v3-based/t10/fetch.py` | byte-range fetch of single tensors, admitted only against v1's sealed `source_sha256` |
+| `v3-based/bundle/`, `day_v2.pdf` | the web surface's session bundle and day record |
 
 ## Not in git, and how to get it back
+
+v3's fetched tensors (`v3-based/t10/*.u16`, 1.42 GB) are not in git. From `v3-based/t10`, `python fetch.py <tensor names>` re-fetches them by byte range and admits each only against v1's seal. `t11_names.txt` lists T11's 154.
+
 
 | what | size | how |
 |---|---|---|
@@ -97,6 +108,14 @@ The references are the engine's own receipts (`receipts/reference-qwen3-1.7b.txt
 - Floatland agreement is not validation.
 - Structure, not tables: nothing is packed back flat.
 - Show attempts, not questions; label [M]/[F]/[B]; seal receipts.
+
+## Where v3 stands (2026-09-24)
+
+- **The kernel runs, composed and exact.** 22/22 layer checks pass. 10⁶ random operations run with 0 invariant violations and rewind bit-identically from receipts. Without receipts, 1000/1000 programs drift.
+- **The no-go is reproduced exhaustively.** No 2T acts on the lanes with −1 as the flip, over all 3,072 lane symmetries. The twist-compatible Hurwitz copy lies in one twist triple, not in the hub.
+- **BF16 through the intake gate: 65,280** (signed zero kept). The only duplicate value is −0. The 41 walk's halves multiply like signs, and its index is a discrete log: adding indices is Mitchell's multiplication.
+- **T11 (pre-registered, every prediction held).** Three heads leave the sink for the induction target on a repeated prompt, and 96% of the released mass lands on that one position. The instrument first reproduced v1's sealed captures (cosine 0.99987 at layer 14).
+- **Next:** `v3-based/NEXT-STAGE.md`. The rule is that there will be no weights: load once, check, seat every value at the position it inhabits.
 
 ## Where v2 stands (2026-09-15)
 

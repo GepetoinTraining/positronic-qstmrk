@@ -1,0 +1,45 @@
+PRE-REGISTRATION T10 — attention as a flow (Claude, at Pedro Garcia's request; before any T10 code ran), 24 Sep 2026
+Posits:
+  [PG] attention is physics: an interaction on a fluid of tokens; QK sets the flow; the stream organises with depth;
+  [PG] fronts: the non-reciprocal part of the coupling makes circulation, violent where the meeting is hard;
+  [PG] selection as history: only the positions a row actually uses need be kept.
+Data: v1's sealed captures (receipts/capture-qwen3-1.7b-L{0,1,14}-508tok[-random].u16, the residual stream entering
+the layer; exact bf16 patterns), and layer-14 tensors fetched by byte range from the Hub, each checked against the
+source_sha256 in receipts/intake-qwen3-1.7b-20260913/MANIFEST.json before use.
+Instrument: f64 on exact bf16 inputs (a ruler, as v1's ringing.py). RoPE angles and exp are floatland here; this is a
+measurement of the model's attention, not a reproduction of v1's hash. Positions 1..507 unless stated; position 0 is
+the sink and is measured separately.
+
+Tier A — the fluid (captures only). Both prompts (ramp ids 1..508; random ids, seed 20260913).
+A1 clustering. Mean pairwise cosine between positions 1..507 rises with depth: L0 < L1 < L14, on both prompts.
+   Control: each vector's coordinates shuffled independently (seed 20260924); the real value at L14 must exceed the
+   control's max over 10 shuffles. Kill: not monotone on the random prompt, or L14 inside the control band.
+A2 effective rank. Participation ratio PR = (tr G)^2 / ||G||_F^2 of the Gram matrix of positions 1..507 falls with
+   depth: L0 > L1 > L14, on both prompts. Kill: not monotone on the random prompt.
+A3 sink. Position 0's share of the total squared norm rises with depth: L0 < L1 < L14, on both prompts.
+   Kill: not monotone on either prompt.
+
+Tier B — the kernel (layer 14: input_layernorm, q_proj, k_proj, q_norm, k_norm).
+B1 fronts. For each of the 16 query heads, the coupling B = U^T V (U = diag(g_q) W_q[head], V = diag(g_k) W_k[group])
+   splits exactly into S = (B + B^T)/2 and A = (B - B^T)/2. a = ||A||^2 / ||B||^2 (0.5 = neither side).
+   Control: W_k's input columns permuted (10 seeds), which destroys the alignment of U and V.
+   Prediction: at least 8 of 16 heads lie outside the control band [min, max], on either side.
+   Kill: fewer than 4 heads outside the band.
+B2 sink. On the random-prompt L14 capture, the attention mass each head sends to position 0, averaged over rows
+   i = 64..507: at least 8 of 16 heads send >= 0.5. Kill: fewer than 4 heads do.
+B3 selection. For each row, the smallest set of positions holding >= 1 - 2^-10 of the row's mass. Averaged over rows
+   i = 64..507, the set is below 25% of the available context (i + 1) in at least 8 of 16 heads.
+   Kill: fewer than 4 heads.
+Exploratory, no prediction: per head, the dominant non-sink offset i - j; whether high-a heads are offset-locked
+   (previous-token-like); the ramp prompt beside the random one.
+Outcomes appended below this line only.
+-----
+OUTCOMES (appended after the run; walk/src/bin/t10.rs; full output t10_run.txt):
+A1 HELD: mean cosine ramp 0.038 -> 0.322 -> 0.514, random 0.053 -> 0.137 -> 0.549; control bands within +-0.0004.
+A2 HELD: participation ratio ramp 88.3 -> 9.2 -> 3.7, random 176.1 -> 34.3 -> 3.3.
+A3 KILLED: sink share ramp 0.0023 -> 0.0027 -> 0.953 (monotone), random 0.0019 -> 0.0010 -> 0.950 (dips at L1).
+B1 HELD: 16/16 heads outside the permuted-column band (band ~[0.499, 0.500]); 12 on the S side (a 0.23..0.49), 4 on the A side (a 0.504..0.510: heads 2, 4, 8, 9).
+B2 HELD: 8/16 heads send >= 0.5 of their mass to position 0 (random prompt, rows 64..507).
+B3 KILLED: 0/16 heads; the set holding 1 - 2^-10 of the mass spans 39%..97% of the context; positions below 2^-24 of the row max ~0%.
+Exploratory: every A-side head's most frequent non-sink target is offset 1 (heads 2, 4, 8, 9: 44%, 36%, 58%, 93% of rows); among the 12 S-side heads only head 3 (45%) is; the S side's top offsets are 0 (self) or 2.
+Post-hoc (not registered): at L14 position 0 holds 95% of the stream's squared norm on both prompts.

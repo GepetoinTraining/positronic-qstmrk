@@ -1,0 +1,37 @@
+PRE-REGISTRATION T11 — do heads leave the sink for what matters? (Claude, at Pedro Garcia's request; before any T11 code ran), 24 Sep 2026
+Posit [PG]: the sink is rest; relevance pulls attention off it. If so, learning lives in attention and the residue reads
+like a book. Follows T10 (B2: 8/16 layer-14 heads rest >= half their mass on position 0).
+Prompts (Qwen3-1.7B, 508 tokens each):
+  RANDOM = v1's random prompt (receipts/tokens-random508-seed20260913.txt), the control;
+  REPEAT = its first 254 tokens, then the same 254 again. For i in 254..507, token(i) = token(i - 254), so the token
+  that followed the earlier occurrence sits at j = i - 253 (the induction target).
+Embeddings: rows taken from v1's sealed L0 capture of RANDOM (exact patterns; REPEAT reuses rows 0..253).
+Weights: every tensor of layers 0..13, plus layer 14's input_layernorm, q/k proj and q/k norm, fetched by byte range and
+admitted only if sha256 equals v1's MANIFEST source_sha256.
+Instrument: f64 forward on exact bf16 inputs (RMSNorm, RoPE, softmax, SiLU in floatland; declared, not v1's exact ops).
+Rows: F = first copy i in 64..253; S = second copy i in 318..507.
+
+G  (validity gate) On RANDOM, the instrument's residual stream entering layers 1 and 14 matches v1's sealed captures:
+   mean per-position cosine >= 0.99 at both. If G fails, T11 is void and nothing below is read.
+P1 (relevance leaves the sink) In REPEAT, at least 2 heads in layers 0..14 have
+   sink(S) <= sink(F) - 0.2 AND induction(S) >= 0.2, where sink = mean mass on j = 0 and induction = mean mass on
+   j = i - 253. Kill: no head satisfies both.
+P2 (control) For every P1 head, on RANDOM over the same rows S, the mass on j = i - 253 stays < 0.05.
+   Kill: any P1 head reaches 0.05 there (the offset would be positional, not relevance).
+P3 (the lag stays) The layer-14 previous-token heads of T10 (2, 4, 8, 9) keep offset 1 as their most frequent non-sink
+   target over rows S of REPEAT. Kill: two or more lose it.
+Exploratory, no prediction: the layer profile of induction mass and sink release; how much of the released sink mass
+   lands on the induction target; the same statistics on RANDOM.
+Outcomes appended below this line only.
+-----
+OUTCOMES (appended after the run; walk/src/bin/t11.rs; full output t11_run.txt; 4 min 50 s):
+G  PASS: instrument vs v1's sealed captures on RANDOM, mean cosine L1 0.999965, L14 0.999870.
+P1 HELD: 3 heads leave the sink for the induction target:
+   L3 h10  sink 0.561 -> 0.063, induction 0.795;  L12 h0  sink 0.511 -> 0.035, induction 0.380;
+   L14 h6  sink 0.537 -> 0.034, induction 0.244.
+P2 HELD: on RANDOM, the same heads put 0.0014, 0.0005, 0.0010 on j = i - 253 (all < 0.05).
+P3 HELD: L14 heads 2, 4, 8, 9 keep offset 1 as their top non-sink target over rows S of REPEAT.
+Exploratory: over the P1 heads the sink released 1.477 of mass and the induction target received 1.419 (96%).
+   Near misses (induction strong, sink drop < 0.2 or induction < 0.2): L6 h11 induction 0.632 (sink 0.164 -> 0.008);
+   L8 h4 induction 0.188 (sink 0.931 -> 0.525); L13 h14 induction 0.114 (sink 0.687 -> 0.088).
+   Layers 0..2 carry no induction (best <= 0.003).

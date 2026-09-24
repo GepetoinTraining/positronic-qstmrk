@@ -1,0 +1,26 @@
+PRE-REGISTRATION T8 (written by Claude at Pedro Garcia's request, before any T8 code ran), 24 Sep 2026
+Object: Pedro's relation (x-1)(x+1)^2 = 1, i.e. the integer recurrence a(n+3) = -a(n+2) + a(n+1) + 2a(n),
+start (0,0,1). No degrees, no pi, no roots evaluated: the polygon is a residue ring. "Doing" = walking the
+recurrence mod p until the state (a(n),a(n+1),a(n+2)) repeats (one full period), recording which residues
+0..p-1 the shadow a(n) lands on.
+Pedro's prediction (verbatim gist): "2 misses, and they move once over."
+Claude's operationalisation (declared, Pedro may reject):
+  P1  mod 19 (the 19-gon): over one full period the shadow misses exactly 2 residues.
+  P2  mod 17: over one full period the shadow misses exactly 2 residues.
+  P3  "move once over": the two misses mod 17 equal the two misses mod 19 shifted by one residue (both +1 or both -1).
+Kills: P1 any count other than 2; P2 any count other than 2; P3 the 17-misses are not a one-step shift of the 19-misses.
+Exploratory, no prediction: the same census mod 13 and mod 7, 11; the period lengths.
+Outcomes appended below this line only.
+-----
+OUTCOMES (appended after run):
+P1 KILLED: mod 19 the shadow misses 0 residues (period 6858 = 19^3 - 1).
+P2 KILLED: mod 17 it misses 8 residues [3,5,6,8,10,12,13,15] (period 16).
+P3 KILLED (no two-miss pairs to compare).
+Exploratory: cubic irreducible mod 19 and 29, periods 19^3-1 and 29^3-1 (maximal: every nonzero state of the p x p x p cube visited once, zero state never); mod 17 the cubic splits completely (roots 9,10,14), period 16 = 2^4.
+mod  7: period   171  misses 0: []   (roots of the cubic mod p: [])
+mod 11: period    40  misses 1: [9]   (roots of the cubic mod p: [5])
+mod 13: period    84  misses 0: []   (roots of the cubic mod p: [5])
+mod 17: period    16  misses 8: [3, 5, 6, 8, 10, 12, 13, 15]   (roots of the cubic mod p: [9, 10, 14])
+mod 19: period  6858  misses 0: []   (roots of the cubic mod p: [])
+mod 23: period   528  misses 0: []   (roots of the cubic mod p: [19])
+mod 29: period 24388  misses 0: []   (roots of the cubic mod p: [])

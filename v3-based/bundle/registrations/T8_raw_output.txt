@@ -1,0 +1,7 @@
+mod  7: period   171  misses 0: []   (roots of the cubic mod p: [])
+mod 11: period    40  misses 1: [9]   (roots of the cubic mod p: [5])
+mod 13: period    84  misses 0: []   (roots of the cubic mod p: [5])
+mod 17: period    16  misses 8: [3, 5, 6, 8, 10, 12, 13, 15]   (roots of the cubic mod p: [9, 10, 14])
+mod 19: period  6858  misses 0: []   (roots of the cubic mod p: [])
+mod 23: period   528  misses 0: []   (roots of the cubic mod p: [19])
+mod 29: period 24388  misses 0: []   (roots of the cubic mod p: [])

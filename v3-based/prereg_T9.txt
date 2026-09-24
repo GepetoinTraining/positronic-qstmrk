@@ -1,0 +1,36 @@
+PRE-REGISTRATION T9 — wiring invariants for the doll (Claude, at Pedro Garcia's request; before any T9 code ran), 24 Sep 2026
+Split of the test structure (Claude's decision):
+  Tier A  exact invariants, run here in Python (correctness only; no timing claims).
+  Tier B  throughput, sent to the rig in Rust (Python overhead would contaminate any speed number).
+  Tier C  end-to-end S1 byte round trip: blocked until Pedro defines the "19 in" and "17 translate" maps.
+Walk: a(n+3) = -a(n+2) + a(n+1) + 2a(n) on (Z/p)^3; inverse step uses 2^-1 mod p.
+A1 Receipts stop drift. Seats (v7,v11) in {0,1,2}^2. 1000 random sequences of 200 single gated half-hinges (7/11 or 11/7).
+   Rewind each by applying inverses in reverse order.  (a) WITH a refusal log (skip steps the gate refused):
+   prediction 1000/1000 return exactly.  (b) WITHOUT the log: prediction drift in more than 0 sequences.
+   Kill: (a) any sequence fails to return; (b) zero drifting sequences.
+A2 Pointerization by walk index. p=19 and p=29: index n -> state is a bijection from [0,p^3-1) onto all nonzero states.
+   p=41: (half bit, index in half) -> state is a bijection onto all 68,920 nonzero states, halves of 34,460.
+   Prediction: 0 collisions, 0 gaps, for all three. Kill: any collision or gap.
+A3 Exact rewind. For p in {19,29,41}: 2,000 random nonzero states, 1,000 random forward steps, then 1,000 inverse steps.
+   Prediction 2,000/2,000 return exactly, and on p=41 no state ever changes half. Kill: any failure or any half change.
+A4 Hub catch (T7 follow-up). For 2 triples (one of each type), escapes caught by another closed set:
+   prediction all are caught by the hub (the set fixed by the triple's order-3 symmetry). Kill: any caught by a non-hub set.
+Outcomes appended below this line only.
+-----
+OUTCOMES (appended after run):
+A1 HOLDS: (a) 1000/1000 exact with refusal log; (b) 449/1000 drift without it.
+A2 HOLDS: p=19, 29 single orbit; p=41 two halves of 34,460; bijective, 0 collisions, 0 gaps.
+A3 HOLDS: 0/2000 rewind failures on 19, 29, 41; 0 half changes on 41.
+A4 KILLED: hub catches 1,024 in both triple types; non-hub closed sets catch 2,048 and 3,072.
+Post-hoc (not registered): the hub's catch is 1,024 = 2^10 in both types.
+
+A1 (a) with refusal log: 1000/1000 return exactly | (b) without log: 449/1000 drift
+A2 p=19: halves=1 sizes=[6858]  bijective=True  collisions=0 gaps=0
+A3 p=19: rewind failures 0/2000, half changes 0
+A2 p=29: halves=1 sizes=[24388]  bijective=True  collisions=0 gaps=0
+A3 p=29: rewind failures 0/2000, half changes 0
+A2 p=41: halves=2 sizes=[34460]  bijective=True  collisions=0 gaps=0
+A3 p=41: rewind failures 0/2000, half changes 0
+Steiner systems S(3,4,8): 30 | aligned among them: True
+A4 triple type (shared by all three = 16): caught by hub 1024, by a non-hub closed set 2048
+A4 triple type (shared by all three = 48): caught by hub 1024, by a non-hub closed set 3072

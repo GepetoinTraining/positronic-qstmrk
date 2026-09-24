@@ -1,0 +1,111 @@
+CubeKernel — layer checks (each reproduces a documented claim or tests a coupling)
+
+binary, tryte, quadryte:
+  [ok] 4^3 = 64 states: corners/edges/faces/centre = [8, 24, 24, 8] (doc: 8/24/24/8)
+  [ok] sigma^2 = magnitude flip on every lane (each lane is {1,i,-1,-i})
+  [ok] magnitude flip is an involution; swaps corner<->centre, edge<->face
+  [ok] tryte positions ignoring zero sign: 27 = 26 faces + the empty centre
+  [ok] sigma on different lanes commutes (the quadryte is abelian)
+Hurwitz seam:
+  [ok] 24 Hurwitz units closed under multiplication
+  [ok] 16 equal-magnitude states biject with the 16 half-integer units
+  [ok] magnitude flip becomes q -> -conj(q) under the bijection
+  [ok] no-go: no 2T with -1 = flip among all 3072 lane symmetries (56 square to flip, 128 cube to it; 0.0s)
+Octavian Catch:
+  [ok] 7 closed of 30 labelings; unique hub of the twist p(i)=2i mod 7 is set 5 (0.1s)
+  [ok] p is a sign-exact symmetry of the table, order 3
+  [ok] twist splits the closed seven as 1+3+3 (cycle lengths [1, 3, 3, 3, 3, 3, 3]; T7 H1)
+  [ok] hub's 240x240 table is a Latin square (unique addressing)
+  [run] pairs (u,v) where applying v then u differs from the single unit uv: 55944 of 57600 (the bracket must be kept)
+  [ok] rewind by conjugate is exact on the hub: conj(u)(ux) = x for all u, x
+  [ok] Hurwitz embeds as a subring, multiplication preserved (I, J, K = [0, 2, 0, 0, 0, 0, 0, 0], [0, 0, 2, 0, 0, 0, 0, 0], [0, 0, 0, 0, 2, 0, 0, 0])
+  [run] the twist-compatible Hurwitz copy is not in the hub; its 24 units lie in sets [1, 2, 3], all three of one twist triple: true
+  [ok] seam is twist-equivariant: embed(phi(cycle lanes)) = p(embed(phi(q))) on all 16
+9-gon:
+  [ok] walk (x+7, y+11) on Z9^2: 9 loops of {9}, x+y conserved
+7//11 hinge, ring mod 13:
+  [ok] 7 = 2^11, 11 = 2^7, 7*11 = 12 = -1, 7/11 = 2^4 (order 3), 5 = 2^9 (order 4)
+  [ok] unpaired hinge closes on 6 of 9 seat states starting 7/11 (6 starting 11/7); doc: 6 of 9
+  [ok] pair-gated hinge closes on 9 of 9 (doll.tex registration 1: kill any drift)
+  [ok] the twist does not commute with a quarter-turn (the non-commuting tier is reached)
+  [ok] three twists return every layer except the 9-gon, which has moved 3 of its 9 steps
+
+Composed kernel — first 16 ops of a random program (start: tryte (+1,+1,+1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1)
+   0 Sigma lane z       Done               tryte (+1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+   1 Mul (in set)       Done               tryte (+1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+   2 Sigma lane x       Done               tryte (-1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+   3 Lift               Done               tryte (-1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+   4 Catch (other set)  refused: Rung      tryte (-1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+   5 Mul (in set)       Done               tryte (-1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+   6 Sigma lane y       Done               tryte (-1,-1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^3=8
+   7 Sigma lane y       Done               tryte (-1,+0,-1) edge   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+   8 Sigma lane x       Done               tryte (+0,+0,-1) face   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+   9 Mul (in set)       Done               tryte (+0,+0,-1) face   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  10 Lift               refused: NoImage   tryte (+0,+0,-1) face   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  11 Hinge 11/7         Done               tryte (+0,-1,+0) face   | cover + | oct set 2      | seats (0, 2) | 9-gon (2, 7) | ring 2^5=6
+  12 Lift               refused: NoImage   tryte (+0,-1,+0) face   | cover + | oct set 2      | seats (0, 2) | 9-gon (2, 7) | ring 2^5=6
+  13 Sigma lane z       Done               tryte (+0,-1,-0) face   | cover + | oct set 2      | seats (0, 2) | 9-gon (2, 7) | ring 2^2=4
+  14 Lift               refused: NoImage   tryte (+0,-1,-0) face   | cover + | oct set 2      | seats (0, 2) | 9-gon (2, 7) | ring 2^2=4
+  15 Sigma lane x       Done               tryte (-0,-1,-0) face   | cover + | oct set 2      | seats (0, 2) | 9-gon (2, 7) | ring 2^11=7
+
+1000000 ops, 215 ns/op forward (with invariant checks). Events:
+  Catch  Done                       19969
+  Catch  Moved { hub: false }       16676
+  Catch  Moved { hub: true }         2301
+  Catch  Rung                       61264
+  Cover  Done                      100035
+  Hinge  Done                      133184
+  Hinge  Gate                       66744
+  Lift   Done                       34389
+  Lift   Moved { hub: false }        4276
+  Lift   NoImage                   149902
+  Lift   Rung                       10758
+  Mul    Done                      200156
+  Sigma  Done                      200346
+  [ok] invariants held on every step (seat sum, 9-gon x+y, |x|=1, x in its set, ring = Z4 quarter-turns x Z3 twists): 0 violations
+  [ok] rewind with receipts over 1000000 ops returns bit-identical (31 ns/op)
+  receipt: 48 bytes as stored; the minimum it must carry is 1 applied bit + 3 bits of set (+ the op stream)
+  [ok] 1000 random programs of 200 ops: with receipts 1000/1000 return exactly
+  [run] without receipts (inverse ops sent back through the gates): 1000/1000 drift
+
+end state after 1000000 ops: tryte (-0,-1,+0) face   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+
+Driven kernel — three Stuart-Landau onsets (noise from OS entropy), read by the quarter-turn lookup
+trial 1 (lanes hold ∅ until their hinge; each quarter-turn read is a sigma, then a Lift is offered):
+  cycle  12.52 Write lane y = -0  Done               tryte (∅,-0,∅)   -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^3=8
+  cycle  12.63 Sigma lane y       Done               tryte (∅,+1,∅)   -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+  cycle  12.63 Lift               refused: Empty     tryte (∅,+1,∅)   -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+  cycle  12.64 Write lane x = -1  Done               tryte (-1,+1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  cycle  12.78 Sigma lane x       Done               tryte (+0,+1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+  cycle  12.78 Lift               refused: Empty     tryte (+0,+1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+  cycle  12.87 Sigma lane y       Done               tryte (+0,-1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^3=8
+  cycle  12.87 Lift               refused: Empty     tryte (+0,-1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^3=8
+  cycle  13.04 Sigma lane x       Done               tryte (-0,-1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+  cycle  13.04 Lift               refused: Empty     tryte (-0,-1,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+  cycle  13.12 Sigma lane y       Done               tryte (-0,+0,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  cycle  13.12 Lift               refused: Empty     tryte (-0,+0,∅)  -      | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  cycle  13.24 Write lane z = -0  Done               tryte (-0,+0,-0) centre | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+  cycle  13.29 Sigma lane x       Done               tryte (+1,+0,-0) face   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  cycle  13.63 Lift               Done               tryte (-1,+1,+1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+  cycle  13.65 Lift               Done               tryte (-1,+1,-1) corner | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^6=12
+  cycle  14.13 Lift               Done               tryte (-0,+0,+0) centre | cover - | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^3=8
+  cycle  14.15 Lift               Done               tryte (-0,+0,-0) centre | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^0=1
+  ... 1375 ops in this trial; end: tryte (+0,-1,+0) face   | cover + | oct set 1      | seats (1, 1) | 9-gon (0, 0) | ring 2^9=5
+
+sigma = 1e-3: 400 trials x 3 lanes (2.6s, 546268 kernel ops)
+  [run] read hinge vs true hinge: median |lag| 9 samples (hinge_test: ~8-10), max 26
+  [run] quadrant written at the hinge equals the true object's quadrant: 1188/1200
+  [run] quarter-turn ticks: 272534 forward, 0 back, 0 two-quadrant jumps (not applied); 4.000 net per lane-cycle after each hinge
+  [run] lane equals the true quadrant on 99.92% of post-hinge samples
+  [run] Lift after each tick: Done 62351, Empty 3865, NoImage 206318; trials where it ever fired: 310/400
+  [ok] invariants on every driven op: 0 violations
+  [ok] every trial rewinds from its receipts to all-∅: 400/400
+
+sigma = 3e-2: 400 trials x 3 lanes (2.5s, 545610 kernel ops)
+  [run] read hinge vs true hinge: median |lag| 9 samples (hinge_test: ~8-10), max 28
+  [run] quadrant written at the hinge equals the true object's quadrant: 1190/1200
+  [run] quarter-turn ticks: 272205 forward, 0 back, 0 two-quadrant jumps (not applied); 4.002 net per lane-cycle after each hinge
+  [run] lane equals the true quadrant on 99.66% of post-hinge samples
+  [run] Lift after each tick: Done 63694, Empty 3922, NoImage 204589; trials where it ever fired: 331/400
+  [ok] invariants on every driven op: 0 violations
+  [ok] every trial rewinds from its receipts to all-∅: 400/400

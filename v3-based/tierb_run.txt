@@ -1,0 +1,22 @@
+build p=19: halves [6858], walk_back inverts walk_step on all states: true
+build p=29: halves [24388], walk_back inverts walk_step on all states: true
+build p=41: halves [34460, 34460], walk_back inverts walk_step on all states: true
+build octonions: 30 labelings of S(3,4,8), 7 closed
+build octonions: t6 closed[0] loaded; Rust integer multiply agrees with its table: true; it is one of Rust's 7 closed sets: true
+build octonions: table 57600 bytes, Latin square: true
+
+B1 p=19 recurrence                           median   6.124 ns/op   spread 6.053..6.282
+B1 p=19 idx+1 table lookup                   median   1.582 ns/op   spread 1.544..1.605
+B1 p=29 recurrence                           median   7.403 ns/op   spread 6.328..7.759
+B1 p=29 idx+1 table lookup                   median   1.936 ns/op   spread 1.862..2.016
+B1 p=41 recurrence                           median   7.279 ns/op   spread 7.206..8.078
+B1 p=41 idx+1 table lookup                   median   1.930 ns/op   spread 1.882..2.661
+B2 p=41 state -> (half, idx)                 median   3.208 ns/op   spread 3.041..3.402
+B3 left mult, u8 table                       median   5.360 ns/op   spread 4.201..5.517
+B3 left mult, f64 octonion                   median  33.220 ns/op   spread 32.615..39.514
+B3 f64 drift: max |norm - 1| over 1e8 chained ops = 0e0 (final 0e0)
+B4 gated half-hinge, with refusal log        median  11.104 ns/op   spread 10.685..11.944
+B4 gated half-hinge, without log             median   3.787 ns/op   spread 3.624..4.005
+B4 log: 125000 bytes per 1e6 ops (1 bit/op); refused 0.3333 of ops
+
+table bytes: otab 57600, state_to_hi p=41 275684, idx_to_state p=41 827040

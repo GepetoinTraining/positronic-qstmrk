@@ -1,0 +1,25 @@
+Footprint: kernel with all 65,536 BF16 patterns loaded in the 41 table
+
+checks:
+  [ok] load: matrix power gives the same 41-state as the table for all 65,536 patterns (457 ns/pattern)
+  [ok] read: baby-step/giant-step returns the same pattern as the table for all 68921 states; 3385 states hold no pattern (3,384 spare + the zero state) (5322 ns/state)
+  [ok] Octavian: products computed from Fano + 14 blocks equal the stored 240x240 tables, all 3 sets of the triple; Latin: true
+
+resident data, tables:
+  41 load  pattern -> state      196608 B (192.0 KiB)
+  41 read  state -> pattern      137842 B (134.6 KiB)
+  41 spare bitmap                  8616 B (8.4 KiB)
+  Octavian triple 3 x 240^2      172800 B (168.8 KiB)
+  kernel state (packed)              18 B (0.0 KiB)
+  total                          515884 B (503.8 KiB)   (built in 16 ms)
+
+resident data, table-free:
+  41 walk: 2 starts, 2 matrices, 2 baby-step tables of 186        3096 B (3.0 KiB)
+  Octavian: Fano table + 3 x 14 block masks        810 B (0.8 KiB)
+  kernel state (packed)              18 B (0.0 KiB)
+  total                            3924 B (3.8 KiB)
+
+process working set (includes the executable and runtime):
+  at start   4571136 B (4464.0 KiB), after table-free setup   5861376 B (5724.0 KiB), after tables   6352896 B (6204.0 KiB) (peak   7958528 B (7772.0 KiB))
+
+for scale: the 65,536 patterns themselves as raw BF16 =    131072 B (128.0 KiB)

@@ -5,6 +5,10 @@ cells/
 *.safetensors
 *.cub
 *.grid
+# v3: tensors fetched by byte range, admitted once against v1's seals (v3-based/t10/fetch.py re-fetches them)
+v3-based/t10/*.u16
+# v3: t6's exported closed set (v3-based/walk/export_t6.py regenerates it)
+v3-based/walk/*.bin
 
 # Build outputs and dependencies
 **/target/

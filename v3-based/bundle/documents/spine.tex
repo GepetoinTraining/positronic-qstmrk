@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\newtheorem{prop}{Proposition}
+\newcommand{\stamp}[1]{\textsf{\small[#1]}}
+\newcommand{\E}{\varnothing}
+
+\title{Spine: the residue lifted out of a wave, harmonics out,\\ and the removed-centre octant construction}
+\author{Written by Claude (Opus 5.5) at the request of Pedro Garcia (Node Zero),\\ from one working session, 24 September 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Non-claim.} This spine makes no claim about the Navier--Stokes problem or any other open problem. It records a construction, the pure statements it rests on, and the numbers measured with it on one day. Stamps: \stamp{PG} a posit of Pedro's; \stamp{std} standard mathematics; \stamp{run} measured today, script named; \stamp{open} not yet tested.
+
+\section*{0. Declarations}
+Nothing is decided at runtime that could have been declared. Every quantity below is a const with a name, so each can be turned alone.
+\begin{description}[leftmargin=2em,style=nextline]
+\item[Rails] Integers only. A reached value is $m\cdot 2^{e}$ with $m\in[2^{30},2^{31})$ in magnitude and $e\in\mathbb Z$: one rung per value. \stamp{run: rung\_kernel\_v2.mjs}
+\item[Bytes] Mantissas in \texttt{BigInt64Array}, exponents in \texttt{Int32Array}; overflow is an error, never a wrap.
+\item[Relation] Quotients are kept as ordered pairs $p/q$, unreduced where the construction matters (\S5).
+\item[Array] Harmonics indexed by $k$. Unreached slots hold the sentinel $\E$, which is not $0$ and is never read as a number.
+\item[Logic / runtime] Hot loop: multiply, add, shift, compare. Tables (viscous factors, $i^k$) are built cold, before the loop.
+\item[Memory] Every dropped bit is added to a receipt. An exact zero can arise only by cancellation and is logged as an event.
+\item[Output] Read cold, after the loop. Floats appear only in print statements.
+\end{description}
+
+\section*{1. The shadow and the lift}
+A plotted wave is the collapse of a rotation to one axis: of $z(t)=A e^{i\phi(t)}$ we record $x=\operatorname{Re}z$. \stamp{PG} The missing component is recovered as a \emph{lookup}, not a transform:
+\[
+z(t)\;\approx\;x(t)+i\,x\!\left(t-\tfrac T4\right),
+\]
+valid for a narrowband single-mode oscillator of period $T$. Here $i$ is an address (a quarter-period offset), not a multiplication. The same object appears in the ring $\mathbb Z/13$: $5=2^9$ has order $4$, so $\{1,5,12,8\}=\{1,i,-1,-i\}$, reached by an exponent offset. \stamp{std}
+
+\section*{2. The hinge: where noise becomes phase}
+Onset of a self-sustained oscillator (Stuart--Landau normal form, $dz=[(\mu+i\omega)z-|z|^2z]\,dt+\sigma\,dW$): just above threshold the amplitude grows, but the \emph{phase} is set by the noise sample present at that instant. A sample of noise is promoted into signal. \stamp{std} That phase is a fingerprint of the instant which cannot be rebuilt physically but can be read and rewound. \stamp{PG}
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Measurement (400 trials) & result & source\\\midrule
+Global Hilbert transform, hinge location & $\sim$1{,}285 samples late; phase error $57$--$66^\circ$ & \stamp{run: hinge\_test.py}\\
+Quarter-turn lookup, hinge location & within $\sim$8--10 samples; phase error $\approx3.5^\circ$ & \stamp{run}\\
+Forward coherence 40 cycles after hinge & $R\approx0.99$ at $\sigma=10^{-3}$ and $3\cdot10^{-2}$ & \stamp{run}\\
+Backward rewind, cycles before hinge: 8, 4, 3, 2 & $R\approx0.2,\ 0.5,\ 0.78,\ 0.95$ & \stamp{run}\\\bottomrule
+\end{tabular}
+\end{center}
+The hinge is a band about two turns wide, set by the growth rate, not the noise level. Two kinds of residue follow: \emph{noise-born} phase, rewindable up to the coherence time; and \emph{systematic} drift, rewindable in principle without limit (test T2: float64 rotation by $(5+12i)/13$ drifts linearly, $\approx2.5\times10^{-17}$ turns/step). \stamp{run}
+
+\section*{3. Harmonics out}
+Keep only one-signed harmonics (the analytic signal). For a field $\omega$ with Hilbert pair $H\omega$, write
+\[
+f=H\omega+i\,\omega=\sum_{k\ge1}a_k\,w^k,\qquad w=e^{-ix},\qquad a_k=i^k\,b_k,\quad b_k\in\mathbb Q .
+\]
+The factor $i^k$ is read from a four-entry table; all arithmetic is on the real $b_k$. For the model $\omega_t=\omega\,H\omega+\nu\,\omega_{xx}$ this gives the closed recursion
+\[
+\dot b_k=\tfrac12\sum_{j+l=k}b_j b_l-\nu k^2 b_k,\qquad b_1(0)=1 . \qquad\stamp{std}
+\]
+\textbf{The rung.} $\rho_k=b_{k+1}/b_k$. If $\rho_k$ is constant across $k$, the profile is one shape times a counter. The singular point reaches the observed circle exactly when $\rho\ge1$: a rational comparison, no logarithm, no limit.
+
+\section*{4. Cuts: the new atom comes from division}
+Cut the unit into $2^k$ pieces. There are $2^k-1$ interior cuts, and
+\[
+\text{pieces}-\text{cuts}=1\quad\text{at every depth.}\qquad\stamp{std}
+\]
+The cut counts $1,3,7,15,31,127,\dots$ are the Mersenne numbers; $3,7,31,127$ are prime. Division by $2$ alone produces new primes as the count of its own seams. The leftover $1$ is the whole, which belongs to no cut. \stamp{PG: forced consequence of honest counting}
+
+\section*{5. Twins, kept unreduced}
+For a value and its inverse twin, keep the construction in order: $\tfrac43\,/\!/\,\tfrac34\mapsto\frac{3\cdot4}{4\cdot3}=\frac{12}{12}$ and $\tfrac32\,/\!/\,\tfrac23\mapsto\frac{2\cdot3}{3\cdot2}=\frac66$. Both are the unit; they are not the same object, since each carries its size. Then
+\[
+\frac{12/12}{6/6}\;\mapsto\;\frac{12}{6}=2\quad\text{exactly.}\qquad\stamp{PG}
+\]
+Reducing first gives $(4/3)^2=16/9$ and $(3/2)^2=9/4$, which only bracket $2$ to within a factor $9/8$. The bracket is the price of reduction, not a property of $2$ and $3$. The ten distinct non-unit ratios of $\{1,2,3,4\}$ form five twin pairs about $\E$, the fixed point of $x\mapsto1/x$. \stamp{std} That ten equals $1+2+3+4$ is a coincidence, not structure: the count is $2\sum_{q\le n}\varphi(q)$, which matches the triangular number only at $n=3,4$ (at $n=5$: $18$ against $15$). \stamp{run}
+
+\section*{6. The inverse twin turns the hard term into a counter}
+\begin{prop}[std]
+If $\dot f=f^2/2$ then $g=1/f$ satisfies $\dot g=-\tfrac12$: a rigid translation. If $\dot A=-A^2$ for a matrix $A$, then $\tfrac{d}{dt}A^{-1}=I$.
+\end{prop}
+So $f(t)=2f_0/(2-tf_0)$, a M\"obius map on Gaussian rationals, and the singular time is $T^*=2/f_0$ where $f_0$ is real: a quotient of integers. The peak, the shrinking core and the spin-up are the shadow, through the reciprocal, of a shift. Nothing stretches; two registers trade against a conserved product (skater: $I\Omega=L$; halve one, double the other).
+
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}\toprule
+$\max|g(t)-g(0)+t/2|$ at $t=1$ & $\Delta t=1/64$ & $1/128$ & $1/256$\\\midrule
+$\nu=0$ & $6.7\times10^{-3}$ & $3.4\times10^{-3}$ & $1.7\times10^{-3}$\\
+$\nu=1/64$ & $2.87\times10^{-2}$ & $2.89\times10^{-2}$ & ---\\\bottomrule
+\end{tabular}\\[2pt]
+\stamp{run: reciprocal.py; coefficients stepped, $f$ evaluated at exact rational points of the circle}
+\end{center}
+Without damping the deviation halves with the step: pure scheme error, limit $0$. With damping it does not: damping is the only thing that deforms the translation.
+
+\section*{7. Damping as one rational per harmonic}
+The exact decay $e^{-\nu k^2 t}$ is transcendental and stays out of the loop. Two declared rules:
+\[
+\text{implicit: } b_k\mapsto\frac{b_k}{1+\nu\Delta t\,k^2},\qquad \text{explicit dyadic: } b_k\mapsto b_k\,(1-\nu\Delta t\,k^2).
+\]
+Heavy teeth damp harder: larger $k$, stronger brake. In exact arithmetic the implicit rule is a bijection: multiply by $1+\nu\Delta t k^2$ to rewind. The damped information is not destroyed; it is stored, and storage grows linearly with steps. \stamp{std; run}
+
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}\toprule
+Unbounded exact rationals, implicit rule & $\sim$3{,}000 bits/step, quadratic total time\\
+Unbounded exact rationals, dyadic rule & $\sim$650 bits/step\\
+Typed kernel v2 (\S0), all cases & 50--330\,ms per run; matches exact values to all 6 printed digits\\
+Explicit rule at $\nu\Delta t K^2=1$ & top harmonic annihilated: exact zero, logged by $\E$ sentinel (stability edge)\\\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Case & rung crosses $1$ at & $\rho$ band at end\\\midrule
+$\nu=0$ (exact answer $T^*=2$) & $t=132/64=33/16$ (first-order step) & $[1.221032,1.229715]$ at $t=2.5$\\
+$\nu=1/1024$ & $t=134/64$ & ---\\
+$\nu=1/16$ & not by $t=10$ & $[0.793,0.856]$, still rising\\\bottomrule
+\end{tabular}\\[2pt]
+\stamp{run: rung\_kernel\_v2.mjs; $K=32$ harmonics, band $K/4..3K/4$}
+\end{center}
+
+\section*{8. Three dimensions: the removed centre}
+\begin{prop}[std]
+Every rotation about $c$ fixes $c$. Restricted to the centre, the whole rotation group acts as the identity.
+\end{prop}
+The centre is therefore not a value but $\E$: it has no inside or outside and carries no rotation to measure. \stamp{PG} Removing it turns the punctured plane into a cylinder, angle $\times$ scale; with integer rungs, scale is an axis stepped by a counter, not by a logarithm. Removing the axis (not a point) is what gives loops winding in 3D; in 4D one removed point suffices (unit quaternions, Hopf fibres). \stamp{std}
+
+\textbf{Torus anatomy.} $1D'$: the empty axis, the reference. $1D'''$: the large rotation about it. $1D''$: the small rotation about the tube's core circle. The two missing centres, axis and core circle, form a Hopf link. The flat torus $\mathbb R^3/\mathbb Z^3$ decomposes every field into harmonics on integer wavevectors: the integers are built into the shape. \stamp{std}
+
+\section*{9. Three dimensions: the octant planes}
+Three planes through $\E$ cut space into eight octants. Each plane carries its own $\{1,i,-1,-i\}$. Composing quarter-turns gives exactly the $24$ rotations of the cube: signed permutation matrices of determinant $+1$, pure lookup, closing exactly. \stamp{std} $45^\circ$ steps never close and import $\sqrt2$; for an exact fine angle use $(5+12i)/13$, whose angle is an irrational fraction of a turn (Niven), so it never repeats and undoes exactly.
+
+\textbf{Per-plane damping.} Declare the damping rule as the product of per-plane factors,
+\[
+b_{\mathbf k}\mapsto\frac{b_{\mathbf k}}{(1+\nu\Delta t\,k_x^2)(1+\nu\Delta t\,k_y^2)(1+\nu\Delta t\,k_z^2)},
+\]
+which equals the isotropic rule up to $O(\Delta t^2)$ and is itself exact, rational, invertible and plane-separable: each plane runs the 1D kernel of \S3--7. \stamp{std} What does \emph{not} separate is the coupling between planes, which is where the two registers of \S6 trade.
+
+\section*{10. Fluids as conserved identities}
+One velocity; every identity (coffee, milk) is its own label field riding on it. Stirring by a volume-preserving map is a bijection on labels, hence reversible; only diffusion merges labels. \stamp{std} In pure mathematics identity is conserved: $A=A$, $B=B$, $A\ne B$, and a mixture is a map of where each went, never a new substance. \stamp{PG} Physically: Taylor's glycerin demonstration, where a dye blob stirred into a ring reassembles when the stirring is reversed. The two handednesses (clockwise and counter-clockwise, or left- and right-helicity) are separate labels in the same sense.
+
+\textbf{Chaos in a closed exact system.} Any deterministic map on a finite state space is eventually periodic. The doubling map $x\mapsto2x\bmod1$, chaotic on $\mathbb R$, is periodic on every rational; on denominator $13$ it walks the twelve nonzero residues and closes. Chaos needs infinite resolution: the transcendental import. \stamp{std}
+
+\section*{11. Open knobs and pre-registrations}
+\begin{enumerate}[leftmargin=2em]
+\item Sweep $K$ and the band as consts (as $\gamma$ was swept on the carillon). Confirm: the $\nu=1/16$ crossing appears as $K$ grows. Kill: $\rho$ saturates below $1$ independently of $K$. \stamp{open}
+\item Run \texttt{hinge\_test.py} unchanged on a real power-on recording (scope capture or SDR key-up) to measure real rewind depth. \stamp{open}
+\item Magnon onset: time-resolved imaging through threshold shows amplitude at the rim first, moving inward (confirm) or nucleating centrally (kill). \stamp{open}
+\item T1: store each channel's offset from the shared cycle at its hinge, rather than overwrite it, before T1 is run. \stamp{open}
+\item 3D kernel: three planes, product damping, labels per identity; count distinct interned profiles per rung. Confirm: saturation. Kill: unbounded growth at fixed box. \stamp{open}
+\end{enumerate}
+
+\vspace{0.5em}\hrule\vspace{0.3em}
+{\small Scripts: \texttt{hinge\_test.py}, \texttt{viscous\_rung.py}, \texttt{rung\_kernel.mjs}, \texttt{rung\_kernel\_v2.mjs}, \texttt{reciprocal.py}. All numbers above were produced on 24 Sep 2026 in a sandboxed container and can be regenerated from those scripts.}
+\end{document}

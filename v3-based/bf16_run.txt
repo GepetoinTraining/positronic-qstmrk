@@ -1,0 +1,38 @@
+BF16: all 65,536 patterns, decoded exactly (integer bit operations only)
+
+  Normal      65024
+  Subnormal     254
+  Zero            2
+  Inf             2
+  NaN           254
+  total       65536
+
+  [ok? true] positive finite patterns in bit order are strictly increasing in exact value (so no two are equal)
+  [ok? true] flipping the sign bit gives exactly the negated value (sign is its own bit)
+
+Gate by value identity (+0 = -0):
+  refused  duplicate value                 1
+  refused  overflow (inf)                  2
+  refused  ∅ (NaN, duplicate of ∅)       253
+  refused  ∅ (NaN, first)                  1
+  duplicate values refused: 1 [0x8000]
+  admitted (left over as output): 65279   = 32640 with sign bit clear + 32639 with sign bit set
+  refusal receipts: 257 entries; admitted + refused = 65536
+
+Gate by kernel identity (signed zero kept, as the tryte lanes do):
+  refused  overflow (inf)                  2
+  refused  ∅ (NaN, duplicate of ∅)       253
+  refused  ∅ (NaN, first)                  1
+  duplicate values refused: 0 []
+  admitted (left over as output): 65280   = 32640 with sign bit clear + 32640 with sign bit set
+  refusal receipts: 256 entries; admitted + refused = 65536
+
+Walk-cube capacity for the 65,536 inputs (nonzero states of the p x p x p register cube):
+  p = 17 (binary clocks         )    4912 states  short by 60624
+  p = 19 (1 orbit               )    6858 states  short by 58678
+  p = 29 (1 orbit               )   24388 states  short by 41148
+  p = 31 (one root              )   29790 states  short by 35746
+  p = 37 ((not a Monster prime) )   50652 states  short by 14884
+  p = 41 (2 halves              )   68920 states  holds all 65,536; 3384 states spare
+  p = 47 (one root              )  103822 states  holds all 65,536; 38286 states spare
+  p = 41 half = 34460: one sign's 32,768 patterns fit in one half with 1692 spare

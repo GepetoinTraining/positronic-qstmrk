@@ -1,0 +1,31 @@
+T11 — registration sha256 19b9c5f00b7a21f046140b760a30db2376e15e67f475db61292c9c4c06af1d0a
+
+G  instrument vs v1's sealed captures (RANDOM): mean cosine L1 0.999965, L14 0.999870 — PASS
+
+per layer (REPEAT): heads meeting P1 (sink drop >= 0.2 and induction >= 0.2); strongest induction head
+  L 0:  0 heads [] | best h 6: induction 0.002, sink F 0.001 -> S 0.000 (RANDOM same rows: induction 0.0020, sink 0.000)
+  L 1:  0 heads [] | best h13: induction 0.003, sink F 0.001 -> S 0.000 (RANDOM same rows: induction 0.0026, sink 0.001)
+  L 2:  0 heads [] | best h 7: induction 0.003, sink F 0.076 -> S 0.045 (RANDOM same rows: induction 0.0020, sink 0.034)
+  L 3:  1 heads [10] | best h10: induction 0.795, sink F 0.561 -> S 0.063 (RANDOM same rows: induction 0.0014, sink 0.397)
+  L 4:  0 heads [] | best h11: induction 0.003, sink F 0.120 -> S 0.126 (RANDOM same rows: induction 0.0011, sink 0.101)
+  L 5:  0 heads [] | best h 5: induction 0.002, sink F 0.168 -> S 0.120 (RANDOM same rows: induction 0.0014, sink 0.132)
+  L 6:  0 heads [] | best h11: induction 0.632, sink F 0.164 -> S 0.008 (RANDOM same rows: induction 0.0004, sink 0.125)
+  L 7:  0 heads [] | best h15: induction 0.013, sink F 0.074 -> S 0.058 (RANDOM same rows: induction 0.0025, sink 0.033)
+  L 8:  0 heads [] | best h 4: induction 0.188, sink F 0.931 -> S 0.525 (RANDOM same rows: induction 0.0001, sink 0.903)
+  L 9:  0 heads [] | best h12: induction 0.004, sink F 0.364 -> S 0.067 (RANDOM same rows: induction 0.0011, sink 0.313)
+  L10:  0 heads [] | best h11: induction 0.002, sink F 0.086 -> S 0.045 (RANDOM same rows: induction 0.0023, sink 0.062)
+  L11:  0 heads [] | best h12: induction 0.012, sink F 0.481 -> S 0.155 (RANDOM same rows: induction 0.0010, sink 0.351)
+  L12:  1 heads [0] | best h 0: induction 0.380, sink F 0.511 -> S 0.035 (RANDOM same rows: induction 0.0005, sink 0.446)
+  L13:  0 heads [] | best h14: induction 0.114, sink F 0.687 -> S 0.088 (RANDOM same rows: induction 0.0008, sink 0.650)
+  L14:  1 heads [6] | best h 6: induction 0.244, sink F 0.537 -> S 0.034 (RANDOM same rows: induction 0.0010, sink 0.435)
+
+P1 heads (layer, head, sink F -> S, induction S, RANDOM induction S):
+  L 3 h10: sink 0.561 -> 0.063, induction 0.795 | RANDOM induction 0.0014
+  L12 h 0: sink 0.511 -> 0.035, induction 0.380 | RANDOM induction 0.0005
+  L14 h 6: sink 0.537 -> 0.034, induction 0.244 | RANDOM induction 0.0010
+
+P1 relevance leaves the sink: 3 heads — HELD
+P2 control (RANDOM mass on j = i - 253 < 0.05 for every P1 head): HELD
+P3 the lag stays (L14 heads 2, 4, 8, 9 top offset in S): [(2, 1), (4, 1), (8, 1), (9, 1)] — HELD
+
+exploratory: over the P1 heads, sink mass released 1.477, induction mass landed 1.419

@@ -1,0 +1,35 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}\usepackage{amsmath,amssymb}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.4em}
+\title{Pre-registration T7: the flywheel inside the Octavian Catch}
+\author{Written by Claude (Opus 5.5) at Pedro Garcia's request. Registered before any code for T7 was run.}
+\date{24 September 2026}
+\begin{document}\maketitle
+\textbf{Object.} The octonion table and the 7 closed Octavian unit sets of T6 (same code, same integers scaled by 2, no floats). The table's 21 sign-exact symmetries include elements of order 3 (Fano relabelings of the form $x\mapsto 2x$). A \emph{flywheel triple} is three closed sets $A\to B\to C\to A$ cycled by one order-3 symmetry: three kernels a third of a turn apart.
+
+\textbf{Operationalisation (Claude's, declared).} Pedro's posit: three kernels (compute, pace, memstore) turning together close as a flywheel, and the outside export explains a missing $30^\circ$. Read here as: the \emph{export} of a triple is the set of cross products $uv$, $u\in A$, $v\in B$ ($240^2=57{,}600$ products); a product is \emph{caught} iff it lies in $A\cup B\cup C$; $30^\circ$ is one twelfth of a turn, read as a caught-fraction deficit of exactly $1/12$ (4,800 products).
+
+\textbf{Hypotheses and kills.}
+\begin{enumerate}
+\item[H1] Structure. Each order-3 symmetry acts on the 7 closed sets as one fixed set plus two 3-cycles. \emph{Kill:} any other cycle type.
+\item[H2] (Claude) The flywheel closes: every cross product of a triple is caught (0 escape). \emph{Kill:} any escape.
+\item[H3] (Pedro, as operationalised) Exactly $1/12$ of cross products escape the triple (4,800 of 57,600). \emph{Kill:} any other count.
+\end{enumerate}
+H2 and H3 compete; at most one can hold.
+\begin{enumerate}\item[E1] Exploratory: where escaping products land (the fixed set, the other triple, another labeling, or a quarter-integer rung).
+
+\end{enumerate}
+Outcomes are appended below this line and never edited into the text above.
+
+\hrule\vspace{0.4em}
+\textbf{Outcomes} (appended after the run; registered source SHA-256 \texttt{214f247c\ldots e84d}).
+\begin{enumerate}
+\item[H1] \textbf{Holds.} All 14 order-3 symmetries act on the 7 closed sets as $1+3+3$: one fixed hub, two 3-cycles.
+\item[H2] \textbf{Killed.} Triples do not close: 35,840 or 36,864 of 57,600 cross products escape.
+\item[H3] \textbf{Killed.} The escape count is not 4,800 in any triple checked.
+\item[E1] Every escape lands either on the quarter-integer rung or inside another closed set; none lands in an open labeling or in no set.
+\end{enumerate}
+\textbf{Coverage disclosed.} 6 of the 84 ordered triples were run (time budget). Both kills trigger on every triple run, so coverage does not change a verdict; the escape census is for those 6. Two triple types appeared, 3 each.
+\textbf{Post-hoc, not registered.} Caught counts are 21,760 and 20,736 $=12^4$. Recorded only as candidates for a later registration.
+
+\end{document}
