@@ -26,6 +26,21 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
    - the full BF16 alphabet (65,536) fits 41³ − 1 = 68,920 [run].
 4. **No possibility is ruled out by an unproven bound.** State what was measured and what is open. Never close a door out of fear of the unknown. That holds on both sides of this work.
 
+## Two objects, kept separate [PG]
+
+**Object 1: the seismograph (storage).** What is loaded into RAM in place of the weights. Passive. Written once at intake (the fold), read by sampling down.
+- **The trace:** the whole model as one long fiber, cut the natural way (layer → head → tensor).
+- **Background:** it looks like noise from outside. v1 measured the weights white; on a seismogram that is the floor, not absence.
+- **Events:** each head and tensor is an arrival, picked by the two marker bytes.
+- **Folds:** each fold rides on the previous event as a smaller, faster wave (magnitude traded for frequency), residue down. The carrier is the head image at 71.
+- **Reading:** sample down band by band to peel the folds back out. Pick each onset with `hinge_test`'s quarter-turn lookup, which locates an onset out of noise within a median of 9 samples [run].
+
+The sampling-down operator already exists as v2's cycler: it pairs neighbours and halves until only the odd top remains, and it unfolds back exactly. An integer lifting step, (a, b) → coarse + detail, is the fold that loses nothing [thm].
+
+**Object 2: the running kernel.** The CubeKernel, the pentagon collector, RMSNorm and attention (untouched), the oscillator bank, and the archive. It reads the seismograph and never sees "weights".
+
+The two meet only at the picks: marker bytes, counters, onsets.
+
 ## Pedro's architecture for the seating (24 Sep) [PG], as understood, numbered for correction
 
 1. **The head image lives at 71.** One head's slice (128 × 2048 = 2¹⁸ cells) sits in the 71-cube (357,910 nonzero states). It is served in slices and rotated in and out by the harmonics. Each wave's magnitude carries a top and a bottom, so N harmonics encode the full head.
