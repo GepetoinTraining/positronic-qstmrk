@@ -37,6 +37,17 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
 
 The sampling-down operator already exists as v2's cycler: it pairs neighbours and halves until only the odd top remains, and it unfolds back exactly. An integer lifting step, (a, b) → coarse + detail, is the fold that loses nothing [thm].
 
+**The fold principle, from steganography [PG, 24 Sep]:** "wave magnitude IS what allows us to cut it down as a less energetic wave on exchange for frequency, the code that PRODUCES a harmonic by sampling down a wave until only noise remains IS the opposite operation... You're literally folding them in I and j inside the harmonics and making it LESS harmonic."
+
+One principle with two directions [C]:
+- **Fold (encode).** Content goes in as a less energetic, higher-frequency wave, in the quadrature axes (i and j) at lower magnitude. Each fold makes the carrier less harmonic and closer to noise. That is steganography: the message hides in what looks like noise.
+- **Sample down (decode).** Each step strips the highest-frequency, lowest-energy fold and hands it back as a harmonic, until only noise remains. The code that produces harmonics by sampling down to noise is the fold run backwards.
+
+Where it already shows [run, v2 `BUILDER_LOG.md` §cycler]:
+- every row unfolds from its top cells through the atlases alone, 0 different;
+- on the ±value basis (layer-0 `k_proj`), every cell is unique from cycle 2 on: noise, as the principle predicts;
+- on the ±residual basis, cycle 1 is the complete square, 126² = 15,876 cells, model-wide.
+
 **Object 2: the running kernel.** The CubeKernel, the pentagon collector, RMSNorm and attention (untouched), the oscillator bank, and the archive. It reads the seismograph and never sees "weights".
 
 The two meet only at the picks: marker bytes, counters, onsets.
@@ -78,6 +89,8 @@ PET, positron emission tomography, reads a brain by the light of positron annihi
 Open for Pedro:
 - (a) What are a wave's "top" and "bottom": the two halves, numerator and denominator, or the pattern's high byte (sign and exponent) and low byte (mantissa)?
 - (b) Which way does the fold chain run?
+- (c) Which axes are i and j: RoPE's quadrature pairs (the Clifford torus), or two of the 71 walk's three waves with the third (period 70, the primitive one) as the carrier?
+- (d) Does each fold halve, strictly one octave (×2, the cycler's pairing)? Or can it step by other ratios (the 7 and the 10)?
 
 Testable now [open]: layers 0..13 are on disk and seal-verified. Register whether the fold of head h at layer ℓ into ℓ + 1 is a smaller wave than the fold between shuffled pairs, before building on point 4.
 
