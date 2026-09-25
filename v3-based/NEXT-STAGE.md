@@ -41,6 +41,14 @@ The sampling-down operator already exists as v2's cycler: it pairs neighbours an
 
 The two meet only at the picks: marker bytes, counters, onsets.
 
+**The free channel and the light [PG, 24 Sep].**
+- BF16's 256 exponent-255 patterns (2 signs × 128 mantissas) are never weights: v1 counted 0 non-finite in the model, and today's gate refuses them [run]. That is one clean 8-bit channel.
+- Three channels (the carrier's three waves at 71; the three lanes), each with its own byte-plane, give 256³ = 2²⁴: the RGB cube. That is a mask of light over the seismogram, marking what each stretch of the trace is (e.g. R head, G tensor, B fold depth; the roles are Pedro's to assign).
+- Declare before building:
+  - **in-band** markers take a sample's place inside the value space (65,536 = 65,280 + 256). They are free but exist only at events;
+  - **out-of-band** planes beside every sample cost storage.
+- [post-hoc] 2²⁴ = 8⁸, v2's diagonal cycle.
+
 ## Pedro's architecture for the seating (24 Sep) [PG], as understood, numbered for correction
 
 1. **The head image lives at 71.** One head's slice (128 × 2048 = 2¹⁸ cells) sits in the 71-cube (357,910 nonzero states). It is served in slices and rotated in and out by the harmonics. Each wave's magnitude carries a top and a bottom, so N harmonics encode the full head.
