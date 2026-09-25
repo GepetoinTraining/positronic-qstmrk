@@ -134,13 +134,17 @@ So for the pipeline [PG] (41 holds the patterns → Octavian cubes 1 and 2 → m
 ### 4c. The footprint: all three agree the alphabet is small and the placement is the model
 
 - **v1 §20:** "The dictionary is 15 KB; the footprint is placement." The ids are the weights byte for byte (3,875 MB).
-- **v1 §21:** the id stream's entropy caps any coding at about 1.32 bytes per cell.
-- **v1 §22:** the placement cannot be regenerated from its shape.
+- **v1 §21:** the id stream's zeroth-order entropy is about 10.5 bits per cell [M]. ~~"caps any coding"~~ Corrected: it bounds only a code that writes each id alone from its frequencies. It is equal for the model and its shuffle (§21's own control), so it cannot measure what the arrangement carries. See §4d below.
+- **v1 §22:** the low modes of the "sheet" did not regenerate the weights [M]. That is one model failing, not a bound.
 - **v2:** the lightest packing is 3.303 GB (13 bits per cell); "don't pack it back as a table" is still unresolved.
 - **Today's 3,924 B** holds the alphabet (all 65,536 patterns as walk positions), the Octavian triple and the kernel state. It does **not** hold the 2,031,739,904 placements.
 - Today's result makes the alphabet side very small. It doesn't touch the placement, and nothing in v1, v2 or v3 has shrunk the placement below about 3.3 GB. [C]
 
-### 4d. BF16 at the door
+### 4d. Why no count of the weights can bound what they carry (Pedro's theorem, 24 Sep)
+
+A quantity that doesn't change when the parts are rearranged can't determine a property that does change when they're rearranged [thm]. Take the object and a rearrangement that destroys the property; the quantity is equal on both. Mass (brains of about the same mass compose very different minds), byte count and zeroth-order entropy are all unchanged by rearrangement. At most they give a ceiling (as the Bekenstein bound does for mass), never the content. What the model is lives in the arrangement: the residue, which is not the weights.
+
+### 4e. BF16 at the door
 
 - v2 says v1 "reproduces floatland's own number" (15 breaks).
 - v3 takes BF16 in at the 41 intake. That is consistent with v2's house rule: "float layout: claimed, found and forced by pgarcia. Not a flag."
@@ -159,7 +163,7 @@ So for the pipeline [PG] (41 holds the patterns → Octavian cubes 1 and 2 → m
    - v1 already produces exact logits and the argmax, bit-identical.
    - v1's Prediction 5 (the logit collapse is injective) is still a bet.
    - The runtime roles need definitions before anything can be measured.
-4. **The placement.** v2's "7D schema" for the handles is not given; v1 §22 says shape alone won't regenerate it.
+4. **The placement.** v2's "7D schema" for the handles is not given; no model tried so far regenerates it (v1 §21–§22), and no bound says one can't.
 5. **doll.tex registrations.**
    - 1 (pair-gated hinge): held today, but it's close to true by construction.
    - 2 (S1 is lossless) and 3 (the semispace rewinds): open; both need the runtime.

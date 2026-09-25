@@ -10,6 +10,22 @@ Stamps as in `day_v2.pdf`: [PG] Pedro's posit or rule · [C] Claude's reading, t
 
 After that, each weight is eliminated in favour of **the position it inhabits**, which is the next compositional layers. Everything is traced to its own spot, and each system is seated.
 
+## Decisions (Pedro, 24 Sep, before compaction) [PG]
+
+1. **Residue ≠ weight.** The residue is the minimal arrangement that must be kept: the synaptic minima. The weights are one encoding of it. What gets seated is the residue.
+
+   Brains of about the same mass compose very different minds. And by the theorem in `SYNTHESIS-v1-v2-v3.md` §4d, no quantity that rearrangement leaves unchanged (mass, byte count, v1's 10.5-bit zeroth-order entropy) can bound what the arrangement carries.
+2. **RMSNorm and attention are not touched.** They are the entropic minima: the part kept separate so the residue can be structured into its viable pattern. T10 and T11 measured their role (the sink as rest, the one-step lag, focus leaving ∅ for exactly the relevant position).
+
+   Consequence: RoPE's frequency table and V5's rsqrt, exp and cos/sin tables return to scope as part of attention and the norm. They are declared exactly, not approximated away.
+3. **Map the weights to where they can be stored, layer by layer.** The minimum is one table. Better is a structure that holds a full tensor. Better still is one that holds a full head.
+
+   Capacity arithmetic from today's objects [post-hoc], a starting point only (the choice is structural, not by size):
+   - one head's q/k/v slice (128 × 2048 = 2¹⁸) fits 71³ − 1 = 357,910;
+   - layer-14 `k_proj` (2²¹) fits 41⁴ = 2,825,761;
+   - the full BF16 alphabet (65,536) fits 41³ − 1 = 68,920 [run].
+4. **No possibility is ruled out by an unproven bound.** State what was measured and what is open. Never close a door out of fear of the unknown. That holds on both sides of this work.
+
 ## What the rule means, concretely [C, to be corrected before building]
 
 1. **A value is a position, never a number.** Every BF16 pattern is already a point:
@@ -22,7 +38,7 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
 
    So the object never holds a weight value. It holds where the value sits, and composition happens by moving.
 2. **A weight's seat is its address in the composition.** Layer, then block (attention or MLP), then head or plane, then row and column. Seating means that address and the value's position are one coordinate of one object, not a table beside a dictionary.
-3. **What must not be lost.** The seated object has to carry the placement's information in its positions. The proof that it does is the round trip in gate S0: every admitted tensor re-emerges bit-identical from the seated object alone.
+3. **What must not be lost** is what the forward computes. The proof is v1's gate 5 on the seated object: the forward's sealed receipts are reproduced with no weight file in reach. A tensor re-emerging bit-identical is a stronger, optional check. It is not the definition of "nothing lost".
 
 ## The systems to seat (from today's composition, and the doll)
 
@@ -41,8 +57,8 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
 ## Order of work, each step with a gate that can fail
 
 - **S0. Seat one tensor.**
-  - Take layer-14 `k_proj` (4 MB, sha `3ed136be…`). Seat it, then delete the weight file.
-  - Gate: it re-emerges bit-identical from the seated form alone (sha equal to v1's seal).
+  - Take layer-14 `k_proj` (4 MB, sha `3ed136be…`). Seat it, then move the weight file out of reach.
+  - Gate: the projection it takes part in, k = W_k·x on v1's layer-14 capture, is reproduced from the seated form alone. Optional stronger check: the tensor re-emerges with sha equal to v1's seal.
   - Report the seated size against 4,194,304 B.
 - **S1. One projection from seats.** k = W_k·x on v1's layer-14 capture.
   - Gate: equal to the exact bucket's integer (v1's matmul, which needs no V5) at every output cell.
@@ -59,7 +75,8 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
 
 ## Do not
 
-- Keep a weight tensor after S0's round trip has passed for it.
+- Keep a weight tensor after its seat's gate has passed.
+- Touch RMSNorm or attention's mechanism. They are kept as they are (decision 2).
 - Put a float inside the object. The f64 instrument stays outside, marked, as a ruler.
 - Seat anything by assumption: each system is seated only after its gate.
 - Build the icosahedral layer (600-cell) before the pentagon collector and the closures are seated [PG].
