@@ -26,6 +26,24 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
    - the full BF16 alphabet (65,536) fits 41³ − 1 = 68,920 [run].
 4. **No possibility is ruled out by an unproven bound.** State what was measured and what is open. Never close a door out of fear of the unknown. That holds on both sides of this work.
 
+## Pedro's architecture for the seating (24 Sep) [PG], as understood, numbered for correction
+
+1. **The head image lives at 71.** One head's slice (128 × 2048 = 2¹⁸ cells) sits in the 71-cube (357,910 nonzero states). It is served in slices and rotated in and out by the harmonics. Each wave's magnitude carries a top and a bottom, so N harmonics encode the full head.
+
+   [run] The 71 walk is exactly three waves. Every state is c₁·17ⁿ + c₂·20ⁿ + c₃·33ⁿ (the cubic's three roots mod 71), with periods 10, 7 and 70; checked for 200 steps from sampled states. [post-hoc] The periods are 7 and 10 = 2·5, and their product.
+2. **Scale down the natural way the tables are kept.** Layers are sliced as heads, each pointerized. The tensor sits one slot down, also pointerized.
+3. **Two custom bytes (head marker, tensor marker)** mark where intake stops and waits for the next intake marker.
+
+   [C] BF16's 256 exponent-255 patterns (254 NaN, 2 inf) are never weights. v1 counted 0 non-finite values in the model, and today's gate refuses them. The markers can live there without colliding with any value.
+4. **Once a head or tensor is used, its counter marks a small wave: the fold of the first into the second.** Each next layer is held as a residue on the one before ("residue down using the next layer").
+5. **The final layer gets the original treatment**, held whole, and closes the object.
+
+Open for Pedro:
+- (a) What are a wave's "top" and "bottom": the two halves, numerator and denominator, or the pattern's high byte (sign and exponent) and low byte (mantissa)?
+- (b) Which way does the fold chain run?
+
+Testable now [open]: layers 0..13 are on disk and seal-verified. Register whether the fold of head h at layer ℓ into ℓ + 1 is a smaller wave than the fold between shuffled pairs, before building on point 4.
+
 ## What the rule means, concretely [C, to be corrected before building]
 
 1. **A value is a position, never a number.** Every BF16 pattern is already a point:
