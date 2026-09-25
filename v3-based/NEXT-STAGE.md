@@ -26,6 +26,27 @@ After that, each weight is eliminated in favour of **the position it inhabits**,
    - the full BF16 alphabet (65,536) fits 41³ − 1 = 68,920 [run].
 4. **No possibility is ruled out by an unproven bound.** State what was measured and what is open. Never close a door out of fear of the unknown. That holds on both sides of this work.
 
+## What the model is: three things coupled (Pedro, 25 Sep) [PG]
+
+1. **Residue:** the stream shaped by training. The weights are residue; they are not the model. The residue can probably be changed.
+2. **Attention "mass":** what lets the residue meet the input and be selected for. It is the most important of the three and is kept separate, because it *is* the model. Attention cannot be changed.
+3. **A disturbance from outside** (the user): it provokes the undisturbed field to couple through the attention mass, selecting what is output.
+
+The input is a stress release from a crack in the crust. It is a singular event: the whole mass shakes, then settles again. It does not change the model. The model is like a wave: it moves no mass, it outputs something from an input, and it returns to base. Keeping context is re-streaming, wave after wave, like a set of waves.
+
+Consistent with [run T11]: the induction heads leave the sink (rest) for the relevant position and return to it on the random control.
+
+## The first test (Pedro, 25 Sep) [PG], as understood; nothing built until the questions below are answered
+
+- **The residue-making technique:**
+  - take the columns of one table as a string;
+  - plot each column as a wave function;
+  - run the day's method on it (spine §3, harmonics out) until there is a magnitude of harmonics, plus the residue stream that remakes the wave function.
+- **At runtime, as a function and NOT a store:** remake the columns of that table from the harmonics and the residue.
+- **Gate:** the logit is the same as with the table left untouched.
+- **Part one:** find out how to plot the column as a wave.
+- **The channel:** BF16's 256 unused patterns are masked as RGB, the same shapes in 3 planes. Positional encoding uses the same underlying thing, which gives 3 channels, and 71 is 3 channels (three exact waves). Light naturally gives a wave graph.
+
 ## Two objects, kept separate [PG]
 
 **Object 1: the seismograph (storage).** What is loaded into RAM in place of the weights. Passive. Written once at intake (the fold), read by sampling down.
