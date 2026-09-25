@@ -1,0 +1,37 @@
+PRE-REGISTRATION T12 — the seismograph's bit-planes: does the arrangement carry the rung and not the odd?
+(Claude, at Pedro Garcia's request "measure and build and test"; before any T12 code ran), 24 Sep 2026
+Posit [PG]: keep the abscissa (exponent, v1's rung) apart from the mantissa (v1's odd) and code each as tiny bitmaps,
+as JPEG 2000 codes coefficients bit-plane by bit-plane. v1 §33: the rung lines up with the head's wavelength
+(z +105 to +1,014); v1 §32: the odd lines up with nothing. Pedro's theorem (SYNTHESIS §4d): a count that a shuffle
+leaves unchanged cannot say what the arrangement carries, so every claim here is real AGAINST SHUFFLED, never
+against a count.
+
+Data: every 2-D matrix of layers 0..13 on disk (q, k, v, o, gate, up, down; 98 tensors, 704,643,072 weights),
+each admitted earlier against v1's MANIFEST sha256. Raw little-endian BF16, row-major (out x in), as stored.
+Planes of each BF16 pattern: EXP = bits 14..7 (8 planes, the abscissa); SIGN = bit 15 (1 plane);
+MANT = bits 6..0 (7 planes; the 7 stored bits stand in for v1's odd).
+
+Coder (integer, no floats; the measurement is a real byte count):
+  LZMA-style binary range coder, 11-bit probabilities, adaptation shift 5, all probabilities start at 1/2.
+  Three independent streams per tensor (EXP, SIGN, MANT), so each group's size is exact bytes.
+  Scan: raster order; for each weight, EXP bits MSB->LSB, then SIGN, then MANT bits MSB->LSB.
+  Contexts use only already-coded data (causal: left neighbour L = (r, c-1), up neighbour U = (r-1, c); absent = 0):
+    EXP : node of the weight's own exponent prefix (255) x bucket(e_L) x bucket(e_U),
+          bucket(e) = clamp(e, 110, 125) - 110 (16 levels).
+    SIGN: (sign_L, sign_U, sign of (r, c-2)) (8 contexts).
+    MANT: node of the weight's own mantissa prefix (127) x top-2 mantissa bits of L x top-2 of U (16).
+  The own-prefix nodes capture the value distribution (unchanged by a shuffle); the neighbour terms are the only
+  way arrangement can pay.
+Control: the same tensor, Fisher-Yates shuffled in place (splitmix64 seeded 20260914, index = (x * (i+1)) >> 64),
+  coded by the same coder. Real and shuffled hold the same multiset of patterns.
+Receipt: every real stream is decoded and compared with the tensor pattern by pattern; any difference voids T12.
+Declared before coding: only file sizes and shapes were looked at; no histogram or statistic of the weights.
+
+P1 (the rung is in the arrangement) Summed over the 98 tensors, EXP bytes real <= 0.99 x EXP bytes shuffled,
+   AND real < shuffled in at least 88 of the 98 tensors. Kill: either fails.
+P2 (the odd is not) Summed over the 98 tensors, MANT bytes real >= 0.995 x MANT bytes shuffled.
+   Kill: real < 0.995 x shuffled (the arrangement would carry the odd, against v1 §32).
+Exploratory, no prediction: SIGN real/shuffled; each group against raw (8, 1, 7 bits per weight); totals against
+   BF16's 16 bits and v2's best table (13.00 bits); the profile by tensor kind and layer.
+Outcomes appended below this line only.
+-----
