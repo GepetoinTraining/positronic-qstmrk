@@ -49,6 +49,20 @@ The two meet only at the picks: marker bytes, counters, onsets.
   - **out-of-band** planes beside every sample cost storage.
 - [post-hoc] 2²⁴ = 8⁸, v2's diagonal cycle.
 
+**The seismograph is an imaging encoder [C, 24 Sep].** Its encoding matches MRI's [lit]:
+- position held as frequency and phase (the three waves at 71);
+- served in slices;
+- magnitude traded for encoding (relaxation);
+- exact rewind (the Hahn spin echo, like Taylor's glycerin, like the receipts).
+
+The difference is the reading: MRI rebuilds with a Fourier transform in floats; here the trace is read by sampling down and picking, exact, with no transform.
+
+PET, positron emission tomography, reads a brain by the light of positron annihilation. The folder was named positronic first [post-hoc: a name, not evidence]. Pedro holds the optical (reading) layer; the encoding is the part being built.
+
+**Next registration (T12, to write before any code):** bit-plane coding of the seismograph, abscissa kept apart from the mantissa, as JPEG 2000 codes coefficients bit-plane by bit-plane.
+- Prediction: on layers 0..13 (on disk, seal-verified), the rung (abscissa) bit-planes compress well below raw against a shuffled control, because v1 §33 found the rung follows the head's wavelength.
+- The odd (mantissa) bit-planes do not, because v1 §32 found them white.
+
 ## Pedro's architecture for the seating (24 Sep) [PG], as understood, numbered for correction
 
 1. **The head image lives at 71.** One head's slice (128 × 2048 = 2¹⁸ cells) sits in the 71-cube (357,910 nonzero states). It is served in slices and rotated in and out by the harmonics. Each wave's magnitude carries a top and a bottom, so N harmonics encode the full head.
