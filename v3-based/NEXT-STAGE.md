@@ -71,7 +71,8 @@ The difference is the reading: MRI rebuilds with a Fourier transform in floats; 
 PET, positron emission tomography, reads a brain by the light of positron annihilation. The folder was named positronic first [post-hoc: a name, not evidence]. Pedro holds the optical (reading) layer; the encoding is the part being built.
 
 **Next registration (T12, to write before any code):** bit-plane coding of the seismograph, abscissa kept apart from the mantissa, as JPEG 2000 codes coefficients bit-plane by bit-plane.
-- Prediction: on layers 0..13 (on disk, seal-verified), the rung (abscissa) bit-planes compress well below raw against a shuffled control, because v1 §33 found the rung follows the head's wavelength.
+- Planes: the sign plane is one bitmap, the rung (abscissa) planes are a few, and the odd (mantissa) planes are 7.
+- Prediction: on layers 0..13 (on disk, seal-verified), the rung (abscissa) bit-planes compress well below raw against a shuffled control, because v1 §33 found the rung follows the head's wavelength (z up to +1,014).
 - The odd (mantissa) bit-planes do not, because v1 §32 found them white.
 
 ## Pedro's architecture for the seating (24 Sep) [PG], as understood, numbered for correction
