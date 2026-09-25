@@ -1,0 +1,98 @@
+L 0 self_attn.v_proj   exp 0.9968 sign 0.9999 mant 1.0000 diff 0
+L 0 self_attn.k_proj   exp 0.9888 sign 0.9987 mant 1.0000 diff 0
+L 0 self_attn.o_proj   exp 0.9953 sign 1.0000 mant 1.0000 diff 0
+L 0 self_attn.q_proj   exp 0.9868 sign 0.9992 mant 1.0000 diff 0
+L 1 self_attn.q_proj   exp 0.9815 sign 0.9985 mant 1.0000 diff 0
+L 1 self_attn.k_proj   exp 0.9851 sign 0.9989 mant 1.0000 diff 0
+L 1 self_attn.v_proj   exp 0.9973 sign 0.9999 mant 1.0000 diff 0
+L 1 self_attn.o_proj   exp 0.9968 sign 0.9999 mant 1.0000 diff 0
+L 2 self_attn.k_proj   exp 0.9735 sign 0.9974 mant 1.0001 diff 0
+L 2 self_attn.q_proj   exp 0.9813 sign 0.9969 mant 1.0000 diff 0
+L 2 self_attn.v_proj   exp 0.9898 sign 0.9999 mant 1.0000 diff 0
+L 0 mlp.up_proj        exp 0.9990 sign 1.0000 mant 1.0000 diff 0
+L 0 mlp.gate_proj      exp 0.9955 sign 0.9999 mant 1.0000 diff 0
+L 0 mlp.down_proj      exp 0.9977 sign 1.0000 mant 1.0000 diff 0
+L 2 self_attn.o_proj   exp 0.9961 sign 0.9997 mant 1.0000 diff 0
+L 3 self_attn.k_proj   exp 0.9746 sign 0.9989 mant 1.0000 diff 0
+L 3 self_attn.q_proj   exp 0.9827 sign 0.9984 mant 1.0000 diff 0
+L 1 mlp.gate_proj      exp 0.9751 sign 0.9988 mant 1.0000 diff 0
+L 1 mlp.down_proj      exp 0.9858 sign 0.9971 mant 0.9998 diff 0
+L 1 mlp.up_proj        exp 0.9715 sign 0.9991 mant 1.0000 diff 0
+L 3 self_attn.v_proj   exp 0.9949 sign 0.9999 mant 1.0000 diff 0
+L 3 self_attn.o_proj   exp 0.9966 sign 0.9999 mant 1.0000 diff 0
+L 4 self_attn.k_proj   exp 0.9749 sign 0.9971 mant 0.9999 diff 0
+L 4 self_attn.q_proj   exp 0.9804 sign 0.9983 mant 1.0000 diff 0
+L 2 mlp.up_proj        exp 0.9977 sign 1.0000 mant 1.0000 diff 0
+L 4 self_attn.v_proj   exp 0.9924 sign 0.9999 mant 1.0000 diff 0
+L 2 mlp.down_proj      exp 0.9973 sign 1.0000 mant 1.0000 diff 0
+L 2 mlp.gate_proj      exp 0.9931 sign 0.9999 mant 1.0000 diff 0
+L 3 mlp.gate_proj      exp 0.9945 sign 1.0000 mant 1.0000 diff 0
+L 4 self_attn.o_proj   exp 0.9964 sign 0.9999 mant 1.0000 diff 0
+L 5 self_attn.k_proj   exp 0.9839 sign 0.9989 mant 1.0000 diff 0
+L 5 self_attn.q_proj   exp 0.9851 sign 0.9984 mant 1.0000 diff 0
+L 5 self_attn.v_proj   exp 0.9922 sign 0.9999 mant 1.0000 diff 0
+L 3 mlp.up_proj        exp 0.9976 sign 1.0000 mant 1.0000 diff 0
+L 5 self_attn.o_proj   exp 0.9950 sign 0.9999 mant 1.0000 diff 0
+L 3 mlp.down_proj      exp 0.9978 sign 1.0001 mant 1.0000 diff 0
+L 4 mlp.gate_proj      exp 0.9943 sign 0.9999 mant 1.0000 diff 0
+L 4 mlp.up_proj        exp 0.9975 sign 1.0000 mant 1.0000 diff 0
+L 4 mlp.down_proj      exp 0.9975 sign 1.0000 mant 1.0000 diff 0
+L 6 self_attn.k_proj   exp 0.9545 sign 0.9951 mant 1.0000 diff 0
+L 6 self_attn.v_proj   exp 0.9909 sign 1.0000 mant 1.0000 diff 0
+L 6 self_attn.q_proj   exp 0.9696 sign 0.9910 mant 1.0000 diff 0
+L 6 self_attn.o_proj   exp 0.9951 sign 0.9998 mant 1.0000 diff 0
+L 7 self_attn.k_proj   exp 0.9847 sign 0.9992 mant 1.0000 diff 0
+L 7 self_attn.q_proj   exp 0.9856 sign 0.9987 mant 1.0001 diff 0
+L 7 self_attn.v_proj   exp 0.9961 sign 1.0001 mant 1.0000 diff 0
+L 7 self_attn.o_proj   exp 0.9950 sign 1.0000 mant 1.0000 diff 0
+L 6 mlp.gate_proj      exp 0.9933 sign 0.9999 mant 1.0000 diff 0
+L 5 mlp.gate_proj      exp 0.9944 sign 0.9999 mant 1.0000 diff 0
+L 5 mlp.up_proj        exp 0.9986 sign 1.0001 mant 1.0000 diff 0
+L 6 mlp.down_proj      exp 0.9961 sign 1.0000 mant 1.0000 diff 0
+L 5 mlp.down_proj      exp 0.9974 sign 1.0000 mant 1.0000 diff 0
+L 8 self_attn.v_proj   exp 0.9977 sign 0.9999 mant 1.0000 diff 0
+L 8 self_attn.k_proj   exp 0.9777 sign 0.9987 mant 1.0000 diff 0
+L 6 mlp.up_proj        exp 0.9982 sign 1.0000 mant 1.0000 diff 0
+L 8 self_attn.q_proj   exp 0.9748 sign 0.9979 mant 1.0000 diff 0
+L 7 mlp.gate_proj      exp 0.9911 sign 0.9999 mant 1.0000 diff 0
+L 8 self_attn.o_proj   exp 0.9940 sign 0.9998 mant 1.0000 diff 0
+L 9 self_attn.k_proj   exp 0.9826 sign 0.9988 mant 1.0000 diff 0
+L 7 mlp.up_proj        exp 0.9971 sign 1.0000 mant 1.0000 diff 0
+L 9 self_attn.v_proj   exp 0.9905 sign 0.9999 mant 0.9999 diff 0
+L 7 mlp.down_proj      exp 0.9946 sign 1.0001 mant 1.0000 diff 0
+L 9 self_attn.q_proj   exp 0.9779 sign 0.9982 mant 1.0000 diff 0
+L 9 self_attn.o_proj   exp 0.9920 sign 1.0000 mant 1.0000 diff 0
+L 8 mlp.gate_proj      exp 0.9912 sign 1.0000 mant 1.0000 diff 0
+L10 self_attn.k_proj   exp 0.9867 sign 0.9987 mant 1.0000 diff 0
+L10 self_attn.v_proj   exp 0.9971 sign 0.9999 mant 1.0000 diff 0
+L10 self_attn.q_proj   exp 0.9858 sign 0.9987 mant 1.0000 diff 0
+L10 self_attn.o_proj   exp 0.9928 sign 0.9998 mant 1.0000 diff 0
+L 8 mlp.up_proj        exp 0.9975 sign 1.0000 mant 1.0000 diff 0
+L 9 mlp.gate_proj      exp 0.9919 sign 0.9998 mant 1.0000 diff 0
+L 8 mlp.down_proj      exp 0.9939 sign 0.9999 mant 1.0000 diff 0
+L11 self_attn.k_proj   exp 0.9681 sign 0.9963 mant 1.0000 diff 0
+L 9 mlp.down_proj      exp 0.9934 sign 1.0000 mant 1.0000 diff 0
+L11 self_attn.v_proj   exp 0.9886 sign 1.0000 mant 1.0000 diff 0
+L11 self_attn.q_proj   exp 0.9676 sign 0.9896 mant 1.0000 diff 0
+L11 self_attn.o_proj   exp 0.9928 sign 0.9997 mant 1.0000 diff 0
+L 9 mlp.up_proj        exp 0.9971 sign 0.9999 mant 1.0000 diff 0
+L10 mlp.gate_proj      exp 0.9896 sign 0.9999 mant 1.0000 diff 0
+L12 self_attn.k_proj   exp 0.9803 sign 0.9980 mant 1.0000 diff 0
+L12 self_attn.v_proj   exp 0.9969 sign 0.9999 mant 1.0000 diff 0
+L10 mlp.down_proj      exp 0.9930 sign 1.0000 mant 1.0000 diff 0
+L12 self_attn.q_proj   exp 0.9805 sign 0.9956 mant 1.0000 diff 0
+L10 mlp.up_proj        exp 0.9963 sign 1.0000 mant 1.0000 diff 0
+L11 mlp.gate_proj      exp 0.9929 sign 0.9999 mant 1.0000 diff 0
+L12 self_attn.o_proj   exp 0.9926 sign 1.0000 mant 1.0000 diff 0
+L13 self_attn.k_proj   exp 0.9780 sign 0.9970 mant 1.0000 diff 0
+L13 self_attn.v_proj   exp 0.9969 sign 1.0000 mant 1.0000 diff 0
+L13 self_attn.q_proj   exp 0.9739 sign 0.9958 mant 1.0000 diff 0
+L13 self_attn.o_proj   exp 0.9907 sign 0.9999 mant 1.0000 diff 0
+L11 mlp.up_proj        exp 0.9967 sign 1.0000 mant 1.0000 diff 0
+L11 mlp.down_proj      exp 0.9952 sign 1.0000 mant 1.0000 diff 0
+L12 mlp.gate_proj      exp 0.9919 sign 0.9999 mant 1.0000 diff 0
+L12 mlp.up_proj        exp 0.9963 sign 1.0000 mant 1.0000 diff 0
+L12 mlp.down_proj      exp 0.9942 sign 1.0000 mant 1.0000 diff 0
+L13 mlp.gate_proj      exp 0.9924 sign 0.9999 mant 1.0000 diff 0
+L13 mlp.up_proj        exp 0.9963 sign 0.9999 mant 1.0000 diff 0
+L13 mlp.down_proj      exp 0.9928 sign 1.0000 mant 1.0000 diff 0

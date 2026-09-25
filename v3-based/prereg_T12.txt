@@ -35,3 +35,18 @@ Exploratory, no prediction: SIGN real/shuffled; each group against raw (8, 1, 7 
    BF16's 16 bits and v2's best table (13.00 bits); the profile by tensor kind and layer.
 Outcomes appended below this line only.
 -----
+OUTCOMES (appended after the run; walk/src/bin/t12.rs; full output t12_run.txt; 83 s on 8 threads):
+VOID first run (kept as t12_run_VOID.txt): the receipt failed (nearly every pattern different). Cause: the encoder's
+   low register kept its top byte on shift (LZMA shifts in 32 bits; the mask was 0xFFFFFFFF, fixed to 0x00FFFFFF).
+   The bug corrupted byte contents, not byte counts: every size in the void run equals the valid run's.
+   The per-tensor ratios of the void run were seen before the valid run; nothing registered was changed.
+Receipt: 704,643,072 weights decoded back from the real streams, 0 different.
+P1 KILLED: EXP real/shuffled 0.9920 summed (needs <= 0.9900). The direction held in 98/98 tensors (needs 88).
+   The arrangement pays on the rung in every tensor, but 0.8%, not 1%. Largest in q_proj 0.9795, k_proj 0.9780;
+   single tensors down to L6 k_proj 0.9545. MLP and v/o 0.991 - 0.995.
+P2 HELD: MANT real/shuffled 1.0000 (needs >= 0.9950). The arrangement carries nothing in the odd.
+Exploratory: SIGN 0.9995. Bits/weight real: EXP 2.727, SIGN 1.011, MANT 7.052, total 10.790 of 16
+   (shuffled 10.812; v2's best table 13.00). SIGN and MANT above raw (1.011 > 1, 7.052 > 7) is the coder's
+   adaptation cost on bits it cannot predict (shift 5), about 0.7 - 1.1%.
+   Almost all of the 5.2 bits saved is the value distribution, which a shuffle keeps (Pedro's theorem: it cannot
+   be what the arrangement carries). What the arrangement adds, through left/up neighbours, is 0.022 bits/weight.
