@@ -1,0 +1,34 @@
+PRE-REGISTRATION T13 — the fold between layers: is head h at layer l+1 a small wave on head h at layer l?
+(Claude, at Pedro Garcia's request "measure and build and test"; before any T13 code ran), 24 Sep 2026
+Posit [PG] (NEXT-STAGE, seating point 4): once a head is used, its counter marks a small wave, the fold of the first
+into the second; each next layer is held as a residue on the one before. Tested here as information: does layer l's
+slice, cell for cell, make layer l+1's slice cheaper to code than a reference with the alignment broken?
+Written after T12's receipts came back 0-different, before T12's summary lines were read; T13 does not depend on them.
+
+Data: layers 0..13 on disk (admitted against v1's seals). Head slices (row-major within the slice):
+  q_proj 16 heads, k_proj 8, v_proj 8: rows 128h .. 128h+127, all 2048 columns (262,144 cells);
+  o_proj 16 heads: all 2048 rows, columns 128h .. 128h+127 (262,144 cells).
+Pairs: (l, l+1) for l = 0..12; every head of every one of the four kinds: 13 x 48 = 624 target slices.
+Coder: T12's integer range coder (fixed carry, self-test and T12 receipts 0-different). Three streams per slice.
+  Contexts come ONLY from the reference cell R at the same (row, col), never from the target's neighbours:
+    EXP : own exponent prefix node (255) x bucket(e_R) (16, T12's bucket);
+    SIGN: sign_R (2);
+    MANT: own mantissa prefix node (127) x top-2 mantissa bits of R (4).
+References for target (l+1, h):
+  SAME  = (l, h), same cell;
+  OTHER = (l, (h+1) mod H), same cell (a different head of the same kind at the same layer);
+  SHUF  = (l, h) with its cells Fisher-Yates shuffled (splitmix64 seeded 20260914, as T12);
+  NONE  = no reference (R = 0 everywhere).
+Receipt: every SAME stream is decoded back and compared cell by cell; any difference voids T13.
+
+P1 (the fold is a smaller wave than shuffled pairs) Summed over the 624 slices, total bytes SAME <= 0.99 x SHUF.
+   Kill: SAME > 0.99 x SHUF.
+P2 (head identity carries across the fold) Summed over the 624 slices, total bytes SAME <= 0.99 x OTHER.
+   Kill: SAME > 0.99 x OTHER.
+Declared expectation [C], not a prediction: P1 may hold through the input basis the layers share (the residual
+   stream's columns), which OTHER shares too; P2 I expect killed (no known reason for head index h to keep an
+   identity across layers). If P1 holds and P2 is killed, the fold rides the columns, not the heads.
+Exploratory, no prediction: the same four references for whole MLP tensors (gate, up, down; l -> l+1); SAME against
+   NONE; per kind, per layer pair; which plane group (EXP, SIGN, MANT) carries any gain.
+Outcomes appended below this line only.
+-----
