@@ -93,7 +93,18 @@ Open for Pedro:
 - (c) Which axes are i and j: RoPE's quadrature pairs (the Clifford torus), or two of the 71 walk's three waves with the third (period 70, the primitive one) as the carrier?
 - (d) Does each fold halve, strictly one octave (×2, the cycler's pairing)? Or can it step by other ratios (the 7 and the 10)?
 
-Testable now [open]: layers 0..13 are on disk and seal-verified. Register whether the fold of head h at layer ℓ into ℓ + 1 is a smaller wave than the fold between shuffled pairs, before building on point 4.
+**T13 [run, 24 Sep]: point 4, cell for cell in the stored coordinates, is killed.**
+- Layer ℓ's head h makes layer ℓ+1's head h no cheaper to code than a shuffled reference: SAME/SHUF 0.9999, SAME/OTHER 1.0000.
+- That holds over 624 slices, the MLP and all 13 layer pairs.
+- Stored cell (r, c) at ℓ and at ℓ+1 are independent.
+
+Open: a fold in the model's own coordinates. The weights keep their function under head permutations, v/o basis rotations and pairwise q/k rotations, so an aligned fold would first have to find the change of basis. Not tested.
+
+**T12 [run, 24 Sep]: the planes.**
+- Rung vs shuffled is 0.9920: the arrangement pays in 98/98 tensors, but only 0.8% (P1 killed at the 1% line).
+- The odd is 1.0000 (P2 held).
+- Total: 10.790 bits/weight against v2's 13.00. Almost all of that is the value distribution, which a shuffle keeps; the arrangement adds 0.022 bits/weight through left/up neighbours.
+- Untested: a row-keyed context (v1 §33's pair).
 
 ## What the rule means, concretely [C, to be corrected before building]
 
