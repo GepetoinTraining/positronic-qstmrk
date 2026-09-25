@@ -1,0 +1,46 @@
+T13 run (walk/src/bin/t13.rs), prereg sha f6e331d5…, 624 head slices + 39 MLP tensors, 8 threads, 153 s
+Receipt: 654311424 target cells decoded back from the SAME streams, 0 different
+
+Head slices (q, k, v, o; l -> l+1, l = 0..12), total bytes:
+  SAME    220729906 B   (EXP   55848997, SIGN  20680798, MANT  144200111)
+  OTHER   220729357 B   (EXP   55849023, SIGN  20680688, MANT  144199646)
+  SHUF    220751677 B   (EXP   55867979, SIGN  20683623, MANT  144200075)
+  NONE    220357811 B   (EXP   55468791, SIGN  20683744, MANT  144205276)
+P1 KILLED: SAME/SHUF 0.9999 (needs <= 0.9900)
+P2 KILLED: SAME/OTHER 1.0000 (needs <= 0.9900)
+
+Exploratory:
+  heads, SAME/NONE 1.0017, OTHER/SHUF 0.9999, SHUF/NONE 1.0018
+  heads, by plane group SAME/SHUF: EXP 0.9997, SIGN 0.9999, MANT 1.0000
+  by kind: SAME/SHUF, SAME/OTHER, OTHER/SHUF, SAME/NONE
+    self_attn.q_proj   0.9999 1.0000 0.9999 1.0016
+    self_attn.k_proj   0.9999 1.0000 0.9999 1.0016
+    self_attn.v_proj   0.9999 1.0000 0.9999 1.0007
+    self_attn.o_proj   0.9999 1.0000 0.9999 1.0023
+    mlp.gate_proj      1.0000 1.0000 1.0000 1.0007
+    mlp.up_proj        1.0000 1.0000 1.0000 1.0004
+    mlp.down_proj      1.0000 1.0000 1.0000 1.0001
+  by layer pair (heads only): SAME/SHUF, SAME/OTHER
+    L0 ->L1  1.0000 1.0000
+    L1 ->L2  0.9999 1.0000
+    L2 ->L3  0.9999 1.0000
+    L3 ->L4  0.9999 1.0000
+    L4 ->L5  0.9999 1.0000
+    L5 ->L6  0.9999 1.0000
+    L6 ->L7  0.9999 1.0000
+    L7 ->L8  0.9999 1.0000
+    L8 ->L9  0.9999 1.0000
+    L9 ->L10 0.9999 1.0000
+    L10->L11 0.9999 1.0000
+    L11->L12 0.9999 1.0000
+    L12->L13 0.9998 1.0000
+  head slices where SAME < OTHER: 288/624
+  strongest SAME/OTHER slices:
+    L5->L6 self_attn.o_proj h1  SAME/OTHER 0.9990 SAME/SHUF 0.9989
+    L8->L9 self_attn.k_proj h6  SAME/OTHER 0.9996 SAME/SHUF 0.9995
+    L10->L11 self_attn.v_proj h2  SAME/OTHER 0.9996 SAME/SHUF 0.9993
+    L9->L10 self_attn.o_proj h1  SAME/OTHER 0.9996 SAME/SHUF 0.9996
+    L9->L10 self_attn.v_proj h2  SAME/OTHER 0.9996 SAME/SHUF 0.9995
+    L4->L5 self_attn.q_proj h13 SAME/OTHER 0.9998 SAME/SHUF 0.9998
+    L4->L5 self_attn.v_proj h5  SAME/OTHER 0.9998 SAME/SHUF 0.9999
+    L3->L4 self_attn.v_proj h4  SAME/OTHER 0.9998 SAME/SHUF 0.9997

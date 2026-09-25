@@ -32,3 +32,15 @@ Exploratory, no prediction: the same four references for whole MLP tensors (gate
    NONE; per kind, per layer pair; which plane group (EXP, SIGN, MANT) carries any gain.
 Outcomes appended below this line only.
 -----
+OUTCOMES (appended after the run; walk/src/bin/t13.rs with walk/src/rc.rs = T12's coder; t13_run.txt; 153 s):
+Receipt: 654,311,424 target cells decoded back from the SAME streams, 0 different.
+P1 KILLED: SAME/SHUF 0.9999 (needs <= 0.9900). Layer l's cell tells nothing about layer l+1's cell.
+P2 KILLED: SAME/OTHER 1.0000. SAME beats OTHER in 288 of 624 slices (46%, a coin). Best single slice 0.9990.
+Declared expectation [C] also wrong: the shared input basis does not show cell for cell either (OTHER/SHUF 0.9999;
+   by plane group SAME/SHUF EXP 0.9997, SIGN 0.9999, MANT 1.0000). Every reference costs slightly more than none
+   (SAME/NONE 1.0017): the coder pays to learn contexts that carry nothing.
+Exploratory: MLP whole tensors the same (gate, up, down SAME/SHUF 1.0000; OTHER there = rows rotated by 128, a choice
+   the registration left open). Uniform across all 13 layer pairs.
+Scope of the kill: this is cell-for-cell in the STORED coordinates. A network's weights keep their function under
+   head permutations and, inside a head, under rotations of the v/o basis and pairwise rotations of the q/k basis
+   (RoPE pairs). A fold aligned in the model's own coordinates (after such a change of basis) is not tested here.
