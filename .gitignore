@@ -7,6 +7,8 @@ cells/
 *.grid
 # v3: tensors fetched by byte range, admitted once against v1's seals (v3-based/t10/fetch.py re-fetches them)
 v3-based/t10/*.u16
+# the weight copies moved into the mistaken archive, for Pedro to delete
+v3-based/ARCHIVE-*/weights/
 # v3: t6's exported closed set (v3-based/walk/export_t6.py regenerates it)
 v3-based/walk/*.bin
 

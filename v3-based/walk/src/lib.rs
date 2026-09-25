@@ -1,4 +1,3 @@
-pub mod rc;
 // Shared exact octonion machinery: the Fano table of t6_octonion.py, the 30 labelings
 // of S(3,4,8), unit sets in doubled coordinates, closure. Used by tierb and kernel.
 
