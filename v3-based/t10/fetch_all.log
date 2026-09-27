@@ -1,0 +1,151 @@
+model.embed_tokens.weight: shape [151936, 2048], 622329856 bytes, sha256 f56b71b6939a944a… EQUAL to v1 seal
+model.layers.14.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 281540288f884c42… EQUAL to v1 seal
+model.layers.14.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 54af9de3aa3fa060… EQUAL to v1 seal
+model.layers.14.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 2fcdc5a68bad6c0b… EQUAL to v1 seal
+model.layers.14.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 961ab4cb112d3fd8… EQUAL to v1 seal
+model.layers.14.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 d102d6fa13beaee5… EQUAL to v1 seal
+model.layers.14.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 a5dca853dae667c3… EQUAL to v1 seal
+model.layers.15.input_layernorm.weight: shape [2048], 4096 bytes, sha256 a34f65accff780ba… EQUAL to v1 seal
+model.layers.15.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 f1066e2f327bd520… EQUAL to v1 seal
+model.layers.15.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 cc278c37833feab9… EQUAL to v1 seal
+model.layers.15.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 72d0a4a9e320c8ea… EQUAL to v1 seal
+model.layers.15.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 f67017f83d378a15… EQUAL to v1 seal
+model.layers.15.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 cdcf0a25519b3ff6… EQUAL to v1 seal
+model.layers.15.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 0a2eb29e0378c92f… EQUAL to v1 seal
+model.layers.15.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 a50ffe133a842569… EQUAL to v1 seal
+model.layers.15.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 b868307fbe6c4a5e… EQUAL to v1 seal
+model.layers.15.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 15990501637cafb7… EQUAL to v1 seal
+model.layers.15.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 cd5c80a7cedb1f22… EQUAL to v1 seal
+model.layers.16.input_layernorm.weight: shape [2048], 4096 bytes, sha256 2d8cbaf8e1573074… EQUAL to v1 seal
+model.layers.16.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 d0a2b41f1eef20fb… EQUAL to v1 seal
+model.layers.16.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 ff644ce022ad9ae6… EQUAL to v1 seal
+model.layers.16.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 b79de9282f2bc0fb… EQUAL to v1 seal
+model.layers.16.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 d97c762cc3a9025c… EQUAL to v1 seal
+model.layers.16.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 380a3311dc40c60b… EQUAL to v1 seal
+model.layers.16.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 15feb24083d8e055… EQUAL to v1 seal
+model.layers.16.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 789d21f45c40a19b… EQUAL to v1 seal
+model.layers.16.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 abd5f8c41f8ae07c… EQUAL to v1 seal
+model.layers.16.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 68a0110295cf4f8f… EQUAL to v1 seal
+model.layers.16.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 b12446deda6eba67… EQUAL to v1 seal
+model.layers.17.input_layernorm.weight: shape [2048], 4096 bytes, sha256 469fafa4e4bcf4d5… EQUAL to v1 seal
+model.layers.17.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 94d0c630a6742b87… EQUAL to v1 seal
+model.layers.17.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 3114bc8056fbd9a5… EQUAL to v1 seal
+model.layers.17.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 fc07ed8af32060ee… EQUAL to v1 seal
+model.layers.17.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 86d60f844d2b15ac… EQUAL to v1 seal
+model.layers.17.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 e1596238ba0e7cd5… EQUAL to v1 seal
+model.layers.17.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 445d7952797e2b04… EQUAL to v1 seal
+model.layers.17.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 0033f44791b571a1… EQUAL to v1 seal
+model.layers.17.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 9479aefeefe4278a… EQUAL to v1 seal
+model.layers.17.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 22842b783812fda8… EQUAL to v1 seal
+model.layers.17.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 e46d52ea406c8330… EQUAL to v1 seal
+model.layers.18.input_layernorm.weight: shape [2048], 4096 bytes, sha256 3f442ed180b5411e… EQUAL to v1 seal
+model.layers.18.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 ed28dd604843c5b2… EQUAL to v1 seal
+model.layers.18.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 9d4ec41734251d64… EQUAL to v1 seal
+model.layers.18.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 04a5b6a98f8346e4… EQUAL to v1 seal
+model.layers.18.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 dddfafe2f0305ee2… EQUAL to v1 seal
+model.layers.18.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 fc46adfaf3116705… EQUAL to v1 seal
+model.layers.18.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 23f47d868fc76f30… EQUAL to v1 seal
+model.layers.18.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 96987aac68cee238… EQUAL to v1 seal
+model.layers.18.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 980e9d37484e5c28… EQUAL to v1 seal
+model.layers.18.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 5f28949537f6acf0… EQUAL to v1 seal
+model.layers.18.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 3ccd4250a79e51ec… EQUAL to v1 seal
+model.layers.19.input_layernorm.weight: shape [2048], 4096 bytes, sha256 e438502637d1711a… EQUAL to v1 seal
+model.layers.19.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 1410ea3b31fbf5a0… EQUAL to v1 seal
+model.layers.19.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 223456ba3f3a180f… EQUAL to v1 seal
+model.layers.19.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 700112e47547cee7… EQUAL to v1 seal
+model.layers.19.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 32d4dcd3f9091163… EQUAL to v1 seal
+model.layers.19.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 51e5a30dfa395f2f… EQUAL to v1 seal
+model.layers.19.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 762c4c75c4191038… EQUAL to v1 seal
+model.layers.19.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 ae2b4a5a902e43c0… EQUAL to v1 seal
+model.layers.19.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 6ed2749d6e65a0bb… EQUAL to v1 seal
+model.layers.19.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 c84b68897e91694c… EQUAL to v1 seal
+model.layers.19.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 f4c6c8b0fbf430b9… EQUAL to v1 seal
+model.layers.20.input_layernorm.weight: shape [2048], 4096 bytes, sha256 4b23e10483877f5e… EQUAL to v1 seal
+model.layers.20.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 17c6850ce5842b23… EQUAL to v1 seal
+model.layers.20.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 4b9b8a81b6e02847… EQUAL to v1 seal
+model.layers.20.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 fd29f2f4af0f0a93… EQUAL to v1 seal
+model.layers.20.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 2a5fa5b4552a0760… EQUAL to v1 seal
+model.layers.20.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 978fe570227a6356… EQUAL to v1 seal
+model.layers.20.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 ba799877a276a401… EQUAL to v1 seal
+model.layers.20.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 f3a87df82f17a6e2… EQUAL to v1 seal
+model.layers.20.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 6a3bc7c64ca387f4… EQUAL to v1 seal
+model.layers.20.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 22e18d2a9412a107… EQUAL to v1 seal
+model.layers.20.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 4f0dfa9a170b5000… EQUAL to v1 seal
+model.layers.21.input_layernorm.weight: shape [2048], 4096 bytes, sha256 e7d67e797c5d4e63… EQUAL to v1 seal
+model.layers.21.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 7f591ed9e5d798ce… EQUAL to v1 seal
+model.layers.21.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 295be957328147f5… EQUAL to v1 seal
+model.layers.21.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 d152e5176572a1a4… EQUAL to v1 seal
+model.layers.21.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 e5f84f4603cf6d21… EQUAL to v1 seal
+model.layers.21.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 dd02088736bddd51… EQUAL to v1 seal
+model.layers.21.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 658def90ace13308… EQUAL to v1 seal
+model.layers.21.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 aef159386740c182… EQUAL to v1 seal
+model.layers.21.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 e3300a5112cef801… EQUAL to v1 seal
+model.layers.21.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 4ebb80a0ed2514b2… EQUAL to v1 seal
+model.layers.21.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 7d7edf28790613e1… EQUAL to v1 seal
+model.layers.22.input_layernorm.weight: shape [2048], 4096 bytes, sha256 72574c94735f913c… EQUAL to v1 seal
+model.layers.22.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 9d9ac99b63c1cb88… EQUAL to v1 seal
+model.layers.22.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 7a30bae60bb73b1b… EQUAL to v1 seal
+model.layers.22.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 6866051832cf7730… EQUAL to v1 seal
+model.layers.22.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 5d0e2adb438ddbc6… EQUAL to v1 seal
+model.layers.22.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 01296b4533b1bdb7… EQUAL to v1 seal
+model.layers.22.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 f94bfc2723e133e9… EQUAL to v1 seal
+model.layers.22.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 2ad2ebbcca163748… EQUAL to v1 seal
+model.layers.22.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 431dd49c1bfe7070… EQUAL to v1 seal
+model.layers.22.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 fbebd8a464ac6533… EQUAL to v1 seal
+model.layers.22.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 6ca68f9efe7590c8… EQUAL to v1 seal
+model.layers.23.input_layernorm.weight: shape [2048], 4096 bytes, sha256 7fbac2c0e9f0356e… EQUAL to v1 seal
+model.layers.23.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 11f667069a1e5385… EQUAL to v1 seal
+model.layers.23.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 3ff1e4fa858b841c… EQUAL to v1 seal
+model.layers.23.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 08b13686c6961bd2… EQUAL to v1 seal
+model.layers.23.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 43beb9f7457c056a… EQUAL to v1 seal
+model.layers.23.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 8d2b8097c3e4dfba… EQUAL to v1 seal
+model.layers.23.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 94eee0c53e6912ed… EQUAL to v1 seal
+model.layers.23.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 cfa8bb74c7808696… EQUAL to v1 seal
+model.layers.23.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 7f38f0e6db02ffd8… EQUAL to v1 seal
+model.layers.23.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 e4c54c300436232d… EQUAL to v1 seal
+model.layers.23.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 f1deabd5c27282fa… EQUAL to v1 seal
+model.layers.24.input_layernorm.weight: shape [2048], 4096 bytes, sha256 efb3bbdf2d22a0a9… EQUAL to v1 seal
+model.layers.24.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 80fe96bdceb72c68… EQUAL to v1 seal
+model.layers.24.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 9412585013bf9bc9… EQUAL to v1 seal
+model.layers.24.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 9457a3a5a3a18008… EQUAL to v1 seal
+model.layers.24.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 2e510439ccccd84e… EQUAL to v1 seal
+model.layers.24.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 670ee53fe807e658… EQUAL to v1 seal
+model.layers.24.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 7466176c3101166d… EQUAL to v1 seal
+model.layers.24.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 7ad3a402f9b11da4… EQUAL to v1 seal
+model.layers.24.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 92e5b6747b1a2a58… EQUAL to v1 seal
+model.layers.24.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 3a21feb727def87c… EQUAL to v1 seal
+model.layers.24.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 d747c2fce66feeff… EQUAL to v1 seal
+model.layers.25.input_layernorm.weight: shape [2048], 4096 bytes, sha256 aae2e50c2dd88a5e… EQUAL to v1 seal
+model.layers.25.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 ebdd19690cda074d… EQUAL to v1 seal
+model.layers.25.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 202cc7bc1864fb52… EQUAL to v1 seal
+model.layers.25.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 3f7bca5b9eec7e15… EQUAL to v1 seal
+model.layers.25.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 bd55146e9a3ef386… EQUAL to v1 seal
+model.layers.25.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 138baff0cdbd8c66… EQUAL to v1 seal
+model.layers.25.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 4d4c4e4e3e6d1f32… EQUAL to v1 seal
+model.layers.25.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 07e585e55e446073… EQUAL to v1 seal
+model.layers.25.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 2b17a99838b563ec… EQUAL to v1 seal
+model.layers.25.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 ebf1ebb7f0d144f3… EQUAL to v1 seal
+model.layers.25.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 356c2009c837e9e5… EQUAL to v1 seal
+model.layers.26.input_layernorm.weight: shape [2048], 4096 bytes, sha256 cbcbaa01a20d89d0… EQUAL to v1 seal
+model.layers.26.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 bfd8e89a2619336d… EQUAL to v1 seal
+model.layers.26.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 04cc6f99b9e49b83… EQUAL to v1 seal
+model.layers.26.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 240a868ecfe0bcd6… EQUAL to v1 seal
+model.layers.26.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 dda202f77cb6face… EQUAL to v1 seal
+model.layers.26.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 08d430710f47b157… EQUAL to v1 seal
+model.layers.26.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 20aeb1cc8219ae6c… EQUAL to v1 seal
+model.layers.26.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 ada968ae4761008a… EQUAL to v1 seal
+model.layers.26.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 834c6195251a1f36… EQUAL to v1 seal
+model.layers.26.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 7b78f2f1e7edfbd2… EQUAL to v1 seal
+model.layers.26.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 f2981490b8c538b8… EQUAL to v1 seal
+model.layers.27.input_layernorm.weight: shape [2048], 4096 bytes, sha256 28ed38bf70fc0ec7… EQUAL to v1 seal
+model.layers.27.mlp.down_proj.weight: shape [2048, 6144], 25165824 bytes, sha256 6c090b3dff92de8d… EQUAL to v1 seal
+model.layers.27.mlp.gate_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 62a5562e2f9e69f1… EQUAL to v1 seal
+model.layers.27.mlp.up_proj.weight: shape [6144, 2048], 25165824 bytes, sha256 a654a2ed91ea83f6… EQUAL to v1 seal
+model.layers.27.post_attention_layernorm.weight: shape [2048], 4096 bytes, sha256 2ab2e2d53221f543… EQUAL to v1 seal
+model.layers.27.self_attn.k_norm.weight: shape [128], 256 bytes, sha256 fe48047f01758116… EQUAL to v1 seal
+model.layers.27.self_attn.k_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 5210b45c59a7306f… EQUAL to v1 seal
+model.layers.27.self_attn.o_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 286fc90b344714c5… EQUAL to v1 seal
+model.layers.27.self_attn.q_norm.weight: shape [128], 256 bytes, sha256 e69a12f7e6afc126… EQUAL to v1 seal
+model.layers.27.self_attn.q_proj.weight: shape [2048, 2048], 8388608 bytes, sha256 41911d19ce0ad24a… EQUAL to v1 seal
+model.layers.27.self_attn.v_proj.weight: shape [1024, 2048], 4194304 bytes, sha256 58a7dab0b75ad67c… EQUAL to v1 seal
+model.norm.weight: shape [2048], 4096 bytes, sha256 8c1184d8eb89012f… EQUAL to v1 seal

@@ -1,0 +1,40 @@
+T15 — closing the sedenion pixel
+Registered by Claude (Fable 5.1), 27 Sep 2026, before any code for T15 runs. Pedro's instruction: "close the sedenion,
+otherwise you can't test, division will silently cost." Every choice below is Claude's [C].
+
+GOAL [C]
+The weight pixel of sedenion.py is 16 weights on the 16 anchors, and inference reads band 0 of conj(w)·x. The
+sedenions are not a division algebra: the norm is not multiplicative (defect.py: the defect lives in the inner×outer
+block, rank 8) and there are 42 zero-divisor pairs (the paper, Capability 6). So a move by a mixed pixel has no exact
+inverse: x cannot be rewound from conj(w)·x, and the loss is silent. T6 closed the octonions by finding the sets the
+product stays inside, with a table. T15 does the same for the pixel: find the closed unit of the sedenion move, so
+that every move rewinds exactly and the norm is kept, and state what closing changes for inference.
+
+ARITHMETIC
+Exact integers only (i128 in std Rust, walk/src/bin/sed.rs). The product is the kernel's: Cayley–Dickson doubling,
+SIGN[a][b] with landing a xor b, taken from legos/kernel.py's construction; the Rust table is checked entry by entry
+against the recursive product and its sha256 is printed beside Python's for cross-check. Random inputs come from a
+seeded xorshift; the seed is in the file.
+
+PREDICTIONS (each can fail; failures are reported as failures)
+P1 [C] The 32 signed anchors ±e_a close under the product (a loop of 32), and anchor moves rewind: for every anchor a
+    and every integer sedenion x (1,000 random), e_a(e_a x) = -x and (x e_a) e_a = -x. Kill: any anchor, any x.
+P2 [C] The octet is the closed unit. For w supported on the inner octet only (e0..e7), or the outer octet only
+    (e8..e15), and any integer sedenion x: w(conj(w) x) = |w|² x exactly, and |w x|² = |w|² |x|² when x is on the same
+    octet. 1,000 random w per octet, 1,000 random x. Kill: any failure.
+P3 [C] A mixed pixel does not close: for w with support on both octets (1,000 random), w(conj(w) x) ≠ |w|² x for
+    almost all x, and the defect |w|²|x|² − |w x|² is nonzero. Prediction: failure on ≥ 99% of (w, x). Held either way
+    it is a measurement; the kill is P3 holding at 0%, which would mean the defect was never there.
+P4 [C] Real pixels. Layer-0 q_proj of Qwen3-1.7B (local u16), the first 4,096 pixels of 16 weights, each pixel as
+    integers on its own lowest band. Whole-pixel rewind w(conj(w) x) = |w|² x fails on ≥ 99% of pixels (10 random x
+    each); inner-octet and outer-octet rewind hold on 100% of pixels. Kill: any octet failure.
+P5 [C] Band 0 is unchanged by closing: band 0 of conj(w)·x equals band 0 of conj(w_in)·x plus band 0 of conj(w_out)·x
+    on every real pixel and every x (it is the dot product, bilinear). So inference reads the same number; what
+    closing removes is the 15 other bands' inner×outer cross terms, which carried the defect.
+P6 Reported, no prediction: the 42 zero pairs of the reading (inner imaginary o with outer imaginary s, s ≠ o + 8)
+    recomputed from the table; and the count of the 336 zero products (e_a ± e_b)(e_c ± e_d) = 0.
+
+WHAT CLOSING MEANS FOR THE RUNTIME [C, to be confirmed by P2–P5]
+The pixel is an octet, not a sedenion: 8 weights on 8 anchors, an octonion, a division algebra with exact rewind.
+Two octets are two pixels, never mixed in one move. 8 octets is the same read one level up (the log's next-build
+item 4). geo.rs already lands by octets; T15 says why that is the closed shape and not a convenience.

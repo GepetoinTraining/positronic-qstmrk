@@ -1,0 +1,11 @@
+[F1] the stream entering layer 14 against the captured 5-token state: cosine 1.000000; entering layer 17: cosine 1.000000
+[F2] the last token's logits, top 5 ids: 12095 (22.7500), 264 (20.1250), 1112 (19.8750), 32671 (19.7500), 7407 (19.7500)
+[F2] argmax 12095 in 34.4s for 5 tokens x 28 layers + the head
+seats read: 14 layers resident in 4.5s
+[R1] PASS  token by token, 64 tokens: cosine 0.999994 against the captured state (instrument)
+[R1] final stream sha256 c6c5f3e465d778b1348cca31be80172b29d9f8f7a846eac95dd9359187f189c6  equals the batch run's c6c5f3e4: true
+[R1] 111.4s, 1.74s per token; the hull holds 64 positions x 14 layers x 8 kv heads
+[R2] PASS  the hull after the turn, rewound to its receipt (40 positions per layer): sha equal to before the turn: true; the turn had changed it: true
+[R3] PASS  the same turn on the rewound hull gives the same 24 output rows: true; those rows: cosine 0.999702 against the captured state (instrument)
+[R4] note  DECAY[0..6] = 1.000000, 0.618027, 0.381966, 0.236069, 0.145897, 0.090170
+[R4] note  phi-decayed context, 64 tokens: cosine 0.997010 against the captured state (instrument) (a different object; the capture is not its reference)

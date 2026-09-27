@@ -1,3 +1,16 @@
-﻿[L0->L1]  cosine 0.999960 against the captured state (instrument)
+﻿# geo.rs, Qwen3-1.7B layers 0-13, 64 captured tokens, against the captured layer-1 and layer-14 states (instrument)
+
+## pixel in, pixel out: the join lands on the top 8 bits (half to even, sticky); f64 only for norms/rotary/softmax/SiLU  27 Sep 2026
+[L0->L1]  cosine 0.999957 against the captured state (instrument)
+[L0->L14] cosine 0.999985 against the captured state (instrument)
+seat 11.1s; 14 layers x 64 tokens 41.7s
+
+## activations as pixels of the weight family (one move per weight-activation pair, PROD table 128x128)  27 Sep 2026
+[L0->L1]  cosine 0.999959 against the captured state (instrument)
+[L0->L14] cosine 0.999983 against the captured state (instrument)
+seat 10.9s; 14 layers x 64 tokens 42.1s
+
+## before: activations as exact 53-bit odds carried as 7 digits (7 lookups per pair)  27 Sep 2026
+[L0->L1]  cosine 0.999960 against the captured state (instrument)
 [L0->L14] cosine 0.999984 against the captured state (instrument)
-seat 11.2s; 14 layers x 64 tokens 243.6s
+seat 13.4s; 14 layers x 64 tokens 241.6s

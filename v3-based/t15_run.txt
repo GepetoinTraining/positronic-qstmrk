@@ -1,0 +1,9 @@
+[T]  PASS  SIGN table = recursive product on all 256 pairs; sha256 of the 256 signs (+/-, row-major): 8dfb99ef80240d623770eb8a6ed604ba8b74c02724cd2d9a665ba196072aa33e
+[P1] PASS  32 signed anchors closed (one anchor lands, sign +-1): true; e_a(e_a x) = -x on 15000/15000; (x e_a) e_a = -x on 15000/15000
+[P2] PASS  octet w (inner 1000, outer 1000): w(conj(w) x) = |w|^2 x for any x on 2000/2000; |w x|^2 = |w|^2 |x|^2 for x on the same octet on 2000/2000
+[P3] HELD  mixed w, 1000 (w, x): rewind fails on 1000/1000; norm not kept on 1000/1000 (registered: >= 99%)
+[P4] PASS  4096 real pixels x 10 x: whole-pixel rewind fails on 4096/4096 pixels (40960/40960 pairs); inner octet rewinds on 4096/4096 (40960/40960); outer octet on 4096/4096 (40960/40960)
+[P5] PASS  band 0 of conj(w) x = band 0 of conj(w_in) x + band 0 of conj(w_out) x = w . x on 40960/40960
+[P6] note  zero products (e_a +- e_b)(e_c +- e_d) = 0: 336; distinct left factor pairs: 42; the reading's count 7 x 6 = 42
+python SIGN sha256: 8dfb99ef80240d623770eb8a6ed604ba8b74c02724cd2d9a665ba196072aa33e  (legos/kernel.py, same flattening)
+registration: prereg_T15.txt sha256 1d7cd63356a4d3f039e379e909e19ab9db60e363eadac7195354625c073bc795

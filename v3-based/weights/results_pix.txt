@@ -1,0 +1,36 @@
+﻿# pix.rs: the whole forward as pixels (object 8 bits). Qwen3-1.7B layers 0-13, 64 captured tokens, against the captured
+# layer-1 and layer-14 states (instrument). Tables (EXP2 plane, RSQRT, RECIP, rotary) at CB bits; residual stream at SB bits.
+# 27 Sep 2026. Reference: geo.rs pixel-in-pixel-out run, outside ops in f64: L1 0.999957, L14 0.999985, 41.7s.
+
+== CB=16 SB=8 (the declared default)
+[L0->L1]  cosine 0.999956 against the captured state (instrument)
+[L0->L14] cosine 0.999994 against the captured state (instrument)
+pixels: object 8 bits, tables 16 bits, stream 8 bits; tables 0.0s; seat 14.4s; 14 layers x 64 tokens 50.8s
+== CB=8 SB=8
+[L0->L1]  cosine 0.999947 against the captured state (instrument)
+[L0->L14] cosine 0.999970 against the captured state (instrument)
+pixels: object 8 bits, tables 8 bits, stream 8 bits; tables 0.0s; seat 12.1s; 14 layers x 64 tokens 51.1s
+== CB=16 SB=16
+[L0->L1]  cosine 0.999957 against the captured state (instrument)
+[L0->L14] cosine 0.999984 against the captured state (instrument)
+pixels: object 8 bits, tables 16 bits, stream 16 bits; tables 0.0s; seat 12.0s; 14 layers x 64 tokens 50.2s
+== CB=8 SB=16
+[L0->L1]  cosine 0.999947 against the captured state (instrument)
+[L0->L14] cosine 0.999978 against the captured state (instrument)
+pixels: object 8 bits, tables 8 bits, stream 16 bits; tables 0.0s; seat 11.8s; 14 layers x 64 tokens 49.4s
+
+## S0 and gate 8: seated once, run from seats only (27 Sep 2026, night)
+  == reference: pix reading the weight files
+  [L0->L1]  cosine 0.999956 against the captured state (instrument)
+  [L0->L14] cosine 0.999994 against the captured state (instrument)
+  final stream sha256 c6c5f3e465d778b1348cca31be80172b29d9f8f7a846eac95dd9359187f189c6
+  pixels: object 8 bits, tables 16 bits, stream 8 bits; tables 0.0s; seat 12.0s; 14 layers x 64 tokens 57.5s
+  == seat, once
+  [S0] 159 tensors, 710997760 weights seated in ../seats/ as ISIS3 cubes: 1422114555 B against raw 1421995520 B (1.0001x, the rest is the labels)
+  [S0] sha256 of all codes in order: 9edd94dad6ea9f17a4c3d157767c504e1e837e746d9d5ba80c9eeea06138bfd8
+  real	2m28.104s
+  == pix reading seats only
+  [L0->L1]  cosine 0.999956 against the captured state (instrument)
+  [L0->L14] cosine 0.999994 against the captured state (instrument)
+  final stream sha256 c6c5f3e465d778b1348cca31be80172b29d9f8f7a846eac95dd9359187f189c6
+  pixels: object 8 bits, tables 16 bits, stream 8 bits; tables 0.0s; seats read 3.9s; 14 layers x 64 tokens 54.0s
