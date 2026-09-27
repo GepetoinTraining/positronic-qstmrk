@@ -1,0 +1,1 @@
+﻿First build, 26 Sep 2026. Withdrawn: it tested the paper from outside, importing sin, cos, pi (cos 40, sin(pi/7) over Q(zeta_28), arccos, Archimedes brackets) and kept scale inside the address. Kept as the record. The rebuild is ../kernel.py.

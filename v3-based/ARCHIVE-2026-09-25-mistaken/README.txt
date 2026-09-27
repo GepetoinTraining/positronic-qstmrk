@@ -5,3 +5,5 @@ runs/     every output of both runs, including the void first T12 run, and the t
 weights/  every weight copy Claude made: the 159 tensors fetched by byte range into t10/ (1.4 GB, BF16 LE,
           admitted against v1's MANIFEST sha256), used by T10, T11, T12 and T13. Gitignored, never committed.
           The source safetensors were not touched. t10/fetch.py can fetch them again.
+          27 Sep 2026: weights/ is now the local Qwen3-1.7B (layers 0-13, 5 tensors of 14) that walk/src/bin/geo.rs
+          reads. Move it before deleting this archive (see ../BUILDER_LOG.md).

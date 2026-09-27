@@ -1,0 +1,12 @@
+[T1a] PASS  bf16 -> exact integer grid (scale 2^-37) -> bf16, bit-identical
+[T1b] PASS  ISIS3 cube (PVL label + BandSequential) written and read back, bit-identical
+[T3a] PASS  blind search found a line: axis 0 (rows), 504 repeats over 1024, strength 142.6 vs best shuffle 63.2; smallest period that tiles the axis T = 128  (9.0s)
+[T3b] PASS  same rule rediscovered independently in layer 0: T = 128 (line 173.6)
+[T3c] PASS  v_proj: no line beats its shuffles, so no rule is claimed; that atom is all residue (honest negative)
+[T2] PASS  BandSequential, Tile 64x64, Tile 128x256, and shuffled row storage (order kept in the label): identical weights, harmonic, residue and inference output, bit for bit
+[T4a] FAIL  energy carried by the signed-value harmonic: 0.1260 in place vs shuffles 0.1250 (max 0.1263, 200 trials). The line lives in the energy envelope, not in the signed values
+[T4b] PASS  the i-pair: inside each 128-wide head, dimension d and d+64 (the rotary pair) have energy correlation 0.484; 200 random pairings give 0.001 (max 0.100)
+[T5a] PASS  1000 stress/release cycles on the exact grid: weights return to baseline bit for bit
+[T5b] PASS  control: the same 1000 cycles in float32 leave 796 of 2,621,440 weights changed (max drift 2.98e-08); float cannot release
+
+9/10 passed

@@ -1,0 +1,4 @@
+﻿[R1] PASS  the real layer read from the rules (np.load refusing) equals the pure-integer reference bit for bit. Seat once 2.1s; layer 21.2s (32 tokens); reference 32s
+[R2] PASS  all 16 bands of all 7 projections on the layer's own inputs: one product per projection (the rule with 16 table-moved activations), band 0 equal to the inference read (67.4s). Imaginary / band 0: q_proj 14.71, k_proj 15.43, v_proj 15.58, o_proj 15.64, gate_proj 14.38, up_proj 14.21, down_proj 11.28
+
+2/2 passed

@@ -1,0 +1,3 @@
+﻿[L0->L1]  BF16-identical 18263 of 131072; largest gap 15424 BF16 steps (same sign); cosine 0.999959 (instrument)
+[L0->L14] BF16-identical 7842 of 131072; largest gap 16313 BF16 steps (same sign); cosine 0.999987 (instrument)
+seat (u16 -> positions) 10.7s; 14 layers x 64 tokens 116.1s; total 127.1s

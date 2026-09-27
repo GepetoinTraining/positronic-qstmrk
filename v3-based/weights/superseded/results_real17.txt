@@ -1,0 +1,13 @@
+﻿[L0->L1] BF16-identical 18,667 of 131,072; largest gap 15428 BF16 steps (same-sign); cosine 0.999960 (instrument)
+[L0->L14] BF16-identical 7,822 of 131,072; largest gap 16328 BF16 steps (same-sign); cosine 0.999984 (instrument)  (371s for 14 layers, 64 tokens)
+
+[bands] imaginary / band 0 on layer 0's real inputs, against the same projection on random inputs
+  self_attn.q_proj   real    2.969   random   14.996
+  self_attn.k_proj   real    2.534   random   14.814
+  self_attn.v_proj   real   17.899   random   15.030
+  self_attn.o_proj   real    8.578   random   15.044
+  mlp.gate_proj      real    3.959   random   15.030
+  mlp.up_proj        real   11.669   random   14.997
+  mlp.down_proj      real   12.240   random   15.012
+
+done (506s)

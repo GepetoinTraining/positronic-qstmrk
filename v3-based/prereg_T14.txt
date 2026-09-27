@@ -1,0 +1,52 @@
+T14 — the weights through the atom kernel
+Registered by Claude (Opus 5.5), 27 Sep 2026, before any code for T14 reads a weight. Pedro is not helping from here
+(his instruction: help would muddy a check he needs), so every choice below is Claude's, marked [C].
+
+GOAL [C]
+Seat one real layer (Qwen3-4B layer 18, the tensor-atom bundle) in the atom kernel, following NEXT-STAGE's order
+(S0 seat, S1 projection from seats, S3 layer from seats) and the kernel's rule that scale lives outside the address:
+  every weight is a position: sign, odd address (the odd part of the BF16 significand, 1..255), 2-band (power of two).
+  value = sign * odd * 2^band, exactly. No weight is ever used as a float.
+Then read the seated weights with exact readings only (integers, counts, cross-multiplication; no float verdicts)
+and answer the tensor-atom handover's questions Q1-Q3 in its QUESTIONS.md.
+
+DATA
+tensor-atom/data: L18 q, k, v, o, gate, up, down, the four norms; L0 k_proj. No network (Q4, 36 layers, not attempted).
+
+GATES (each can fail; a failed gate stops what depends on it)
+G1  Decomposition: every weight of all 8 projection tensors decomposes into (sign, odd, band) and rebuilds its BF16
+    bits exactly. Zero is its own position (address 0). Any Inf/NaN pattern: FAIL.
+G2  Seat (S0): each tensor stored as an ISIS3 cube, two bands (Address: signed odd, SignedWord; TwoBand: band,
+    SignedWord), scale rule in the label; read back, the BF16 bytes rebuilt have the same sha256 as the .npy data.
+G3  Projection from seats (S1): y = W x for all 7 L18 projections, computed by the collector from the cube alone
+    (per 2-band: signed addresses times x, summed in integers; bands joined by shifts), equals an independent exact
+    integer reference (the whole tensor on one grid, split in two int64 halves, joined as Python integers) at every
+    output cell. x: 16 token rows on the 2^-16 grid.
+G4  Layer from seats (S3): T6's hull and second interior (Qwen3-4B L18; attention and norms untouched, decision 2),
+    with every projection's input snapped once to 2^-16 (the one rounding, kept) and every projection computed
+    exactly, run twice: (ref) projections from the raw weights by the exact reference; (seated) projections from the
+    cubes by the collector, with np.load refusing any .npy (the weights out of reach). Gate: both deltas equal bit for
+    bit on a 32-token input (24 context + 8 prompt rows, T6's construction, seed 11).
+Report: seated bytes against raw bytes (not a gate).
+
+EXACT READINGS AND PREDICTIONS
+Profiles along an axis, exact integers: band profile B_i = sum_j 4^band_ij (address set to 1); address profile
+A_i = sum_j odd_ij^2 (band removed); full profile F_i = sum_j odd^2 4^band. Zeros contribute 0.
+Period excess for T | N: X_T(p) = T * sum_r (sum_k p[r + kT])^2 - (sum p)^2  (integer, >= 0).
+A line at T: X_T(real) > X_T of every one of 100 position shuffles of the profile.
+
+P1 [C, from the kernel: the address carries no scale; and T4a: the line is in the envelope]
+    In L18 q_proj, L18 k_proj and L0 k_proj along rows, T = 128: the band profile has a line; the address profile
+    has none. (Answers Q1: the multiplicative split envelope x unit-residue is BF16's own split 2^band x odd,
+    division-free.) P1 fails if the band profile lacks the line in any of the three, or the address profile has it in any.
+P2 [C, from the kernel: an anchor move is an XOR; the rotary pair d, d+64 is d xor 64]
+    Inside each 128-row head of L18 q_proj and L18 k_proj, on the band profile: D_b = sum (B_d - B_(d xor 2^b))^2.
+    Prediction: D_6 (xor 64) is the smallest of D_0..D_6 and smaller than D of all 200 random pairings within heads.
+    No prediction for L0 k_proj (a withdrawn float reading suggested anti-alignment there); reported only.
+    (Answers Q3 in exact form: which pairing inside the head carries the most shared band energy, 64 or 32 or other.)
+P3  Exploratory, no prediction: all 8 tensors, both axes, every power-of-two T that tiles, band / address / full
+    profiles, line or not. (Informs Q2.)
+P4  Exploratory, no prediction: count of addresses +-1 (the weight is a pure band: an exact power of two) per tensor,
+    against the count expected if the 7-bit mantissa field were uniform (1 in 128 among normal values).
+
+Nothing in P1-P4 is edited after the run. Failures are reported as failures.

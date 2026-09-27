@@ -1,0 +1,7 @@
+﻿[S0] PASS  from the kernel's table: band 0 of conj(w) * x takes only a = b, with sign CONJ[a] * SIGN[a][a] = [1] for all 16 anchors: band 0 is the crossing of w and x, anchor by anchor
+[S1] PASS  all 12 tensors as 16-band cubes (anchors e0..e15 as bands, each pixel a sedenion of 16 weights), read back sha-identical; 207,114,007 bytes against raw 207,104,512 (1.0000x)
+[S2] PASS  on 64 q_proj rows, the full sedenion product conj(w) * x, pixel by pixel through the kernel's mul, summed: band 0 equals the row's dot product exactly; the other 15 bands carry 960 nonzero sums of 960 (what the crossing also makes, and inference does not read)
+[S3] PASS  all 7 projections read as band 0 of the sedenion products, from the 16-band cubes, equal the exact reference at every cell (54s)
+[S4] PASS  the real layer, every projection read as band 0 of sedenion products from the 16-band cubes alone (np.load refusing), equals the raw-weight run bit for bit (28s)
+
+5/5 passed

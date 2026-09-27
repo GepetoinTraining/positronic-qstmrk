@@ -1,0 +1,47 @@
+﻿[data] note  12 tensors; L18_k_proj.npy equals L18_self_attn_k_proj.npy: True
+[G1] PASS  all 12 tensors (103,552,256 weights) decompose into sign, odd address and 2-band and rebuild their BF16 bits exactly; no Inf/NaN; -0 patterns: 0
+[G2] PASS  every tensor seated as an ISIS3 cube (bands Address and TwoBand, SignedWord, the rule in the label); read back, its BF16 bytes rebuild with the same sha256
+[G2] note  seated 414,215,689 bytes against raw 207,104,512 (2.000x): two 16-bit bands per weight
+[G3] note  L18_self_attn_q_proj       (4096, 2560)  collector == reference at all 65,536 cells: True
+[G3] note  L18_self_attn_k_proj       (1024, 2560)  collector == reference at all 16,384 cells: True
+[G3] note  L18_self_attn_v_proj       (1024, 2560)  collector == reference at all 16,384 cells: True
+[G3] note  L18_self_attn_o_proj       (2560, 4096)  collector == reference at all 40,960 cells: True
+[G3] note  L18_mlp_gate_proj          (9728, 2560)  collector == reference at all 155,648 cells: True
+[G3] note  L18_mlp_up_proj            (9728, 2560)  collector == reference at all 155,648 cells: True
+[G3] note  L18_mlp_down_proj          (2560, 9728)  collector == reference at all 40,960 cells: True
+[G3] PASS  y = W x for all 7 L18 projections, from the cubes by the collector, equals the independent exact reference (from the BF16 bits on one grid) at every output cell (72s)
+[G4] PASS  one real layer (Qwen3-4B L18: attention and MLP, 32 tokens) run from the cubes alone, np.load refusing, gives the same two deltas and the same two rounding receipts as the run from the raw weights, bit for bit (ref 36s, seated 19s)
+[G4] note  attention delta max |488229| and MLP delta max |1086458| grid steps; largest rounding 7.63e-06 (half step 7.63e-06)
+[P] note  period readings done (98s)
+[P1] PASS  rows, T = 128, band profile vs address profile (shuffles beaten of 100): L18_self_attn_q_proj: band 100, address 49, full 100; L18_self_attn_k_proj: band 100, address 37, full 100; L0_k_proj: band 100, address 31, full 100
+[P2] FAIL  inside each head, band profile, D_b = sum (B_d - B_(d xor 2^b))^2: L18_self_attn_q_proj: xor bits ranked most-shared first [64, 4, 2, 1, 8, 16, 32], xor64 below 200/200 random pairings; L18_self_attn_k_proj: xor bits ranked most-shared first [2, 4, 64, 8, 1, 16, 32], xor64 below 200/200 random pairings; L0_k_proj: xor bits ranked most-shared first [4, 1, 16, 2, 8, 32, 64], xor64 below 0/200 random pairings (L0 reported only)
+
+[P3] exploratory: T with a line (band / address / full), rows (axis 0) and columns (axis 1)
+  L18_self_attn_q_proj       axis 0  band: [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048] | address: - | full: [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048]
+  L18_self_attn_q_proj       axis 1  band: - | address: - | full: -
+  L18_self_attn_k_proj       axis 0  band: [32, 64, 128, 256, 512] | address: - | full: [4, 8, 16, 32, 64, 128, 256, 512]
+  L18_self_attn_k_proj       axis 1  band: - | address: - | full: -
+  L18_self_attn_v_proj       axis 0  band: - | address: - | full: -
+  L18_self_attn_v_proj       axis 1  band: - | address: - | full: -
+  L18_self_attn_o_proj       axis 0  band: - | address: - | full: -
+  L18_self_attn_o_proj       axis 1  band: - | address: - | full: -
+  L18_mlp_gate_proj          axis 0  band: - | address: - | full: -
+  L18_mlp_gate_proj          axis 1  band: - | address: - | full: -
+  L18_mlp_up_proj            axis 0  band: - | address: - | full: -
+  L18_mlp_up_proj            axis 1  band: - | address: - | full: -
+  L18_mlp_down_proj          axis 0  band: - | address: - | full: -
+  L18_mlp_down_proj          axis 1  band: - | address: - | full: -
+  L0_k_proj                  axis 0  band: [128, 256, 512] | address: - | full: [128, 256, 512]
+  L0_k_proj                  axis 1  band: [256] | address: - | full: -
+
+[P4] exploratory: addresses +-1 (the weight is an exact power of two) against 1 in 128 of normal values
+  L18_self_attn_q_proj       +-1: 85,317 of 10,485,760 normal  (1/128 would be 81,920.0; ratio 1.041)
+  L18_self_attn_k_proj       +-1: 21,433 of 2,621,440 normal  (1/128 would be 20,480.0; ratio 1.047)
+  L18_self_attn_v_proj       +-1: 21,449 of 2,621,440 normal  (1/128 would be 20,480.0; ratio 1.047)
+  L18_self_attn_o_proj       +-1: 85,361 of 10,485,760 normal  (1/128 would be 81,920.0; ratio 1.042)
+  L18_mlp_gate_proj          +-1: 203,975 of 24,903,680 normal  (1/128 would be 194,560.0; ratio 1.048)
+  L18_mlp_up_proj            +-1: 202,918 of 24,903,680 normal  (1/128 would be 194,560.0; ratio 1.043)
+  L18_mlp_down_proj          +-1: 202,297 of 24,903,680 normal  (1/128 would be 194,560.0; ratio 1.040)
+  L0_k_proj                  +-1: 21,310 of 2,621,440 normal  (1/128 would be 20,480.0; ratio 1.041)
+
+5/6 passed  (gates G1-G4; predictions P1, P2)

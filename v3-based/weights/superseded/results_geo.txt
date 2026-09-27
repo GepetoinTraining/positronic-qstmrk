@@ -1,0 +1,10 @@
+﻿layer 0 of Qwen3-1.7B, 8 real tokens: each projection read by landing, against the exact integer reference
+  self_attn.q_proj   (2048, 2048)  landing == exact reference on all 8 tokens: True
+  self_attn.k_proj   (1024, 2048)  landing == exact reference on all 8 tokens: True
+  self_attn.v_proj   (1024, 2048)  landing == exact reference on all 8 tokens: True
+  self_attn.o_proj   (2048, 2048)  landing == exact reference on all 8 tokens: True
+  mlp.gate_proj      (6144, 2048)  landing == exact reference on all 8 tokens: True
+  mlp.up_proj        (6144, 2048)  landing == exact reference on all 8 tokens: True
+  mlp.down_proj      (2048, 6144)  landing == exact reference on all 8 tokens: True
+
+PASS  every projection of the real layer, read by moves and landings (no runtime multiply), equals the exact reference bit for bit.  landing 27.5s, reference 46.4s (8 tokens x 7 projections)

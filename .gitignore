@@ -7,8 +7,11 @@ cells/
 *.grid
 # v3: tensors fetched by byte range, admitted once against v1's seals (v3-based/t10/fetch.py re-fetches them)
 v3-based/t10/*.u16
-# the weight copies moved into the mistaken archive, for Pedro to delete
+# the weight copies moved into the mistaken archive (Qwen3-1.7B layers 0-13 as u16; read by walk/src/bin/geo.rs)
 v3-based/ARCHIVE-*/weights/
+# the tensor-atom bundle's real tensors and its zip (Qwen3-4B layer 18; the code and results are tracked)
+v3-based/tensor-atom/data/
+v3-based/tensor-atom.zip
 # v3: t6's exported closed set (v3-based/walk/export_t6.py regenerates it)
 v3-based/walk/*.bin
 

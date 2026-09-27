@@ -1,0 +1,18 @@
+﻿[in] inputs captured from the real layer (32s); reading the 8 prompt rows
+
+[R1/R2] energy per band (E_c / E_0, shown to 4 places; verdicts exact); imaginary energy I = sum E_1..E_15
+  self_attn_q_proj   I/E_0 =  15.0727   real I vs 10 regroupings: above all 10; band 0 identical under regrouping: True
+                     bands by energy: [10, 11, 12, 15, 8, 3, 6, 7, 4, 2, 1, 14, 9, 5, 13]
+                     per band, regroupings with more energy (0 = real is highest, 10 = lowest): 1:6 2:6 3:1 4:6 5:8 6:2 7:3 8:2 9:7 10:0 11:0 12:0 13:9 14:6 15:0   (119s)
+  self_attn_k_proj   I/E_0 =  15.2611   real I vs 10 regroupings: below all 10; band 0 identical under regrouping: True
+                     bands by energy: [9, 1, 5, 15, 2, 4, 14, 10, 12, 11, 3, 13, 7, 8, 6]
+                     per band, regroupings with more energy (0 = real is highest, 10 = lowest): 1:7 2:10 3:10 4:9 5:8 6:10 7:10 8:10 9:7 10:9 11:10 12:10 13:10 14:9 15:9   (27s)
+  self_attn_v_proj   I/E_0 =  16.0666   real I vs 10 regroupings: above all 10; band 0 identical under regrouping: True
+                     bands by energy: [9, 3, 2, 11, 12, 1, 14, 5, 13, 7, 10, 6, 4, 8, 15]
+                     per band, regroupings with more energy (0 = real is highest, 10 = lowest): 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:1 9:0 10:0 11:0 12:0 13:0 14:0 15:2   (21s)
+  self_attn_o_proj   I/E_0 =  15.4393   real I vs 10 regroupings: below all 10; band 0 identical under regrouping: True
+                     bands by energy: [15, 6, 2, 8, 1, 5, 11, 10, 4, 3, 12, 13, 9, 14, 7]
+                     per band, regroupings with more energy (0 = real is highest, 10 = lowest): 1:10 2:10 3:10 4:10 5:10 6:10 7:10 8:10 9:10 10:10 11:10 12:10 13:10 14:10 15:10   (93s)
+  mlp_gate_proj      I/E_0 =  14.4645   real I vs 10 regroupings: above all 10; band 0 identical under regrouping: True
+                     bands by energy: [15, 5, 3, 12, 2, 10, 6, 4, 7, 13, 9, 8, 11, 1, 14]
+                     per band, regroupings with more energy (0 = real is highest, 10 = lowest): 1:8 2:0 3:2 4:5 5:0 6:1 7:3 8:6 9:8 10:3 11:5 12:3 13:3 14:8 15:0   (305s)

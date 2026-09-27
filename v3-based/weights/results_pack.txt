@@ -1,0 +1,18 @@
+﻿[K1] PASS  all 12 tensors packed one UnsignedWord per weight in their own order, rule and floor in the label; read back sha-identical. 207,111,141 bytes against raw 207,104,512 (1.0000x; the rest is the label)
+      L18_self_attn_q_proj           band floor   -38  band offsets 1..35  (34 distinct)
+      L18_self_attn_k_proj           band floor   -37  band offsets 1..35  (33 distinct)
+      L18_self_attn_v_proj           band floor   -34  band offsets 1..31  (31 distinct)
+      L18_self_attn_o_proj           band floor   -37  band offsets 1..35  (35 distinct)
+      L18_mlp_gate_proj              band floor   -39  band offsets 1..37  (37 distinct)
+      L18_mlp_up_proj                band floor   -40  band offsets 1..38  (36 distinct)
+      L18_mlp_down_proj              band floor   -39  band offsets 1..37  (37 distinct)
+      L18_input_layernorm            band floor   -13  band offsets 1..13  (13 distinct)
+      L18_post_attention_layernorm   band floor   -23  band offsets 1..23  (14 distinct)
+      L18_self_attn_q_norm           band floor   -16  band offsets 1..15  (11 distinct)
+      L18_self_attn_k_norm           band floor   -17  band offsets 1..18  (14 distinct)
+      L0_k_proj                      band floor   -37  band offsets 1..35  (34 distinct)
+[K2] PASS  +256 on the code doubles the value exactly on all 10,485,760 q_proj weights, the address byte untouched
+[K3] PASS  all 7 projections from the packed cubes, the collector reading band windows as code ranges, equal the exact reference at every cell (47s)
+[K4] PASS  the real layer from the packed cubes alone (np.load refusing) equals the raw-weight run bit for bit (19s)
+
+4/4 passed

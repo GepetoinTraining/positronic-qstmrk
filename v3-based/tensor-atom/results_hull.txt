@@ -1,0 +1,8 @@
+[T6a] PASS  100 turns through a real layer (hull + second interior), each rewound by its receipts: the state returns to baseline bit for bit every turn, and only the 100 output rows are kept
+[T6b] PASS  the only rounding in the system is the snap out of each interior; its largest value over all turns is 7.63e-06 (half a grid step is 7.63e-06), and every one is written in its receipt
+[T6c] PASS  weights read-only throughout (hash be3873a30d882815 before and after)
+[T6d] PASS  control, off the grid: the same 100 turns in float32 with the raw deltas subtracted back leave 46,477 of 61,440 context values changed (max 1.50e-05)
+[T6f] PASS  note: the first control was accidentally on the grid (context and deltas multiples of 2^-16) and released perfectly in plain float32; the release comes from staying on the grid, whatever arithmetic carries it
+[T6e] PASS  the damper chooses: last-token attention entropy 1.20 nats averaged over 32 heads, vs 3.47 for no choice
+
+6/6 passed

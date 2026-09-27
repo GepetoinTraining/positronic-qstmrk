@@ -1,0 +1,3 @@
+﻿[L0->L1]  cosine 0.999960 against the captured state (instrument)
+[L0->L14] cosine 0.999984 against the captured state (instrument)
+seat 11.2s; 14 layers x 64 tokens 243.6s

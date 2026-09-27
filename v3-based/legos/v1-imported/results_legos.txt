@@ -1,0 +1,43 @@
+﻿[I1] PASS (exact)  x^3-2x-1 = (x+1)(x^2-x-1); roots r, 1-r (= -1/r), -1 sum to 0 and multiply to 1; x^2-1 = 1/x+1 holds at r with 1/r = r-1
+[C1] PASS (exact)  3000 turns by (4+3i)/5: every point has a^2+b^2 = d^2; a is never divisible by 5, so each point sits in lowest terms over 5^n and none repeats (0.44s)
+[C2a] PASS (exact)  inversion x -> (3/4) x/|x|^2 in homogeneous integers (no division): an involution on 2000 random points; all 1560 rational sphere points found are fixed; the centre has no image and infinity maps to the centre
+[C2b] PASS (exact)  on all 8 diagonals the segment from the midpoint (t=1/4) to the ninth-cube corner (t=1/2) goes onto the segment from that corner to the outer corner (t=1): t -> 1/(4t); the corner is fixed; the centre is reached by none
+[C3] PASS (exact)  12+26 -> {2,19}, 23+54 -> {7,11}; 200,000 random sums inside the frontier resolve into prime atoms by lookup, each product checked back
+[C3] note  frontier 10^7 built in 1.12s, 200,000 sums resolved in 0.42s (paper: 1.4s and 0.1s)
+[C4a] PASS (exact)  i, j, the half-diagonal and (r + i + r^-1 j)/2 close under multiplication on exactly 120 unit quaternions in Z[r]; the 120x120 table is a Latin square; every conjugate is present. Shapes (nonzero coords: count) [(1, 8), (3, 96), (4, 16)]
+[C4b] PASS (exact)  largest inner product below 1 is (0+1/2r) = phi/2, and every one of the 120 has exactly {12} neighbours there: the icosahedral vertex figure of the 600-cell
+[C4c] PASS (exact)  x -> l x m over all 120^2 pairs gives 7200 distinct maps (l,m and -l,-m coincide); with the mirror x -> l conj(x) m, 14400 = 14,400, the order of the 120-cell's group. Read by table lookup only (0.70s)
+[C10b] PASS (exact)  7,200 random compositions by lookup agree with multiplication
+[C10b] note  table built once in 3.94s, 7,200 lookups in 0.0819s (paper: 2.1s and 0.016s)
+[C5a] PASS (exact)  r^-1 = r-1, r^-2 = 2-r, r^2 = r+1, sqrt5 = 2r-1; the 120-cell: 600 vertices, each an address of 8 integers, all at |v|^2 = 8; nearest pairs (inner product (-2+6r)) number 1200: its 1200 edges (1.6s)
+[C5b] PASS (exact)  units of Z[r] in the box |p|,|q| <= 300: all 52 are +-r^n; r^-n > 0 and strictly falling for n <= 60, so there is no smallest positive step
+[C5] note  the 120-cell's coordinates are p+qr with p, q integers; the 120 icosians of C4 are not: 352 of their 480 coordinates carry a half (they become integer only doubled, as walk/kernel.rs does)
+[C5] note  'multiplying by r changes band without touching the address inside it': r*(p+qr) = q + (p+q)r changes (p,q); the band/address split this sentence means is not built here (meaning needed)
+[C6a] PASS (exact)  the 77-clock visits every (mod 7, mod 11) once; the 42-cycle every (mod 2, mod 3, mod 7) once
+[C6b] PASS (exact)  comparator read on squares (|x|^2|y|^2 - |xy|^2 has delta's sign): 0 on 2000 random octonion pairs; nonzero on all 2000 sedenion pairs, 1026 positive and 974 negative
+[C6c] PASS (exact)  exhaustive (e_a +- e_b)(e_c +- e_d) over all 16 indices: 336 zero products from 42 factor pairs; (e1+e10)(e4-e15) = 0 with |x|^2|y|^2 = 4, so delta = 2 (23.5s)
+[C6d] PASS (exact)  one reading, lower unit o with upper unit s skipping its mirror o+8: 7x6 = 42 pairs, identical to the exhaustive set
+[B5] PASS (exact)  e_a e_b = SIGN[a][b] e_(a xor b) for all 256 slots (and on the octonions, A.11); 500 random products agree; the 336 zero products and 42 pairs recovered by lookup alone (0.6s vs 23.5s)
+[C7] PASS (reading)  sight = each of the 7 other octant cubes looking at the empty middle (its body diagonal), x 6 oriented planes: 42 readings, P2 = (3cos^2-1)/2 = 0 exactly on all, cosine +1/sqrt3 on 21 and -1/sqrt3 on 21
+[C7] note  other reading (sight from each of the 7 cubes to cube 000): P2 = 0 on 6 of 42. The check holds on any 7 of the 8 body diagonals, and on all 8; why 7 is taken from A.11's octonion indexing
+[C8a] PASS (exact)  the cone of half-angle arccos(1/sqrt3) about (1,1,1) is the rational conic ab+bc+ca = 0: 36 primitive integer directions in [-12,12]^3, P2 = 0 on each; (a(a+b), b(a+b), -ab) lies on it for every a, b; the axes are on it; the 1/3 turn about the diagonal is the permutation x->y->z and keeps the cone
+[C8b] PASS (exact)  in turns: the step 7/9 (+280) equals -2/9 (-80), visits all 9 positions as the star {9/2}, and lands on a third-turn (an axis) exactly at steps 0, 3, 6; lifting 9 -> 18 -> 36 holds 1, then 2, then all 4 of the oscillator's quarter-turns
+[C8] note  the turn by 40 degrees about the diagonal has no rational matrix (cos 40 is cubic), so the walk is checked in turn arithmetic; the exact geometry checked is the 1/3 turn it lands on
+[C9] PASS (bracket)  omega^(9/2) is the half-turn, and i*i = -1 in the icosian table; 8c^3-6c+1 has no rational root (cos 40 is cubic, the nonagon is not constructible); the lifts 9, 18, 36, 72, 144 are held in exact brackets that round to 3.0782, 3.1257, 3.1376, 3.1406, 3.1413 and rise strictly
+[C9] note  bracket width at 144 sides < 2^-189. Each lift is one square root; the seed chord of the 9-gon is not (it needs cos 40, a cubic)
+[C10a] PASS (exact)  the nonagon brick (1/9) and the oscillator brick (1/4) close on exactly 36 turns, the smallest 1/36; look(1/4, 1/4) = 1/2, the -1
+[C11a] PASS (exact)  1/7 turns about x, y, z as exact quaternions over Q(zeta_28): orientations within 0..6 moves [1, 4, 13, 40, 121, 364, 1093] = (3^k-1)/2, no repeat; at 7 moves the only repeats are x^7 = y^7 = z^7 = 1, together (3277 = 3280 - 3)
+[C11] note  8 moves: 9823 orientations, repeats at 8: 6 (3.2s). Never closing is the known theorem (no finite 3D rotation group has 7-fold turns about two axes); a finite walk cannot prove it
+[C11b] PASS (exact)  each count is 3x the previous + 1; every odd prime 5..997 enters at the order of 3 mod p; 7 at step 6 (364 = 2^2*7*13 = 7^3+3*7), 7^2 at 42, 7^3 at 294; 3 never enters
+[C11] note  the prime 2 enters at step 2, not at the order of 3 mod 2 (= 1): the /2 in (3^k-1)/2
+[C11] note  Collatz, all 2^19 odd starts below 2^20, 'check the table; if absent, count': counted 832,481 of 24,195,556 odd steps (3.44%), 2,498,079 of 72,389,763 steps with halvings (3.45%) (paper: 3.4%; which count it used is not stated) (1.9s)
+[C11c] PASS (exact)  every tree count up to 797161 = (3^13-1)/2 resolves into atoms from the marks to 2^20
+[C11c] note  marks to 2^20 in 0.09s (paper 0.33s)
+[A2] PASS (exact)  no equilateral triangle in the 7x7 integer grid; (1,0,0),(0,1,0),(0,0,1) is one in Z^3; the even-parity corners of {0,1}^3 are a regular tetrahedron with edge^2 = 2
+[A5] PASS (exact)  roofs of height r - 1 = 1/r on the cube give 20 vertices, all edges^2 = 4r^-2, 3 at each vertex: the dodecahedron; 5 cubes share its corners, each corner in 2
+[A9] PASS (exact)  nonagon angle 140 = 7*20, outer 220 = 11*20, clearance 80 = two turns of 40
+[A12] PASS (exact)  16 corners and 32 edges: the tesseract
+[A14] PASS (exact)  on the nonagon's clock 10 = 1, 2 and 5 are inverses, 7 = -2; 7 does not divide 360
+[A11] note  the doubling of the 120 icosians into the 240 roots of E8 is listed as known (section 3) and is not built here
+
+29/29 passed  (exact 27, reading 1, bracket 1)

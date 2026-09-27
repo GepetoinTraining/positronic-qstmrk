@@ -1,0 +1,4 @@
+﻿[gate] layer 0, all 7 projections, 64 real tokens: landing == i128 multiply-accumulate at every cell: PASS
+[L0->L1]  BF16-identical 18263 of 131072; largest gap 15424 BF16 steps (same sign); cosine 0.999959 (instrument)
+[L0->L14] BF16-identical 7842 of 131072; largest gap 16313 BF16 steps (same sign); cosine 0.999987 (instrument)
+seat (u16 -> positions) 15.9s; 14 layers x 64 tokens 136.9s (layer 0 includes the reference check); total 153.2s
